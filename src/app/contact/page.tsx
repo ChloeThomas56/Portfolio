@@ -16,7 +16,7 @@ export default function Page() {
             </h1>
             <section className={styles['contact__intro']}>
                 <p>
-                    Un projet, une question&nbsp;? N&#39;hésitez pas à me contacter via le formulaire de contact ou directement par email.
+                    Un projet, une question&nbsp;? N&#39;hésitez pas à me contacter via le formulaire ci-dessous ou directement par email.
                 </p>
                 <ul className={styles['contact__info']}>
                     <li>

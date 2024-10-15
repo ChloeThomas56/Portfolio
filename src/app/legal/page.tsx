@@ -19,7 +19,7 @@ export default function Page() {
                         Éditeur
                     </h4>
                     <p>
-                        Le site https://www.chloethomas.com est édité par Chloé Thomas, entreprise individuelle.
+                        Le site https://chloethomas.me est édité par Chloé Thomas, entreprise individuelle.
                         <br />
                         SIRET&nbsp;: 87760685500030
                         <br />
@@ -36,11 +36,11 @@ export default function Page() {
                         Hébergement
                     </h4>
                     <p>
-                        Le site https://www.chloethomas.com est hébergé par XXX
+                        Le site https://chloethomas.me est hébergé par Vercel Inc.
                         <br />
-                        Siège social&nbsp;:
+                        Siège social&nbsp;: 340 S Lemon Ave #4120, Walnut, CA 91789, USA
                         <br />
-                        Contact&nbsp;:
+                        Contact&nbsp;: +1 951-383-6898
                     </p>
                 </article>
                 <article>

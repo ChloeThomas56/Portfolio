@@ -215,9 +215,12 @@ ul, ol {
     margin: 0 var(--gutter);
     border-radius: 3px;
     background-color: var(--color-darker);
-    color: var(--color-light);
     max-width: 400px;
     border-radius: 10px;
+
+    p {
+        color: var(--color-light);
+    }
 
     &__close-btn {
         position: absolute;

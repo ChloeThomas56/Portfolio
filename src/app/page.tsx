@@ -21,7 +21,7 @@ export default function Page() {
                         Développeuse web freelance
                     </h2>
                     <p className={styles['home__description']}>
-                        Bienvenue sur mon portfolio&nbsp;! Je suis Chloé Thomas, développeuse web freelance passionnée par la création et le design. Je conçois des interfaces et solutions web qui répondent aux besoins des utilisateurs. Découvrez mes projets et explorons ensemble toutes les possibilités de donner vie à vos idées.
+                        Bienvenue sur mon portfolio&nbsp;! Je suis Chloé Thomas, développeuse web freelance passionnée par la création et le design. Je conçois des interfaces et solutions web qui répondent aux besoins des utilisateurs. Découvrez mes projets et explorons ensemble toutes les possibilités pour donner vie à vos idées.
                     </p>
                     <CustomLink href="/about" className="link hover-underline">
                         <MdArrowOutward />

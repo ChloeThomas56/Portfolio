@@ -43,7 +43,7 @@ export default function Page() {
                     <li>
                         <h4>Conception graphique</h4>
                         <p>
-                            Je crée des maquettes qui reflètent l&#39;identité de votre marque, tout en étant esthétiques et fonctionnelles sur tous les types d&#39;appareils. Ensemble, nous imaginons un design centré sur l&#39;expérience utilisateur et l&#39;impact visuel.
+                            Je crée des maquettes qui reflètent l&#39;identité de votre marque, tout en étant esthétiques et adaptées à tous les types d&#39;appareils. Ensemble, nous imaginons un design centré sur l&#39;expérience utilisateur et l&#39;impact visuel.
                         </p>
                     </li>
                     <li>
@@ -55,13 +55,13 @@ export default function Page() {
                     <li>
                         <h4>Optimisation SEO</h4>
                         <p>
-                            Je vous aide à améliorer la visibilité de votre site sur les moteurs de recherche en optimisant sa structure, son contenu et ses performances, afin d&#39;assurer un meilleur classement SEO.
+                            Je vous aide à améliorer la visibilité de votre site sur les moteurs de recherche, en optimisant sa structure, son contenu et ses performances, afin d&#39;assurer un meilleur classement SEO.
                         </p>
                     </li>
                     <li>
                         <h4>Maintenance</h4>
                         <p>
-                            Je propose également des services de maintenance et veille à ce que votre site soit toujours à jour, sécurisé et performant, afin que vous puissiez vous concentrer sur votre activité sans souci technique.
+                            Je propose également des services de maintenance et veille à ce que votre site soit toujours à jour, sécurisé et performant, pour que vous puissiez vous concentrer sur votre activité sans souci technique.
                         </p>
                     </li>
                 </ol>
