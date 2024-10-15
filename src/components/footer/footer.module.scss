@@ -1,0 +1,36 @@
+.footer {
+    position: fixed;
+    left: var(--gutter);
+    bottom: var(--gutter);
+    color: var(--color-light);
+    transform: rotate(-90deg);
+    mix-blend-mode: difference;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+
+    &__content {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: var(--gutter);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transform: rotate(0);
+
+        &__content {
+            position: static;
+        }
+    }
+}

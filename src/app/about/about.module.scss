@@ -1,0 +1,111 @@
+.about {
+    &__introduction {
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+
+        &__text {
+            max-width: 65%;
+
+            > p:first-child {
+                margin-bottom: 2rem;
+            }
+        }
+
+        &__illustration {
+            flex-shrink: 0;
+            width: 400px;
+        }
+        
+    }
+
+    &__img {
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(0.3);
+    }
+
+    &__steps {
+        margin-top: 5rem;
+
+        &__list {
+            margin-top: 3rem;
+            display: grid;
+            gap: 5rem;
+            grid-template-columns: repeat(2, minmax(300px, 1fr));
+            counter-reset: item;
+
+            > li {
+                counter-increment: item;
+                &::before {
+                    content: "0" counter(item);
+                    display: block;
+                    padding-bottom: var(--gutter);
+                }
+
+                > h4 {
+                    padding-top: var(--gutter);
+                    border-top: 1px solid var(--border-color);
+                }
+            }
+        }
+    }
+
+    &__tools {
+        margin-top: 8rem;
+
+        &-list {
+            display: inline-flex;
+            column-gap: 1rem;
+            row-gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: var(--font-size-medium);
+
+            > li {
+                display: flex;
+                align-items: center;
+
+                &:not(:last-child)::after {
+                    content: "";
+                    display: flex;
+                    width: 0.5rem;
+                    height: 0.5rem;
+                    background-color: var(--text-color-lighter);
+                    border-radius: 50%;
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .about {
+        &__introduction {
+            display: flex;
+            flex-direction: column-reverse;
+
+            &__text {
+                max-width: none;
+            }
+
+            &__illustration {
+                width: 100%;
+                max-width: 400px;;
+            }
+        }
+
+        &__steps {
+            width: 100%;
+
+            &__list {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 3rem;
+            }
+        }
+
+        &__tools {
+            margin-top: 5rem;
+        }
+    }
+}

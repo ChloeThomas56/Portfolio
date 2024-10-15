@@ -1,0 +1,29 @@
+.contact {
+    &__intro {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 2rem;
+    }
+
+    &__info > li:not(:last-child) {
+        margin-bottom: 0.5rem;
+    }
+
+    &__form-container {
+        width: 50%;
+        margin-top: 5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact {
+        &__intro {
+            flex-direction: column-reverse;
+            row-gap: 3rem;
+        }
+
+        &__form-container {
+            width: 100%;
+        }
+    }
+}

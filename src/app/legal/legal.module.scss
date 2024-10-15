@@ -1,0 +1,31 @@
+.legal-page {
+    article {
+        display: flex;
+        gap: 2rem;
+        margin-top: 3rem;
+
+        h4 {
+            width: 350px;
+            flex-shrink: 0;
+        }
+
+        p {}
+    }
+}
+
+@media (max-width: 1024px) {
+    .legal-page article h4 {
+        width: 300px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .legal-page article {
+        flex-direction: column;
+        gap: 0;
+
+        > h4 {
+            width: auto;
+        }
+    }
+}

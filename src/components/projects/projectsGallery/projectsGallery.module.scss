@@ -1,0 +1,125 @@
+.projects-gallery-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+}
+
+.projects-gallery__header {
+    margin-bottom: var(--gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > div {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__title {
+        font-size: var(--font-size-small);
+        text-transform: uppercase;
+    }
+
+    &__scroll {
+        color: var(--text-color-lighter);
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-right: 2px;
+    }
+}
+
+.projects-gallery__arrows {
+    display: flex;
+    gap: 0.5rem;
+
+    > button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.4rem;
+    }
+}
+
+.projects-gallery {
+    width: 100%;
+    position: relative;
+    overflow: hidden; 
+
+    &__inner {
+        width: 100%;
+        aspect-ratio: 5/3; 
+    }
+
+    &__item {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+
+        &__img {
+            height: auto;
+            object-fit: cover;
+            filter: saturate(0.4);
+            transition: transform 0.4s ease;
+            transform-origin: top center;
+        }
+
+        &--active {
+            opacity: 1;
+
+            .projects-gallery__item__img {
+                transform: scale(1.1) translateZ(0px);
+            }
+        }
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+
+        > span {
+            width: 40px;
+        }
+
+        &--mobile {
+            display: none;
+        }
+
+        &--desktop {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: var(--background-color);
+            width: 100%;
+            z-index: 2;
+            padding: 0.5rem 0;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .projects-gallery-container {
+        width: 100% !important;
+        position: static;
+    }
+
+    .projects-gallery__header__scroll {
+        display: none;
+    }
+
+    .projects-gallery {
+        &__title--desktop {
+            display: none;
+        }
+
+        &__title--mobile {
+            display: flex;
+            margin-top: 0.5rem;
+        }
+    }
+}
