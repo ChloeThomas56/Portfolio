@@ -1,3 +1,7 @@
+.home-page {
+    padding-bottom: var(--gutter);
+}
+
 .home {
     &__hero {
         height: calc(100vh - 9rem - var(--gutter));

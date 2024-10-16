@@ -124,7 +124,7 @@ ul, ol {
     position: relative;   
     min-height: 100vh;
     padding-top: 9rem;
-    padding-bottom: var(--gutter);
+    padding-bottom: 5rem;
     padding-left: 10%;
     padding-right: 10%;
 }
@@ -257,7 +257,6 @@ ul, ol {
         padding-left: var(--gutter);
         padding-right: var(--gutter);
         padding-top: 8rem;
-        padding-bottom: 5rem;
     }
 
     .subtitle {
@@ -269,10 +268,6 @@ ul, ol {
     :root {
         --gutter: 1rem;
         --font-size-medium: 1.2rem;
-    }
-
-    .page {
-        padding-bottom: 4rem;;
     }
 }
 

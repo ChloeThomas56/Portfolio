@@ -6,7 +6,7 @@
 }
 
 .projects-gallery__header {
-    margin-bottom: var(--gutter);
+    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,20 +66,20 @@
 
 .projects-gallery__title {
     line-height: 28px;
+    text-transform: uppercase;
 
     &--mobile {
         display: none;
     }
 
     &--desktop {
-        text-transform: uppercase;
         opacity: 0.5;
         text-align: right;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
 
         > h5 {
-            font-weight: 700;
             cursor: pointer;
+            font-weight: 700;
         }
     }
 
@@ -111,7 +111,6 @@
             object-fit: cover;
             filter: saturate(0.4);
             transition: transform 0.4s ease;
-            //transform-origin: bottom;
         }
 
         &--active {
@@ -140,14 +139,10 @@
         }
 
         &--mobile {
-            display: flex;
-            align-items: center;
+            display: inline-block;
+            margin-top: 0.3rem;
             font-size: 1rem;
-            padding-top: 0.5rem;
-
-            > span {
-                width: 40px;
-            }
+            font-weight: 700;
         }
     }
 }

@@ -9,6 +9,7 @@ import { CursorProvider } from '@/components/ui/cursor/CursorContext';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+    title: 'Chloé Thomas',
     description: 'Développeuse web freelance passionnée par la création et le design. Je conçois des sites et applications web sur-mesure.',
     keywords: "développement web, front-end, création de sites, react, freelance"
 }

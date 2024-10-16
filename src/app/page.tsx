@@ -1,17 +1,19 @@
+'use client';
+
 import styles from './home.module.scss';
 import { MdArrowOutward } from 'react-icons/md';
 import { CustomLink } from '@/components/ui/customLink/CustomLink';
 import ProjectsGallery from '@/components/projects/projectsGallery/ProjectsGallery';
 import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-    title: 'Chloé Thomas',
-}
+import { useEffect } from 'react';
 
 export default function Page() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
-        <div className="page">
+        <div className={`page ${styles['home-page']}`}>
             <section className={styles['home__hero']}>
                 <div>
                     <h1>

@@ -160,7 +160,6 @@ export default function ProjectsGallery() {
             </div>
             {currentProject && (
                 <h5 className={`${styles['projects-gallery__title']} ${styles['projects-gallery__title--mobile']}`}>
-                    <span>0{currentProjectIndex + 1}</span>
                     {currentProject.name}
                 </h5>
             )}
