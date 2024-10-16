@@ -32,7 +32,7 @@
     &__images {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 2rem;
     }
 
     &__img {
@@ -41,7 +41,7 @@
         transition: filter 0.3s ease;
 
         [data-theme='light'] & {
-            box-shadow: 0 0 20px rgba(0,0,0, 0.1);
+            box-shadow: 0 0 25px rgba(0,0,0, 0.1);
         }
 
         &:hover {
@@ -64,6 +64,12 @@
                 cursor: not-allowed;
             }
         }
+    }
+}
+
+@media (max-width: 1024px) {
+    .project__images {
+        gap: 1.5rem;
     }
 }
 

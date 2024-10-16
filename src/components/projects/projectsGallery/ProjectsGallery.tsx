@@ -73,9 +73,9 @@ export default function ProjectsGallery() {
                     </button>
                 </div>
             </div>
-            <ul className={styles['projects-gallery__titles']}>
+            <div className={styles['projects-gallery__titles']}>
                 {projects.map((project, index) => (
-                    <li 
+                    <div 
                         key={project.id}
                         className={clsx(
                             styles['projects-gallery__title'],
@@ -88,14 +88,14 @@ export default function ProjectsGallery() {
                         }}>
                             {project.name}
                         </h5>
-                    </li>
+                    </div>
                 ))}
                 <span 
                     className={styles['projects-gallery__titles__icon-container']}
                     style={{transform: `translateY(${28 * currentProjectIndex}px)`}}>
                     <IoTriangleSharp />
                 </span>
-            </ul>
+            </div>
             <div className={clsx(styles['projects-gallery'])}>
                 <ul className={styles['projects-gallery__inner']}>
                     {projects.map((project, index) => (
