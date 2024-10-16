@@ -26,7 +26,6 @@
         color: var(--text-color-lighter);
         text-transform: uppercase;
         font-weight: 600;
-        margin-right: 2px;
     }
 }
 
@@ -39,6 +38,53 @@
         justify-content: center;
         align-items: center;
         font-size: 1.4rem;
+    }
+}
+
+.projects-gallery__titles {
+    position: absolute;
+    bottom: 0;
+    left: -1rem;
+    transform: translateX(-100%);
+
+    &__icon-container {
+        position: absolute;
+        font-size: 0.8rem;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        left: -2rem;
+        transition: transform 0.3s ease;
+
+        > svg {
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.projects-gallery__title {
+    line-height: 28px;
+
+    &--mobile {
+        display: none;
+    }
+
+    &--desktop {
+        text-transform: uppercase;
+        opacity: 0.5;
+        text-align: right;
+        font-size: 1.1rem;
+
+        > h5 {
+            font-weight: 700;
+            cursor: pointer;
+        }
+    }
+
+    &--active {
+        opacity: 1;
     }
 }
 
@@ -65,7 +111,7 @@
             object-fit: cover;
             filter: saturate(0.4);
             transition: transform 0.4s ease;
-            transform-origin: top center;
+            //transform-origin: bottom;
         }
 
         &--active {
@@ -74,30 +120,6 @@
             .projects-gallery__item__img {
                 transform: scale(1.1) translateZ(0px);
             }
-        }
-    }
-
-    &__title {
-        display: flex;
-        align-items: center;
-        font-size: 1rem;
-
-        > span {
-            width: 40px;
-        }
-
-        &--mobile {
-            display: none;
-        }
-
-        &--desktop {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            background-color: var(--background-color);
-            width: 100%;
-            z-index: 2;
-            padding: 0.5rem 0;
         }
     }
 }
@@ -112,14 +134,20 @@
         display: none;
     }
 
-    .projects-gallery {
-        &__title--desktop {
+    .projects-gallery__title {
+        &--desktop {
             display: none;
         }
 
-        &__title--mobile {
+        &--mobile {
             display: flex;
-            margin-top: 0.5rem;
+            align-items: center;
+            font-size: 1rem;
+            padding-top: 0.5rem;
+
+            > span {
+                width: 40px;
+            }
         }
     }
 }

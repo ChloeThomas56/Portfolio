@@ -9,12 +9,7 @@ export default function ThemeToggleButton() {
     const { theme, setTheme } = useTheme();
 
     const toggleTheme = () => {
-        if (theme === 'system') {
-            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-            setTheme(currentTheme === 'light' ? 'dark' : 'light');
-        } else {
-            setTheme(theme === 'light' ? 'dark' : 'light');
-        }
+        setTheme(theme === 'light' ? 'dark' : 'light');
     };
 
     return (

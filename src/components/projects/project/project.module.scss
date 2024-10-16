@@ -1,8 +1,8 @@
 .project {
     &__info {
-        margin-top: 3rem;
         display: flex;
         gap: 3rem;
+        margin: 5rem 0;
 
         &__technical-data {
             width: 30%;
@@ -30,7 +30,6 @@
     }
 
     &__images {
-        margin-top: 4rem;
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
@@ -71,7 +70,8 @@
 @media (max-width: 768px) {
     .project__info {
         flex-direction: column-reverse;
-        margin-top: 2rem;
+        margin-bottom: 4rem;
+        margin-top: 3rem;
 
         &__technical-data, &__description {
             width: 100%;

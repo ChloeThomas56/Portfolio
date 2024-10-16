@@ -63,7 +63,7 @@ export default function Header() {
     return (
         <header className={styles['header']}>
             <div className={styles['header__logo-container']}>
-                <CustomLink href="/">
+                <CustomLink href="/" aria-label="Retour à l'accueil">
                     <Logo className={styles['header__logo']} />
                 </CustomLink>
             </div>

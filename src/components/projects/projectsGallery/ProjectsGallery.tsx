@@ -5,18 +5,18 @@ import projects from '@/lib/projects.json';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MdArrowForward, MdArrowBack } from 'react-icons/md';
+import { IoTriangleSharp } from "react-icons/io5";
 import { useState, useEffect, useRef } from 'react';
 import clsx from 'clsx';
 import { useCursor } from '@/components/ui/cursor/CursorContext';
 import useWindowSize from '@/hooks/useWindowSize';
-import { AnimatePresence, motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
 export default function ProjectsGallery() {
     const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
     const [currentProject, setCurrentProject]           = useState(projects[0]);
-    const { isProjectHovered, setIsProjectHovered }     = useCursor();
+    const { setIsProjectHovered }                       = useCursor();
     const { isDesktop, windowSize }                     = useWindowSize();
     const scaledProjects                                = useRef<HTMLDivElement | null>(null);
 
@@ -91,11 +91,17 @@ export default function ProjectsGallery() {
                         Projets
                     </h3>
                     <div className={styles['projects-gallery__arrows']}>
-                        <button disabled={!previousProject}>
-                            <MdArrowBack className={styles['projects-gallery__arrow']} onClick={goBack} />
+                        <button 
+                            disabled={!previousProject} 
+                            aria-label="Projet précédent"
+                            onClick={goBack}>
+                            <MdArrowBack />
                         </button>
-                        <button disabled={!nextProject}>
-                            <MdArrowForward className={styles['projects-gallery__arrow']} onClick={goForward} />
+                        <button 
+                            disabled={!nextProject}
+                            aria-label="Projet suivant"
+                            onClick={goForward}>
+                            <MdArrowForward />
                         </button>
                     </div>
                 </div>
@@ -103,23 +109,31 @@ export default function ProjectsGallery() {
                     (scroll &#8595;)
                 </span>
             </div>
+            {isDesktop && (
+                <ul className={styles['projects-gallery__titles']}>
+                    {projects.map((project, index) => (
+                        <li 
+                            key={project.id}
+                            className={clsx(
+                                styles['projects-gallery__title'],
+                                styles['projects-gallery__title--desktop'],
+                                {[styles['projects-gallery__title--active']]: currentProject.id === project.id})}>
+                            <h5 onClick={() => {
+                                setCurrentProject(project);
+                                setCurrentProjectIndex(index);
+                            }}>
+                                {project.name}
+                            </h5>
+                        </li>
+                    ))}
+                    <span 
+                        className={styles['projects-gallery__titles__icon-container']}
+                        style={{transform: `translateY(${28 * currentProjectIndex}px)`}}>
+                        <IoTriangleSharp />
+                    </span>
+                </ul>
+            )}
             <div className={clsx(styles['projects-gallery'])}>
-                {isDesktop && (
-                    <AnimatePresence>
-                        {currentProject && isProjectHovered && (
-                            <motion.h5
-                                key="project-title" 
-                                className={`${styles['projects-gallery__title']} ${styles['projects-gallery__title--desktop']}`}
-                                initial={{ y: "100%" }}
-                                animate={{ y: 0 }}
-                                exit={{ y: "100%" }}
-                                transition={{ ease: "linear", duration: 0.3 }}>
-                                <span>0{currentProjectIndex + 1}</span>
-                                {currentProject.name}
-                            </motion.h5>
-                        )}
-                    </AnimatePresence>
-                )}
                 <ul className={styles['projects-gallery__inner']}>
                     {projects.map((project, index) => (
                         <li 
@@ -133,7 +147,7 @@ export default function ProjectsGallery() {
                                 onMouseEnter={() => {isDesktop && setIsProjectHovered(true);}}
                                 onMouseLeave={() => {isDesktop && setIsProjectHovered(false);}}>
                                 <Image
-                                    src={project.images[0]}
+                                    src={project.image_home}
                                     width={1850}
                                     height={1110}
                                     className={styles['projects-gallery__item__img']}

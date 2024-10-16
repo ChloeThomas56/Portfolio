@@ -23,7 +23,7 @@ export default function Page() {
                         <br />
                         SIRET&nbsp;: 87760685500030
                         <br />
-                        Siège social&nbsp;: 9 Sainte-Suzanne, 59230 Questembert, France
+                        Siège social&nbsp;: 9 Sainte-Suzanne, 56230 Questembert, France
                         <br />
                         Email&nbsp;:
                         <CustomLink href="mailto:chloe.thomas@netc.fr">

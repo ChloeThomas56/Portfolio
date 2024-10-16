@@ -25,14 +25,13 @@ export default function RootLayout({
                 <SmoothScrolling>
                     <ThemeProvider
                         attribute="data-theme"
-                        defaultTheme="system"
-                        enableSystem>
+                        defaultTheme="light"
+                        enableSystem={false}>
                         <CursorProvider>
                             <Header />
                             <main>{children}</main>
                             <Footer />
                             <Cursor />
-                            <div className="noise" />
                         </CursorProvider>
                     </ThemeProvider>
                 </SmoothScrolling>

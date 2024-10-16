@@ -1,6 +1,6 @@
 .home {
     &__hero {
-        height: calc(100vh - 9rem);
+        height: calc(100vh - 9rem - var(--gutter));
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -15,7 +15,7 @@
 
     &__projects {
         position: fixed;
-        width: 90vw;
+        width: calc(90vw - var(--gutter));
     }
 
     &__hidden-projects-container {
