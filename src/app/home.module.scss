@@ -31,11 +31,15 @@
 
 @media (max-width: 1200px) {
     .home__projects {
-        width: calc(100vw - 4rem);
+        width: calc(100vw - 4rem - var(--gutter));
     }
 }
 
 @media (max-width: 1024px) {
+    .home-page {
+        padding-bottom: 5rem;
+    }
+
     .home {
         &__hero {
             height: auto;
