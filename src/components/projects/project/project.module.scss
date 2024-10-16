@@ -41,7 +41,7 @@
         transition: filter 0.3s ease;
 
         [data-theme='light'] & {
-            box-shadow: 0 0 20px rgba(103, 109, 133, 0.25);
+            box-shadow: 0 0 20px rgba(0,0,0, 0.1);
         }
 
         &:hover {

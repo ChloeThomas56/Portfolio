@@ -1,26 +1,9 @@
-'use client';
-
 import styles from './home.module.scss';
 import { MdArrowOutward } from 'react-icons/md';
 import { CustomLink } from '@/components/ui/customLink/CustomLink';
 import ProjectsGallery from '@/components/projects/projectsGallery/ProjectsGallery';
-import { useEffect } from 'react';
-import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling';
 
 export default function Page() {
-    const lenis = useSmoothScrollingControl(); // Accéder à l'instance de Lenis
-
-    useEffect(() => {
-        lenis?.stop();
-        window.scrollTo(0, 0);
-
-        const timer = setTimeout(() => {
-            lenis?.start();
-        }, 1250);
-
-        return () => clearTimeout(timer);
-    }, [lenis]);
-
     return (
         <div className={`page ${styles['home-page']}`}>
             <section className={styles['home__hero']}>
@@ -43,7 +26,6 @@ export default function Page() {
             <section className={styles['home__projects']}>
                 <ProjectsGallery />
             </section>
-            <div className={styles['home__hidden-projects-container']} />
         </div>
     );
 }

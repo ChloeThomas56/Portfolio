@@ -21,12 +21,6 @@
         position: fixed;
         width: calc(90vw - var(--gutter));
     }
-
-    &__hidden-projects-container {
-        width: 80%;
-        aspect-ratio: 1.58;
-        margin-left: auto;
-    }
 }
 
 @media (max-width: 1200px) {
@@ -49,10 +43,6 @@
             position: static;
             margin-top: 5rem;
             width: 100%;
-        }
-
-        &__hidden-projects-container {
-            display: none;
         }
     }
 }

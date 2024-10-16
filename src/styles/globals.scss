@@ -173,13 +173,13 @@ ul, ol {
     outline: none;
     transition: padding 0.3s ease;
 
-    &[disabled] {
-        cursor: not-allowed;
-    }
-
     &:has(.spinner) {
         padding-left: calc(2rem + 32px);
     }
+}
+
+button[disabled] {
+    cursor: not-allowed;
 }
 
 .link {
