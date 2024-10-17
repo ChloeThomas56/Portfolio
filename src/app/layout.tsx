@@ -1,5 +1,5 @@
 import '../styles/globals.scss';
-import { dm_sans } from '../lib/font';
+import { dm_sans } from '@/lib/font';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import { Cursor } from '@/components/ui/cursor/Cursor';
@@ -22,7 +22,7 @@ export default function RootLayout({
 
     return (
         <html lang="fr" suppressHydrationWarning>
-            <body className={`${dm_sans.className}`}>
+            <body className={dm_sans.className}>
                 <SmoothScrolling>
                     <ThemeProvider
                         attribute="data-theme"

@@ -4,12 +4,12 @@
         "name": "Sports-Village",
         "slug": "sports-village",
         "text": "<p>Sports-Village, c'est une plateforme qui permet aux clubs sportifs amateurs de créer et d'administrer leur propre boutique en ligne, offrant ainsi à leurs adhérents des produits personnalisés aux couleurs du club. Durant deux années passées chez Sports-Village, j'ai participé à l'évolution des fonctionnalités, à la refonte UX/UI de la plateforme et au développement d'un tableau de bord permettant aux administrateurs des clubs la gestion complète de leur boutique, de leurs cotisations, des newsletters, et d'autres services.</p>",
-        "image_home": "/images/projects/sv/sv_presentation.avif",
+        "image_home": "/images/projects/sv/sv_pres.avif",
         "images": [
-            "/images/projects/sv/sv_1.avif",
-            "/images/projects/sv/sv_2.avif",
-            "/images/projects/sv/sv_3.avif",
-            "/images/projects/sv/sv_4.avif"
+            "/images/projects/sv/sv_home.avif",
+            "/images/projects/sv/sv_dashboard.avif",
+            "/images/projects/sv/sv_store.avif",
+            "/images/projects/sv/sv_products.avif"
         ],
         "year": "2022-2024",
         "stack": "Nuxt.js, Laravel",
@@ -20,11 +20,11 @@
         "name": "Les Pendules de Minerve",
         "slug": "lespendulesdeminerve",
         "text": "<p>Les Pendules de Minerve est une boutique en ligne spécialisée dans la vente de pendules de radiesthésie. J'ai réalisé ce projet sur Wordpress, en concevant une plateforme e-commerce fluide et responsive. Le site permet une gestion simplifiée et efficace des produits, des paiements en ligne et des commandes, tout en étant optimisé pour le référencement naturel afin d'améliorer la visibilité de la boutique sur les moteurs de recherche.</p>",
-        "image_home": "/images/projects/lpdm/lpdm_presentation.avif",
+        "image_home": "/images/projects/lpdm/lpdm_pres.avif",
         "images": [
-            "/images/projects/lpdm/lpdm_1.avif",
-            "/images/projects/lpdm/lpdm_2.avif",
-            "/images/projects/lpdm/lpdm_3.avif"
+            "/images/projects/lpdm/lpdm_home.avif",
+            "/images/projects/lpdm/lpdm_store.avif",
+            "/images/projects/lpdm/lpdm_product.avif"
         ],
         "year": "2023",
         "stack": "Wordpress",
@@ -35,11 +35,11 @@
         "name": "Geobio56",
         "slug": "geobio56",
         "text": "<p>Dans le cadre de son activité de géobiologie, Jean-François Thomas souhaitait améliorer sa présence en ligne. J'ai donc réalisé une refonte complète de son site vitrine Wordpress, le modernisant et assurant une expérience utilisateur optimale sur tous les appareils. J'ai restructuré l'interface pour la rendre plus intuitive et responsive, tout en améliorant le référencement naturel afin d'augmenter sa visibilité sur les moteurs de recherche.</p>",
-        "image_home": "/images/projects/geobio/geobio56_presentation.avif",
+        "image_home": "/images/projects/geobio/geobio56_pres.avif",
         "images": [
-            "/images/projects/geobio/geobio56_1.avif",
-            "/images/projects/geobio/geobio56_2.avif",
-            "/images/projects/geobio/geobio56_3.avif"
+            "/images/projects/geobio/geobio56_home.avif",
+            "/images/projects/geobio/geobio56_articles.avif",
+            "/images/projects/geobio/geobio56_home2.avif"
         ],
         "year": "2024",
         "stack": "Wordpress",

@@ -15,10 +15,6 @@ export default function ContactForm() {
 
     const form = useRef<HTMLFormElement | null>(null);
 
-    const open = () => {
-        setIsLoading(true);
-    }
-
     const closeModal = () => {
         setShowMessage(false);
         setFormStatus(null);
