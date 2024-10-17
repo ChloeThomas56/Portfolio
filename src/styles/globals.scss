@@ -254,10 +254,7 @@ button[disabled] {
     }
 
     .page {
-        padding-left: var(--gutter);
-        padding-right: var(--gutter);
-        padding-top: 8rem;
-        padding-bottom: 9rem;
+        padding: 8rem var(--gutter);
     }
 
     .subtitle {
