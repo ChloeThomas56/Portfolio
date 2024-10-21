@@ -24,7 +24,7 @@ interface ProjectProps {
     nextProject: Project | null;
 }
 
-export default function Project({ project, previousProject, nextProject, }: ProjectProps) {
+export default function Project({ project, previousProject, nextProject }: ProjectProps) {
     const htmlContent = project.text
 
     return (

@@ -24,8 +24,10 @@
 }
 
 @media (max-width: 1200px) {
-    .home__projects {
-        width: calc(100vw - 4rem - var(--gutter));
+    .home {
+        &__projects {
+            width: calc(100vw - 4rem - var(--gutter));
+        }
     }
 }
 
