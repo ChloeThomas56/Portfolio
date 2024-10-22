@@ -1,44 +1,26 @@
-.home-page {
-    padding-bottom: var(--gutter);
-}
-
 .home {
-    &__hero {
-        height: calc(100vh - 9rem - var(--gutter));
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 3rem;
-    }
-
     &__description {
         width: 100%;
         max-width: 800px;
         margin: 3rem 0;
     }
 
-    &__projects {
-        position: fixed;
-        width: calc(90vw - var(--gutter));
+    &__link {
+        margin-bottom: 200px;
     }
-}
 
-@media (max-width: 1200px) {
-    .home {
-        &__projects {
-            width: calc(100vw - 4rem - var(--gutter));
-        }
+    &__projects {
+        position: absolute;
+        right: var(--gutter);
+        bottom: var(--gutter);
+        width: 100%;
     }
 }
 
 @media (max-width: 1024px) {
-    .home-page {
-        padding-bottom: 8rem;
-    }
-
     .home {
-        &__hero {
-            height: auto;
+        &__link {
+            margin-bottom: 0;
         }
 
         &__projects {

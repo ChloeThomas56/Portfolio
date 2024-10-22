@@ -1,7 +1,7 @@
 'use client';
 
 import styles from './project.module.scss';
-import Image from 'next/image';
+import { CustomImage } from '@/components/ui/customImage/CustomImage';
 import clsx from 'clsx';
 import { CustomLink } from '@/components/ui/customLink/CustomLink';
 import { MdArrowOutward } from 'react-icons/md';
@@ -62,7 +62,7 @@ export default function Project({ project, previousProject, nextProject }: Proje
                 </section>
                 <section className={`${styles['project__images']}`}>
                     {project.images.map((img, index) => (
-                        <Image
+                        <CustomImage
                             key={img}
                             src={img}
                             width={1850}

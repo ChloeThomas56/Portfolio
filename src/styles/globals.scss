@@ -7,20 +7,19 @@
     --font-size-medium: 1.3rem;
     --font-size-small: 1rem;
     --transition-style: cubic-bezier(0.6, 0, 0.24, 1);
+    --border-color: color-mix(in srgb,var(--text-color)25%,transparent);
 }
 
 [data-theme='light'] {
     --background-color: var(--color-lighter);
     --text-color: var(--color-dark);
     --text-color-lighter: color-mix(in srgb,var(--text-color)70%,transparent);
-    --border-color: #c6c6c6;
 }
 
 [data-theme='dark'] {
     --background-color: var(--color-dark);
     --text-color: var(--color-light);
     --text-color-lighter: color-mix(in srgb,var(--text-color)60%,transparent);
-    --border-color: #4f4f4f;
 }
 
 ::-webkit-scrollbar {
@@ -80,11 +79,6 @@ h1 {
     letter-spacing: -5px;
 }
 
-h4 {
-    font-size: 1.5rem;
-    margin-bottom: var(--gutter);
-}
-
 p {
     font-size: var(--font-size-medium);
     line-height: 1.5;
@@ -98,6 +92,7 @@ input, textarea, button {
 img {
     display: block;
     width: 100%;
+    transition: opacity 0.3s ease;
 }
 
 ul, ol {
@@ -127,6 +122,12 @@ ul, ol {
     padding-bottom: 6rem;
     padding-left: 10%;
     padding-right: 10%;
+}
+
+.grid {
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
 }
 
 .subtitle {
@@ -168,8 +169,8 @@ ul, ol {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    font-size: var(--font-size-small);
-    font-weight: 600;
+    font-size: var(--font-size-medium);
+    font-weight: 500;
     border: none;
     outline: none;
     transition: padding 0.3s ease;
@@ -189,13 +190,6 @@ button[disabled] {
     gap: 0.5rem;
     font-size: var(--font-size-medium);
     width: fit-content;
-}
-
-.link-cursor {
-    height: 50px;
-    width: 50px;
-    background-color: var(--color-light);
-    mix-blend-mode: difference;
 }
 
 .modal-overlay {
@@ -254,6 +248,11 @@ button[disabled] {
 
     .page {
         padding: 8rem var(--gutter);
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
     }
 
     .subtitle {

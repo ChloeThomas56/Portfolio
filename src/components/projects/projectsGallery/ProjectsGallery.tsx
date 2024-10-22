@@ -82,12 +82,12 @@ export default function ProjectsGallery() {
                             styles['projects-gallery__title'],
                             {[styles['projects-gallery__title--active']]: currentProject.id === project.id})}
                             style={!isDesktop ? {transform: `translateY(-${28 * currentProjectIndex}px)`} : {}}>
-                        <h5 onClick={() => {
+                        <h4 onClick={() => {
                             setCurrentProject(project);
                             setCurrentProjectIndex(index);
                         }}>
                             {project.name}
-                        </h5>
+                        </h4>
                     </div>
                 ))}
                 <span 

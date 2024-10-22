@@ -5,23 +5,21 @@ import ProjectsGallery from '@/components/projects/projectsGallery/ProjectsGalle
 
 export default function Page() {
     return (
-        <div className={`page ${styles['home-page']}`}>
-            <section className={styles['home__hero']}>
-                <div>
-                    <h1>
-                        Chloé Thomas
-                    </h1>
-                    <h2 className="subtitle">
-                        Développeuse web freelance
-                    </h2>
-                    <p className={styles['home__description']}>
-                        Bienvenue sur mon portfolio&nbsp;! Je suis Chloé Thomas, développeuse web freelance passionnée par la création et le design. Je conçois des interfaces et solutions web qui répondent aux besoins des utilisateurs. Découvrez mes projets et explorons ensemble toutes les possibilités de donner vie à vos idées.
-                    </p>
-                    <CustomLink href="/about" className="link hover-underline">
-                        <MdArrowOutward />
-                        En savoir plus
-                    </CustomLink>
-                </div>
+        <div className="page">
+            <section>
+                <h1>
+                    Chloé Thomas
+                </h1>
+                <h2 className="subtitle">
+                    Développeuse web freelance
+                </h2>
+                <p className={styles['home__description']}>
+                    Bienvenue sur mon portfolio&nbsp;! Je suis Chloé Thomas, développeuse web freelance passionnée par la création et le design. Je conçois des interfaces et solutions web qui répondent aux besoins des utilisateurs. Découvrez mes projets et explorons ensemble toutes les possibilités de donner vie à vos idées.
+                </p>
+                <CustomLink href="/about" className={`link hover-underline ${styles['home__link']}`}>
+                    <MdArrowOutward />
+                    En savoir plus
+                </CustomLink>
             </section>
             <section className={styles['home__projects']}>
                 <ProjectsGallery />

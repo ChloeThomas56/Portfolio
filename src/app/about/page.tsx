@@ -36,30 +36,30 @@ export default function Page() {
                 </div>
             </section>
             <section className={styles['about__steps']}>
-                <h3 className="subtitle">
+                <h2 className="subtitle">
                     Expertise
-                </h3>
-                <ol className={styles['about__steps__list']}>
+                </h2>
+                <ol className={`grid ${styles['about__steps__list']}`}>
                     <li>
-                        <h4>Conception graphique</h4>
+                        <h3>Conception graphique</h3>
                         <p>
                             Je crée des maquettes qui reflètent l&#39;identité de votre marque, tout en étant esthétiques et adaptées à tous les types d&#39;appareils. Ensemble, nous imaginons un design centré sur l&#39;expérience utilisateur et l&#39;impact visuel.
                         </p>
                     </li>
                     <li>
-                        <h4>Développement sur mesure</h4>
+                        <h3>Développement sur mesure</h3>
                         <p>
                             Je construis votre site ou application web en fonction de vos besoins et en m&#39;assurant de répondre à toutes vos exigences techniques, que ce soit via des CMS pour une gestion simplifiée ou par des solutions personnalisées.
                         </p>
                     </li>
                     <li>
-                        <h4>Optimisation SEO</h4>
+                        <h3>Optimisation SEO</h3>
                         <p>
                             Je vous aide à améliorer la visibilité de votre site sur les moteurs de recherche, en optimisant sa structure, son contenu et ses performances, afin d&#39;assurer un meilleur classement SEO.
                         </p>
                     </li>
                     <li>
-                        <h4>Maintenance</h4>
+                        <h3>Maintenance</h3>
                         <p>
                             Je propose également des services de maintenance et veille à ce que votre site soit toujours à jour, sécurisé et performant, pour que vous puissiez vous concentrer sur votre activité sans souci technique.
                         </p>
@@ -67,9 +67,9 @@ export default function Page() {
                 </ol>
             </section>
             <section className={styles['about__tools']}>
-                <h3 className="subtitle">
+                <h2 className="subtitle">
                     Mes outils
-                </h3>
+                </h2>
                 <ul className={styles['about__tools-list']}>
                     <li>HTML</li>
                     <li>CSS</li>

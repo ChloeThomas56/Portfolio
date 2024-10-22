@@ -1,31 +1,23 @@
 .legal-page {
+    section {
+        margin-top: 4rem;
+    }
+
     article {
-        display: flex;
-        gap: 2rem;
-        margin-top: 3rem;
-
-        h4 {
-            width: 350px;
-            flex-shrink: 0;
+        h3 {
+            font-size: 1.5rem;
+            padding-bottom: var(--gutter);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        p {}
+        p {
+            margin-top: var(--gutter);
+        }
     }
 }
 
-@media (max-width: 1024px) {
-    .legal-page article h4 {
-        width: 300px;
-    }
-}
-
-@media (max-width: 1024px) {
-    .legal-page article {
-        flex-direction: column;
-        gap: 0;
-
-        > h4 {
-            width: auto;
-        }
+@media (max-width: 768px) {
+    .legal-page section {
+        gap: 4rem;
     }
 }

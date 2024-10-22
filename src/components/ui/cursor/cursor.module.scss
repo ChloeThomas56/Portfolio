@@ -41,18 +41,11 @@
 
     > span {
         display: block;
-        animation: rotate 3s linear infinite;
     }
 }
 
 @media (max-width: 1024px) {
     .cursor {
         display: none;
-    }
-}
-
-@keyframes rotate {
-    to {
-        transform: rotate(360deg);
     }
 }
