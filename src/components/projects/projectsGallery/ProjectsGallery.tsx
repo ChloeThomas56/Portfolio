@@ -74,22 +74,24 @@ export default function ProjectsGallery() {
                 </div>
             </div>
             <div className={styles['projects-gallery__titles']}>
-                {projects.map((project, index) => (
-                    <div 
-                        key={project.id}
-                        className={clsx(
-                            styles['projects-gallery__title'],
-                            styles['projects-gallery__title'],
-                            {[styles['projects-gallery__title--active']]: currentProject.id === project.id})}
-                            style={!isDesktop ? {transform: `translateY(-${28 * currentProjectIndex}px)`} : {}}>
-                        <h4 onClick={() => {
-                            setCurrentProject(project);
-                            setCurrentProjectIndex(index);
-                        }}>
-                            {project.name}
-                        </h4>
-                    </div>
-                ))}
+                <ul>
+                    {projects.map((project, index) => (
+                        <li 
+                            key={project.id}
+                            className={clsx(
+                                styles['projects-gallery__title'],
+                                styles['projects-gallery__title'],
+                                {[styles['projects-gallery__title--active']]: currentProject.id === project.id})}
+                                style={!isDesktop ? {transform: `translateY(-${28 * currentProjectIndex}px)`} : {}}>
+                            <h4 onClick={() => {
+                                setCurrentProject(project);
+                                setCurrentProjectIndex(index);
+                            }}>
+                                {project.name}
+                            </h4>
+                        </li>
+                    ))}
+                </ul>
                 <span 
                     className={styles['projects-gallery__titles__icon-container']}
                     style={{transform: `translateY(${28 * currentProjectIndex}px)`}}>
