@@ -78,7 +78,7 @@ export default function Page() {
                     <li>Next</li>
                     <li>Nuxt</li>
                     <li>Gsap</li>
-                    <li>Framer motion</li>
+                    <li>Framer Motion</li>
                     <li>Figma</li>
                     <li>Wordpress</li>
                     <li>PHP</li>

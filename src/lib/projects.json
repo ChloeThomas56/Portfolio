@@ -17,6 +17,22 @@
     },
     {
         "id": 2,
+        "name": "CipherNet",
+        "slug": "ciphernet",
+        "text": "<p>CipherNet est un site one-page fictif conçu pour présenter les services d'une entreprise spécialisée en cybersécurité. Imaginé pour offrir une expérience utilisateur dynamique et immersive, le site présente des animations interactives inspirées de références primées aux CSS Design Awards. Également conçu comme une vitrine technique, CipherNet vous permet de découvrir un panel d'effets et de transitions fluides qui sauront dynamiser votre site web ou portfolio, et retenir l'attention de vos visiteurs.</p>",
+        "image_home": "/images/projects/ciphernet/ciphernet_pres.avif",
+        "images": [
+            "/images/projects/ciphernet/ciphernet_home.avif",
+            "/images/projects/ciphernet/ciphernet_core.avif",
+            "/images/projects/ciphernet/ciphernet_services.avif",
+            "/images/projects/ciphernet/ciphernet_innovation.avif"
+        ],
+        "year": "2024",
+        "stack": "Next.js, Gsap, Framer Motion",
+        "url": "https://ciphernet-rouge.vercel.app/"
+    },
+    {
+        "id": 3,
         "name": "Les Pendules de Minerve",
         "slug": "lespendulesdeminerve",
         "text": "<p>Les Pendules de Minerve est une boutique en ligne spécialisée dans la vente de pendules de radiesthésie. J'ai réalisé ce projet sur Wordpress, en concevant une plateforme e-commerce fluide et responsive. Le site permet une gestion simplifiée et efficace des produits, des paiements en ligne et des commandes, tout en étant optimisé pour le référencement naturel afin d'améliorer la visibilité de la boutique sur les moteurs de recherche.</p>",
@@ -31,7 +47,7 @@
         "url": "https://www.lespendulesdeminerve.com/"
     },
     {
-        "id": 3,
+        "id": 4,
         "name": "Geobio56",
         "slug": "geobio56",
         "text": "<p>Dans le cadre de son activité de géobiologie, Jean-François Thomas souhaitait améliorer sa présence en ligne. J'ai donc réalisé une refonte complète de son site vitrine Wordpress, le modernisant et assurant une expérience utilisateur optimale sur tous les appareils. J'ai restructuré l'interface pour la rendre plus intuitive et responsive, tout en améliorant le référencement naturel afin d'augmenter sa visibilité sur les moteurs de recherche.</p>",

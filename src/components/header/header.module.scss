@@ -3,13 +3,13 @@
 
     &__logo-container, &__menu-container {
         position: fixed;
+        top: var(--gutter);
         z-index: 10;
         mix-blend-mode: difference;
         height: 35px;
     }
 
     &__logo-container {
-        top: var(--gutter);
         left: var(--gutter);
         display: flex;
         align-items: center;
@@ -21,7 +21,6 @@
 
     &__menu-container {
         right: var(--gutter);
-        top: var(--gutter);
         display: flex;
         align-items: center;
         column-gap: 2.5rem;
