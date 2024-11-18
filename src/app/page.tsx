@@ -1,15 +1,23 @@
+'use client';
+
 import styles from './home.module.scss';
 import { MdArrowOutward } from 'react-icons/md';
 import { CustomLink } from '@/components/ui/customLink/CustomLink';
 import ProjectsGallery from '@/components/projects/projectsGallery/ProjectsGallery';
+import { motion } from 'framer-motion';
 
 export default function Page() {
+
     return (
         <div className={`page ${styles['home']}`}>
             <section className={styles['home__content']}>
-                <h1>
+                <motion.h1
+                    initial={{y: 30, opacity: 0}}
+                    animate={{y: 0, opacity: 1}}
+                    exit={{y: 30, opacity: 0}}
+                    transition={{duration: 0.3, ease:"easeIn"}}>
                     Chloé Thomas
-                </h1>
+                </motion.h1>
                 <h2 className="subtitle">
                     Développeuse web freelance
                 </h2>

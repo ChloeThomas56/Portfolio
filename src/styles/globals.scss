@@ -34,8 +34,8 @@ body {
 }
 
 body {
-    background-color: var(--black);
-    position: relative;
+    background-color: var(--light);
+    color: var(--black);
 }
 
 a {
@@ -86,21 +86,7 @@ ul, ol {
 
 
 // classes
-.page-transition {
-    background-color: var(--light);
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    z-index: 0;
-}
-
-.container {
-    width: 100vw;
-}
-
 .page {
-    background-color: var(--light);
-    color: var(--black);
     position: relative;   
     min-height: 100vh;
     padding-top: 9rem;
