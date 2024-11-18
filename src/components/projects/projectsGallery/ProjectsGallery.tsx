@@ -113,8 +113,8 @@ export default function ProjectsGallery() {
                                 onMouseLeave={() => {isDesktop && setIsProjectHovered(false);}}>
                                 <Image
                                     src={project.image_home}
-                                    width={1850}
-                                    height={1110}
+                                    width={1200}
+                                    height={800}
                                     className={styles['projects-gallery__item__img']}
                                     alt={project.name}
                                 />

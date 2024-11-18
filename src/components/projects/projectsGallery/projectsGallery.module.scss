@@ -1,9 +1,5 @@
 .projects-gallery-container {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 35%;
-    min-width: 500px;
+    position: relative;
 }
 
 .projects-gallery__header {
@@ -24,7 +20,7 @@
 
 .projects-gallery__titles {
     position: absolute;
-    bottom: 0;
+    bottom: -8px;
     left: -1rem;
     transform: translateX(-100%);
 
@@ -50,7 +46,6 @@
     text-transform: uppercase;
     opacity: 0.5;
     text-align: right;
-    font-size: 1.2rem;
 
     > h4 {
         font-size: 1rem;
@@ -70,11 +65,7 @@
 
     &__inner {
         width: 100%;
-        aspect-ratio: 5/3; 
-        
-        a {
-            cursor: none;
-        }
+        aspect-ratio: 3/2; 
     }
 
     &__item {
@@ -105,7 +96,6 @@
 @media (max-width: 1024px) {
     .projects-gallery-container {
         width: 100%;
-        max-width: 700px;
         min-width: auto;
         position: relative;
         margin-bottom: 2rem;

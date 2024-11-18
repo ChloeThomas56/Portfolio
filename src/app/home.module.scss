@@ -1,32 +1,37 @@
 .home {
+    padding-bottom: var(--gutter);
+    padding-right: var(--gutter);
+    display: flex;
+    column-gap: 1.5rem;
+
+    &__content {
+        width: 60%;
+    }
+
     &__description {
         width: 100%;
         max-width: 800px;
         margin: 3rem 0;
     }
 
-    &__link {
-        margin-bottom: 200px;
-    }
-
     &__projects {
-        position: absolute;
-        right: var(--gutter);
-        bottom: var(--gutter);
-        width: 100%;
+        width: 40%;
+        margin-top: auto;
     }
 }
 
 @media (max-width: 1024px) {
     .home {
-        &__link {
-            margin-bottom: 0;
+        flex-direction: column;
+        row-gap: 5rem;
+        padding-bottom: 8rem;
+
+        &__content, &__projects {
+            width: 100%;
         }
 
-        &__projects {
-            position: static;
-            margin-top: 5rem;
-            width: 100%;
+        &__description {
+            max-width: none;
         }
     }
 }

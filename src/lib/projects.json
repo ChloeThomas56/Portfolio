@@ -45,20 +45,5 @@
         "year": "2023",
         "stack": "Wordpress",
         "url": "https://www.lespendulesdeminerve.com/"
-    },
-    {
-        "id": 1,
-        "name": "Geobio56",
-        "slug": "geobio56",
-        "text": "<p>Dans le cadre de son activité de géobiologie, Jean-François Thomas souhaitait améliorer sa présence en ligne. J'ai donc réalisé une refonte complète de son site vitrine Wordpress, le modernisant et assurant une expérience utilisateur optimale sur tous les appareils. J'ai restructuré l'interface pour la rendre plus intuitive et responsive, tout en améliorant le référencement naturel afin d'augmenter sa visibilité sur les moteurs de recherche.</p>",
-        "image_home": "/images/projects/geobio/geobio56_pres.avif",
-        "images": [
-            "/images/projects/geobio/geobio56_home.avif",
-            "/images/projects/geobio/geobio56_articles.avif",
-            "/images/projects/geobio/geobio56_home2.avif"
-        ],
-        "year": "2024",
-        "stack": "Wordpress",
-        "url": "https://geobio56.fr/"
     }
 ]

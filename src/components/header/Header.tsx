@@ -4,7 +4,6 @@ import clsx from 'clsx';
 import { useState, useEffect } from 'react';
 import styles from './header.module.scss';
 import Logo from '/public/images/logo.svg';
-import ThemeToggleButton from '../ui/themeToggle/ThemeToggleButton';
 import BurgerMenu from '../ui/burgerMenu/BurgerMenu';
 import { CustomLink } from '../ui/customLink/CustomLink';
 import { usePathname } from 'next/navigation';
@@ -81,7 +80,6 @@ export default function Header() {
                         ))}
                     </ul>
                 </nav>
-                <ThemeToggleButton />
                 <BurgerMenu toggleMenu={toggleMenu} isOpen={isMenuOpen} />
             </div>
             <nav 

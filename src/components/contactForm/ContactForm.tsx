@@ -60,28 +60,48 @@ export default function ContactForm() {
                         Prénom
                         <span>*</span>
                     </label>
-                    <input type="text" id="first_name" name="first_name" required />
+                    <input 
+                        type="text" 
+                        id="first_name" 
+                        name="first_name"
+                        placeholder="Jean"
+                        required />
                 </div>
                 <div className={styles['form__field-wrapper']}>
                     <label htmlFor="last_name">
                         Nom
                         <span>*</span>
                     </label>
-                    <input type="text" id="last_name" name="last_name" required />
+                    <input 
+                        type="text"
+                        id="last_name"
+                        name="last_name"
+                        placeholder="Dupont"
+                        required />
                 </div>
                 <div className={styles['form__field-wrapper']}>
                     <label htmlFor="email">
                         Email
                         <span>*</span>
                     </label>
-                    <input type="email" id="email" name="email" required />
+                    <input 
+                        type="email" 
+                        id="email"
+                        name="email"
+                        placeholder="jean.dupont@exemple.com"
+                        required />
                 </div>
                 <div className={styles['form__field-wrapper']}>
                     <label htmlFor="message">
                         Message
                         <span>*</span>
                     </label>
-                    <textarea id="message" name="message" rows={3} required />
+                    <textarea 
+                        id="message"
+                        name="message"
+                        placeholder="Taper votre demande ici"
+                        rows={3} 
+                        required />
                 </div>
                 <Button type="submit" className="button" disabled={isLoading ? true : false}>
                     {

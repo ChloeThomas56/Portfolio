@@ -5,8 +5,8 @@ import ProjectsGallery from '@/components/projects/projectsGallery/ProjectsGalle
 
 export default function Page() {
     return (
-        <div className="page">
-            <section>
+        <div className={`page ${styles['home']}`}>
+            <section className={styles['home__content']}>
                 <h1>
                     Chloé Thomas
                 </h1>

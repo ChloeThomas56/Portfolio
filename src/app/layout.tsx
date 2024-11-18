@@ -4,7 +4,6 @@ import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import { Cursor } from '@/components/ui/cursor/Cursor';
 import SmoothScrolling from '@/components/ui/SmoothScrolling';
-import { ThemeProvider } from '@/components/ui/themeToggle/ThemeProvider';
 import { CursorProvider } from '@/components/ui/cursor/CursorContext';
 import { Metadata } from 'next';
 
@@ -24,17 +23,12 @@ export default function RootLayout({
         <html lang="fr" suppressHydrationWarning>
             <body className={dm_sans.className}>
                 <SmoothScrolling>
-                    <ThemeProvider
-                        attribute="data-theme"
-                        defaultTheme="light"
-                        enableSystem={false}>
-                        <CursorProvider>
-                            <Header />
-                            <main>{children}</main>
-                            <Footer />
-                            <Cursor />
-                        </CursorProvider>
-                    </ThemeProvider>
+                    <CursorProvider>
+                        <Header />
+                        <main>{children}</main>
+                        <Footer />
+                        <Cursor />
+                    </CursorProvider>
                 </SmoothScrolling>
             </body>
         </html>

@@ -10,7 +10,7 @@
     &-inner {
         width: 5px;
         height: 5px;
-        background-color: var(--color-light);
+        background-color: var(--light);
     }
 
     &-outer {
@@ -25,19 +25,19 @@
 }
 
 .link-cursor {
-    background-color: var(--color-light);
+    background-color: var(--light);
     border-width: 0px;
     transform: translate(-50%, -50%) scale(2);
 }
 
 .projects-cursor {
-    background-color: var(--color-darker);
-    border-color: var(--color-darker);
+    background-color: var(--black);
+    border-color: var(--black);
     border-width: 0px;
     mix-blend-mode: normal;
     transform: translate(-50%, -50%) scale(3);
-    color: var(--color-light);
-    font-size: 0.3rem;
+    color: var(--light);
+    font-size: 0.35rem;
 
     > span {
         display: block;
