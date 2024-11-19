@@ -66,7 +66,7 @@
         width: 100%;
         top: -100vh;
         left: 0;
-        background-color: var(--black);
+        background-color: var(--dark);
         color: var(--light);
         transition: top 0.5s ease-in-out;
         padding-left: 20%;
@@ -107,7 +107,7 @@
             }
     
             &__name {
-                background-color: var(--black);
+                background-color: var(--dark);
                 transform: translateX(-30px);
                 transition: transform 0.4s ease;
             }

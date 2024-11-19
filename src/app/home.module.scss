@@ -14,6 +14,25 @@
         margin: 3rem 0;
     }
 
+    &__infos {
+        display: flex;
+        column-gap: 2.5rem;
+        row-gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &__location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: var(--font-size-medium);
+
+            > svg {
+                color: var(--grey);
+            }
+        }
+    }
+
     &__projects {
         width: 40%;
         margin-top: auto;
