@@ -38,13 +38,14 @@
                     content: "0" counter(item);
                     display: block;
                     padding-bottom: var(--gutter);
+                    font-size: var(--font-size-medium);
                 }
 
                 > h3 {
                     font-size: 1.5rem;
                     margin-bottom: var(--gutter);
                     padding-top: var(--gutter);
-                    border-top: 1px solid var(--border-color);
+                    border-top: 2px solid var(--border-color);
                 }
             }
         }

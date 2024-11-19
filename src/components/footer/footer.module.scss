@@ -2,15 +2,13 @@
     position: fixed;
     left: var(--gutter);
     bottom: var(--gutter);
-    color: var(--light);
     transform: rotate(-90deg);
+    color: var(--light);
     mix-blend-mode: difference;
     white-space: nowrap;
-    font-size: 0.9rem;
-    letter-spacing: 0.7px;
     text-transform: uppercase;
 
-    &__content {
+    > a {
         position: absolute;
         top: 0;
         left: 0;
@@ -24,12 +22,9 @@
         left: 0;
         width: 100%;
         padding: var(--gutter);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         transform: rotate(0);
 
-        &__content {
+        > a {
             position: static;
         }
     }

@@ -5,7 +5,7 @@ export default function Footer() {
 
     return (
         <footer className={styles['footer']}>
-            <CustomLink href="/legal" className={styles['footer__content']}>
+            <CustomLink href="/legal">
                 © 2024
             </CustomLink>
         </footer>

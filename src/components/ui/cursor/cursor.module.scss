@@ -5,7 +5,7 @@
     pointer-events: none;
     mix-blend-mode: difference;
     transform: translate(-50%, -50%) scale(1);
-    transition: transform 0.2s cubic-bezier(0.6, 0, 0.24, 1), border-color 0.2s cubic-bezier(0.6, 0, 0.24, 1), border-width cubic-bezier(0.6, 0, 0.24, 1);
+    transition: transform 0.2s cubic-bezier(0.6, 0, 0.24, 1), color-mix(in srgb,var(--black)25%,transparent) 0.2s cubic-bezier(0.6, 0, 0.24, 1), border-width cubic-bezier(0.6, 0, 0.24, 1);
 
     &-inner {
         width: 5px;

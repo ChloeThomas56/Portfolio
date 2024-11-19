@@ -10,6 +10,7 @@
 
     &__title {
         font-size: 1.1rem;
+        font-weight: var(--font-weight-medium);
         text-transform: uppercase;
     }
 }
@@ -50,7 +51,7 @@
     > h4 {
         font-size: 1rem;
         cursor: pointer;
-        font-weight: 700;
+        font-weight: var(--font-weight-bolder);
     }
 
     &--active {
