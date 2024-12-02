@@ -101,7 +101,7 @@
                 height: 10px;
                 margin-right: 0.3rem;
                 border-radius: 50%;
-                background-color: #a4af73;
+                background-color: #1f8f41;
                 animation: pulse 2s infinite;
             }
         }
@@ -162,8 +162,8 @@
 
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 #ade200d3;
+        box-shadow: 0 0 #4aa765c9;
     } 100% {
-        box-shadow: 0 0 0 .4rem #ade20000;
+        box-shadow: 0 0 0 .4rem #4aa76400;
     }
 }
