@@ -3,8 +3,8 @@
         "id": 4,
         "name": "CipherNet",
         "slug": "ciphernet",
-        "text": "<p>CipherNet est un site one-page fictif conçu pour présenter les services d'une entreprise spécialisée en cybersécurité. Imaginé pour offrir une expérience utilisateur dynamique et immersive, le site présente des animations interactives inspirées de références primées aux CSS Design Awards. Également conçu comme une vitrine technique, CipherNet vous permet de découvrir un panel d'effets et de transitions fluides qui sauront dynamiser votre site web ou portfolio, et retenir l'attention de vos visiteurs.</p>",
-        "image_home": "/images/projects/ciphernet/ciphernet_pres.avif",
+        "text": "CipherNet est un site one-page fictif conçu pour présenter les services d'une entreprise spécialisée en cybersécurité. Imaginé pour offrir une expérience utilisateur dynamique et immersive, le site présente des animations interactives inspirées de références primées aux CSS Design Awards. Également conçu comme une vitrine technique, CipherNet vous permet de découvrir un panel d'effets et de transitions fluides qui sauront dynamiser votre site web ou portfolio, et retenir l'attention de vos visiteurs.",
+        "image_home": "/images/projects/ciphernet/ciphernet_home.avif",
         "images": [
             "/images/projects/ciphernet/ciphernet_home.avif",
             "/images/projects/ciphernet/ciphernet_core.avif",
@@ -19,8 +19,8 @@
         "id": 3,
         "name": "Sports-Village",
         "slug": "sports-village",
-        "text": "<p>Sports-Village, c'est une plateforme qui permet aux clubs sportifs amateurs de créer et d'administrer leur propre boutique en ligne, offrant ainsi à leurs adhérents des produits personnalisés aux couleurs du club. Durant deux années passées chez Sports-Village, j'ai participé à l'évolution des fonctionnalités, à la refonte UX/UI de la plateforme et au développement d'un tableau de bord permettant aux administrateurs des clubs la gestion complète de leur boutique, de leurs cotisations, des newsletters, et d'autres services.</p>",
-        "image_home": "/images/projects/sv/sv_pres.avif",
+        "text": "Sports-Village, c'est une plateforme qui permet aux clubs sportifs amateurs de créer et d'administrer leur propre boutique en ligne, offrant ainsi à leurs adhérents des produits personnalisés aux couleurs du club. Durant deux années passées chez Sports-Village, j'ai participé à l'évolution des fonctionnalités, à la refonte UX/UI de la plateforme et au développement d'un tableau de bord permettant aux administrateurs des clubs la gestion complète de leur boutique, de leurs cotisations, des newsletters, et d'autres services.",
+        "image_home": "/images/projects/sv/sv_store.avif",
         "images": [
             "/images/projects/sv/sv_home.avif",
             "/images/projects/sv/sv_dashboard.avif",
@@ -35,8 +35,8 @@
         "id": 2,
         "name": "Les Pendules de Minerve",
         "slug": "lespendulesdeminerve",
-        "text": "<p>Les Pendules de Minerve est une boutique en ligne spécialisée dans la vente de pendules de radiesthésie. J'ai réalisé ce projet sur Wordpress, en concevant une plateforme e-commerce fluide et responsive. Le site permet une gestion simplifiée et efficace des produits, des paiements en ligne et des commandes, tout en étant optimisé pour le référencement naturel afin d'améliorer la visibilité de la boutique sur les moteurs de recherche.</p>",
-        "image_home": "/images/projects/lpdm/lpdm_pres.avif",
+        "text": "Les Pendules de Minerve est une boutique en ligne spécialisée dans la vente de pendules de radiesthésie. J'ai réalisé ce projet sur Wordpress, en concevant une plateforme e-commerce fluide et responsive. Le site permet une gestion simplifiée et efficace des produits, des paiements en ligne et des commandes, tout en étant optimisé pour le référencement naturel afin d'améliorer la visibilité de la boutique sur les moteurs de recherche.",
+        "image_home": "/images/projects/lpdm/lpdm_store.avif",
         "images": [
             "/images/projects/lpdm/lpdm_home.avif",
             "/images/projects/lpdm/lpdm_store.avif",

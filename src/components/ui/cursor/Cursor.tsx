@@ -8,8 +8,8 @@ import clsx from 'clsx';
 import useWindowSize from '@/hooks/useWindowSize';
 
 export function Cursor() {
-    const { isLinkOrButtonHovered, isProjectHovered } = useCursor();
-    const { isDesktop } = useWindowSize();
+    const { isProjectHovered }  = useCursor();
+    const { isDesktop }         = useWindowSize();
 
     const cursorInner = useRef<HTMLDivElement | null>(null);
     const cursorOuter = useRef<HTMLDivElement | null>(null);
@@ -68,7 +68,7 @@ export function Cursor() {
             />
             <div
                 ref={cursorOuter} 
-                className={clsx(styles['cursor'], styles['cursor-outer'], {[styles['link-cursor']]: isLinkOrButtonHovered}, {[styles['projects-cursor']]: isProjectHovered})}
+                className={clsx(styles['cursor'], styles['cursor-outer'], {[styles['projects-cursor']]: isProjectHovered})}
             >
                 {isProjectHovered && <span>Voir</span>}
             </div>

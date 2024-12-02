@@ -1,3 +1,5 @@
+'use client';
+
 import Image from "next/image";
 import { useState } from "react";
 
@@ -5,7 +7,7 @@ interface ImageProps {
     src: string;
     width: number;
     height: number;
-    className: string;
+    className?: string;
     alt: string;
 }
 

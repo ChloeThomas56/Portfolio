@@ -1,7 +1,7 @@
 'use client';
 
 import styles from './contactForm.module.scss';
-import { Button } from '@/components/ui/button/Button';
+import { Button } from '@/components/ui/Button';
 import { MdOutlineClose } from 'react-icons/md';
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
@@ -133,19 +133,15 @@ export default function ContactForm() {
                                 </button>
                                 {
                                     formStatus === 'success' ? (
-                                        <div>
-                                            <p>
-                                                Votre message a bien été envoyé&nbsp;!<br/>Je vous répondrai dans les plus brefs délais.<br/>
-                                                <span className={styles['form__smiley']}>(•‿•)</span>
-                                            </p>
-                                        </div>
+                                        <p>
+                                            Votre message a bien été envoyé&nbsp;!<br/>Je vous répondrai dans les plus brefs délais.<br/>
+                                            <span className={styles['form__smiley']}>(•‿•)</span>
+                                        </p>
                                     ) : (
-                                        <div>
-                                            <p>
-                                                Oups&nbsp;! Quelque chose s&#39;est mal passé.<br/>Veuillez vérifier vos informations et réessayer.<br/>
-                                                <span className={styles['form__smiley']}>(•_•)</span>
-                                            </p>
-                                        </div>
+                                        <p>
+                                            Oups&nbsp;! Quelque chose s&#39;est mal passé.<br/>Veuillez vérifier vos informations et réessayer.<br/>
+                                            <span className={styles['form__smiley']}>(•_•)</span>
+                                        </p>
                                     )
                                 }
                         </motion.div>

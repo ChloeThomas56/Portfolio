@@ -1,0 +1,35 @@
+.nav {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .nav {
+        display: block;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        left: 0;
+        z-index: 2;
+        background-color: var(--light-grey);
+        padding-left: 20%;
+    
+        > ul {
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0.5rem;
+    
+            > li {
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        padding-left: var(--gutter);
+    }
+}

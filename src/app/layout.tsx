@@ -1,11 +1,12 @@
 import '../styles/globals.scss';
-import { dm_sans } from '@/lib/font';
+import { inter } from '@/lib/font';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import { Cursor } from '@/components/ui/cursor/Cursor';
 import SmoothScrolling from '@/components/ui/SmoothScrolling';
 import { CursorProvider } from '@/components/ui/cursor/CursorContext';
 import { Metadata } from 'next';
+import PageTransition from '@/components/ui/animations/PageTransition';
 
 export const metadata: Metadata = {
     title: 'Chloé Thomas',
@@ -21,11 +22,15 @@ export default function RootLayout({
 
     return (
         <html lang="fr" suppressHydrationWarning>
-            <body className={dm_sans.className}>
+            <body className={inter.className}>
                 <SmoothScrolling>
                     <CursorProvider>
                         <Header />
-                        <main>{children}</main>
+                        <main>
+                            <PageTransition>
+                                {children}
+                            </PageTransition>
+                        </main>
                         <Footer />
                         <Cursor />
                     </CursorProvider>

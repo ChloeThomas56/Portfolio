@@ -10,7 +10,6 @@
     }
 
     &__form-container {
-        //width: 50%;
         margin-top: 5rem;
     }
 }
@@ -20,10 +19,6 @@
         &__intro {
             flex-direction: column-reverse;
             row-gap: 3rem;
-        }
-
-        &__form-container {
-            width: 100%;
         }
     }
 }

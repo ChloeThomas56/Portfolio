@@ -1,31 +1,16 @@
 .footer {
-    position: fixed;
-    left: var(--gutter);
-    bottom: var(--gutter);
-    transform: rotate(-90deg);
-    color: var(--light);
-    mix-blend-mode: difference;
-    white-space: nowrap;
-    text-transform: uppercase;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--gutter);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gutter);
+    flex-wrap: wrap;
 
-    > a {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-}
-
-@media (max-width: 1024px) {
-    .footer {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: var(--gutter);
-        transform: rotate(0);
-
-        > a {
-            position: static;
-        }
+    > span {
+        font-size: var(--font-size-small);
     }
 }

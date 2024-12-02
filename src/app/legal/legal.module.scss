@@ -1,23 +1,7 @@
-.legal-page {
-    section {
-        margin-top: 4rem;
-    }
+.legal-page section {
+    margin-top: 4rem;
 
-    article {
-        h3 {
-            font-size: 1.5rem;
-            padding-bottom: var(--gutter);
-            border-bottom: 2px solid var(--border-color);
-        }
-
-        p {
-            margin-top: var(--gutter);
-        }
-    }
-}
-
-@media (max-width: 768px) {
-    .legal-page section {
-        gap: 4rem;
+    a:hover {
+        opacity: 0.5;
     }
 }

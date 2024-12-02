@@ -1,13 +1,16 @@
 import styles from './footer.module.scss';
-import { CustomLink } from '../ui/customLink/CustomLink';
+import Link from 'next/link';
 
 export default function Footer() {
 
     return (
         <footer className={styles['footer']}>
-            <CustomLink href="/legal">
+            <span>
                 © 2024
-            </CustomLink>
+            </span>
+            <Link href="/legal" className="nav-item">
+                Mentions légales
+            </Link>
         </footer>
     );
 }
