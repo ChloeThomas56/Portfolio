@@ -5,8 +5,8 @@
     --light-grey: #dfdfdf;
     --mid-grey: #d1d1d1;
     --gutter: 1.5vw;
-    --top-gutter: 9rem;
-    --bottom-gutter: 10rem;
+    --top-gutter: clamp(7rem, 14vh, 9rem);
+    --bottom-gutter: clamp(8rem, 17vh, 10rem);
     --block-margin: 50%;
     --font-size-small: clamp(0.8rem, 0.9vw, 0.9rem);
     --font-size-medium: clamp(0.9rem, 1.15vw, 1.15rem);
@@ -237,8 +237,6 @@ button[disabled] {
     :root {
         --gutter: 1rem;
         --block-margin: 33%;
-        --top-gutter: 7rem;
-        --bottom-gutter: 8rem;
     }
 }
 
