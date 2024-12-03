@@ -7,6 +7,8 @@ import SmoothScrolling from '@/components/ui/SmoothScrolling';
 import { CursorProvider } from '@/components/ui/cursor/CursorContext';
 import { Metadata } from 'next';
 import PageTransition from '@/components/ui/animations/PageTransition';
+import { LoaderProvider } from '@/components/ui/animations/loader/LoaderContext';
+import Loader from '@/components/ui/animations/loader/Loader';
 
 export const metadata: Metadata = {
     title: 'Chloé Thomas',
@@ -25,14 +27,17 @@ export default function RootLayout({
             <body className={inter.className}>
                 <SmoothScrolling>
                     <CursorProvider>
-                        <Header />
-                        <main>
-                            <PageTransition>
-                                {children}
-                            </PageTransition>
-                        </main>
-                        <Footer />
-                        <Cursor />
+                        <LoaderProvider>
+                            <Loader />
+                            <Header />
+                            <main>
+                                <PageTransition>
+                                    {children}
+                                </PageTransition>
+                            </main>
+                            <Footer />
+                            <Cursor />
+                        </LoaderProvider>
                     </CursorProvider>
                 </SmoothScrolling>
             </body>

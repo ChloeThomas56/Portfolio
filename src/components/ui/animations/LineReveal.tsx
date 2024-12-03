@@ -2,13 +2,13 @@
 
 import { motion, Variants } from 'framer-motion';
 
-export default function LineReveal({ children }: { children: React.ReactNode }) {
+export default function LineReveal({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) {
     
     const lineReveal: Variants = {
-        initial: { y: "-100%"},
+        initial: { y: "100%"},
         animate: { 
             y: 0, 
-            transition: { duration: 0.5 }
+            transition: { duration: 0.5, delay: delay }
         },
     }
 

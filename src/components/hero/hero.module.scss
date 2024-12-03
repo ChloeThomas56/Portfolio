@@ -14,13 +14,10 @@
     }
 
     &__inner {
-        position: fixed;
         top: 0;
-        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 100vw;
     }
 
     &__main {

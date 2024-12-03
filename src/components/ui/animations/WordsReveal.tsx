@@ -5,7 +5,7 @@ import { motion, Variants } from 'framer-motion';
 export default function WordsReveal({ text }: { text: string } ) {
 
     const wordsReveal: Variants = {
-        initial: { y: "-100%" },
+        initial: { y: "100%" },
         animate: (i: number) => ({
           y: 0,
           transition: { duration: 0.5, delay: 0.8 }

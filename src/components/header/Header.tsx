@@ -5,15 +5,12 @@ import styles from './header.module.scss';
 import BurgerMenu from '../ui/burgerMenu/BurgerMenu';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useSmoothScrollingControl } from '../ui/SmoothScrolling';
 import MobileNav from '../ui/mobileNav/MobileNav';
 import LineReveal from '../ui/animations/LineReveal';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
-
-    const lenis = useSmoothScrollingControl();
         
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -22,21 +19,6 @@ export default function Header() {
     useEffect(() => {
         setIsMenuOpen(false);
     }, [pathname]);
-
-    // disable scroll when menu is open
-    useEffect(() => {
-        if (isMenuOpen) {
-            lenis?.stop();
-            document.documentElement.style.overflowY = 'hidden';
-        } else {
-            const timeout = setTimeout(() => {
-                lenis?.start();
-                document.documentElement.style.overflowY = 'auto';
-            }, 800);
-    
-            return () => clearTimeout(timeout);
-        }
-    }, [isMenuOpen, lenis]);
 
     const links = [
         { name: 'Accueil', href: '/'},
@@ -48,7 +30,7 @@ export default function Header() {
         <>
             <header className={styles['header']}>
                 <div className={styles['header__inner']}>
-                    <LineReveal>
+                    <LineReveal delay={2.3}>
                         <Link href="/" aria-label="Retour à l'accueil" className="nav-item">
                             CT.
                         </Link>
@@ -57,7 +39,7 @@ export default function Header() {
                         <ul>
                             {links.map((link) => (
                                 <li key={link.name} >
-                                    <LineReveal>
+                                    <LineReveal delay={2.3}>
                                         <Link href={link.href} className="nav-item">
                                             {link.name}
                                         </Link>

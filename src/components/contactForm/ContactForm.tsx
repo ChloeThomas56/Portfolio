@@ -120,7 +120,7 @@ export default function ContactForm() {
                         animate={{backdropFilter: 'blur(5px)'}}
                         exit={{backdropFilter: 'blur(0px)'}}
                         transition={{duration: 0.3, ease:"easeIn"}}
-                        className="modal-overlay">
+                        className="overlay modal-overlay">
                         <motion.div
                             key="modal"
                             initial={{scale: 0}}

@@ -93,11 +93,14 @@ ul, ol {
 
 
 // classes
-.page-transition {
-    background-color: var(--light);
+.overlay {
     position: fixed;
     width: 100vw;
     height: 100vh;
+}
+
+.page-transition {
+    background-color: var(--light);
     z-index: 0;
 }
 
@@ -184,11 +187,8 @@ button[disabled] {
 }
 
 .modal-overlay {
-    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;

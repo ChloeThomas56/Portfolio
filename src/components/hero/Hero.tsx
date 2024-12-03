@@ -15,7 +15,7 @@ export default function Hero() {
     return (
         <section id="hero" className={styles['hero']}>
             <div id="hero-overlay" className={styles['hero__overlay']} />
-            <div className={styles['hero__inner']}>
+            <div className={`overlay ${styles['hero__inner']}`}>
                 <div className={styles['hero__main']}>
                     <div>
                         <h1 className="title">

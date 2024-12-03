@@ -2,6 +2,7 @@ import styles from './mobileNav.module.scss'
 import Link from 'next/link';
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from 'next/navigation';
+import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling';
 
 interface LinkProps {
     name: string;
@@ -10,6 +11,7 @@ interface LinkProps {
 
 export default function MobileNav({ links, show, setShow }: { links: LinkProps[], show: boolean, setShow: (show: boolean) => void }) {
     const pathname = usePathname();
+    const lenis = useSmoothScrollingControl();
 
     const handleClick = (href: string) => {
         if (pathname === href) {
@@ -21,14 +23,24 @@ export default function MobileNav({ links, show, setShow }: { links: LinkProps[]
         <AnimatePresence>
             {show && (
                 <motion.nav
-                    initial={{ top: '100vh' }}
+                    initial={{ top: '-100vh' }}
                     animate={{ top: 0 }}
-                    exit={{ top: '100vh' }}
-                    transition={{ duration: 0.8, ease: [0.6, 0.14, 0, 1] }}
-                    className={styles['nav']}
+                    exit={{ top: '-100vh' }}
+                    transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+                    className={`overlay ${styles['nav']}`}
+                    onAnimationStart={() => {
+                        lenis?.stop();
+                        document.documentElement.style.overflowY = 'hidden';
+                    }}
+                    onAnimationComplete={(animation: { top: string}) => {
+                        if (animation.top === "-100vh") {
+                            lenis?.start();
+                            document.documentElement.style.overflowY = 'auto'; 
+                        }
+                    }}
                 >
                     <motion.ul
-                        initial={{ y: 150, opacity: 0 }}
+                        initial={{ y: -150, opacity: 0 }}
                         animate={{ 
                             y: 0, 
                             opacity: 1,

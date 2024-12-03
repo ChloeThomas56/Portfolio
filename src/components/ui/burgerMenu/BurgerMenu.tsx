@@ -10,7 +10,7 @@ interface BurgerMenuProps {
 
 export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
     return (
-        <LineReveal>
+        <LineReveal delay={2.3}>
             <Button
                 className={clsx(styles['burger-menu'], {[styles['burger-menu--open']]: isOpen})}
                 onClick={toggleMenu}
