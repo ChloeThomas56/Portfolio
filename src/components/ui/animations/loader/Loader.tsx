@@ -3,25 +3,33 @@
 import styles from './loader.module.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useLoader } from './LoaderContext';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling';
 import LineReveal from '../LineReveal';
 
 export default function Loader() {
-    const { isLoading, setIsLoading } = useLoader();
-    const lenis = useSmoothScrollingControl();
+    const { isLoading, setIsLoading }   = useLoader();
+    const lenis                         = useSmoothScrollingControl();
+    const timerRef                      = useRef<number | null>(null);
 
-    useEffect(() => {        
-        const timer = setTimeout(() => {
-            setIsLoading(false)
+    useEffect(() => {
+        timerRef.current = window.setTimeout(() => {
+            setIsLoading(false);
         }, 1500);
-        return () => clearTimeout(timer);
+
+        // Nettoyage lors du démontage ou si l'effet est réexécuté
+        return () => {
+            if (timerRef.current) {
+                clearTimeout(timerRef.current);
+                timerRef.current = null; // Réinitialiser la référence
+            }
+        };
     }, [setIsLoading]);
 
     useEffect(() => {
         lenis?.stop();
         document.documentElement.style.overflowY = 'hidden';
-    }, [lenis, setIsLoading]);
+    }, [lenis]);
 
     return (
         <AnimatePresence>
