@@ -99,7 +99,7 @@ export default function ContactForm() {
                     <textarea 
                         id="message"
                         name="message"
-                        placeholder="Taper votre demande ici"
+                        placeholder="Tapez votre demande ici"
                         rows={3} 
                         required />
                 </div>

@@ -50,7 +50,6 @@
     &__img {
         height: auto;
         filter: saturate(0.4);
-        transition: filter 0.3s ease, opacity 0.3s ease;
 
         &:hover {
             filter: saturate(0.7);

@@ -13,7 +13,7 @@ export default function SmoothScrolling({ children }: { children: React.ReactNod
     }, [pathname, lenis]);
 
     return (
-        <ReactLenis root options={{ lerp: 0.1, duration: 1.5 }}>
+        <ReactLenis root options={{ lerp: 0.1, duration: 1.25 }}>
             {children}
         </ReactLenis>
     );
