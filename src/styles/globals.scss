@@ -247,6 +247,11 @@ button[disabled] {
         --indent: 3rem;
     }
 
+    html {
+        scrollbar-width: auto;
+        scrollbar-color: auto; 
+    }
+
     .grid {
         grid-template-columns: 1fr;
         gap: 2rem;
