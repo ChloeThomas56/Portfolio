@@ -2,11 +2,9 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import { useLoader } from './loader/LoaderContext';
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
     const pathName = usePathname();    
-    const { isLoading } = useLoader();
 
     return (
         <div key={pathName}>

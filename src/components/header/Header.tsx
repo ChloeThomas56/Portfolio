@@ -7,10 +7,12 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import MobileNav from '../ui/mobileNav/MobileNav';
 import LineReveal from '../ui/animations/LineReveal';
+import { useLoader } from '../ui/animations/loader/LoaderContext';
 
 export default function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const pathname = usePathname();
+    const [isMenuOpen, setIsMenuOpen]   = useState(false);
+    const pathname                      = usePathname();
+    const { isLoadingCompleted }        = useLoader();
         
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -30,20 +32,24 @@ export default function Header() {
         <>
             <header className={styles['header']}>
                 <div className={styles['header__inner']}>
-                    <LineReveal delay={2.3}>
-                        <Link href="/" aria-label="Retour à l'accueil" className="nav-item">
-                            CT.
-                        </Link>
-                    </LineReveal>
+                    {isLoadingCompleted && (
+                        <LineReveal>
+                            <Link href="/" aria-label="Retour à l'accueil" className="nav-item">
+                                CT.
+                            </Link>
+                        </LineReveal>
+                    )}
                     <nav className={styles['header__nav']}>
                         <ul>
                             {links.map((link) => (
                                 <li key={link.name} >
-                                    <LineReveal delay={2.3}>
-                                        <Link href={link.href} className="nav-item">
-                                            {link.name}
-                                        </Link>
-                                    </LineReveal>
+                                    {isLoadingCompleted && (
+                                        <LineReveal>
+                                            <Link href={link.href} className="nav-item">
+                                                {link.name}
+                                            </Link>
+                                        </LineReveal>
+                                    )}
                                 </li>
                             ))}
                         </ul>

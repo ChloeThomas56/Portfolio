@@ -8,9 +8,9 @@ import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling';
 import LineReveal from '../LineReveal';
 
 export default function Loader() {
-    const { isLoading, setIsLoading }   = useLoader();
-    const lenis                         = useSmoothScrollingControl();
-    const timerRef                      = useRef<number | null>(null);
+    const { isLoading, setIsLoading, setIsLoadingCompleted }    = useLoader();
+    const lenis                                                 = useSmoothScrollingControl();
+    const timerRef                                              = useRef<number | null>(null);
 
     useEffect(() => {
         timerRef.current = window.setTimeout(() => {
@@ -40,6 +40,7 @@ export default function Loader() {
                     exit={{ y: '-100vh' }}
                     transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
                     onAnimationComplete={() => {
+                        setIsLoadingCompleted(true);
                         lenis?.start();
                         document.documentElement.style.overflowY = 'auto';
                     }}

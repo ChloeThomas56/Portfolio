@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import styles from './burgerMenu.module.scss';
 import { Button } from '../Button';
 import LineReveal from '../animations/LineReveal';
+import { useLoader } from '../animations/loader/LoaderContext';
 
 interface BurgerMenuProps {
     isOpen: boolean;
@@ -9,8 +10,14 @@ interface BurgerMenuProps {
 }
 
 export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
+    const { isLoadingCompleted } = useLoader();
+
+    if (!isLoadingCompleted) {
+        return null; // Ou un autre rendu si nécessaire pendant le chargement
+    }
+
     return (
-        <LineReveal delay={2.3}>
+        <LineReveal>
             <Button
                 className={clsx(styles['burger-menu'], {[styles['burger-menu--open']]: isOpen})}
                 onClick={toggleMenu}
