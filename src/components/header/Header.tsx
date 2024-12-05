@@ -34,7 +34,7 @@ export default function Header() {
                 <div className={styles['header__inner']}>
                     {isLoadingCompleted && (
                         <LineReveal>
-                            <Link href="/" aria-label="Retour à l'accueil" className="nav-item">
+                            <Link href="/" className="nav-item">
                                 CT.
                             </Link>
                         </LineReveal>
