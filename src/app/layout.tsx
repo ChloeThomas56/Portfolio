@@ -9,6 +9,7 @@ import { Metadata } from 'next';
 import PageTransition from '@/components/ui/animations/PageTransition';
 import { LoaderProvider } from '@/components/ui/animations/loader/LoaderContext';
 import Loader from '@/components/ui/animations/loader/Loader';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
     title: 'Chloé Thomas',
@@ -40,6 +41,7 @@ export default function RootLayout({
                         </LoaderProvider>
                     </CursorProvider>
                 </SmoothScrolling>
+                <SpeedInsights />
             </body>
         </html>
     );
