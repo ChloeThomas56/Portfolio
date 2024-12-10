@@ -2,7 +2,7 @@
     &__info {
         display: flex;
         gap: 3rem;
-        margin: 5rem 0;
+        margin-bottom: 4rem;
         padding-top: var(--gutter);
         border-top: var(--border);
 
@@ -84,8 +84,6 @@
 @media (max-width: 768px) {
     .project__info {
         flex-direction: column-reverse;
-        margin-bottom: 4rem;
-        margin-top: 3rem;
 
         &__technical-data, &__description {
             width: 100%;
