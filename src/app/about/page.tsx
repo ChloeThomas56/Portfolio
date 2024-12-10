@@ -75,7 +75,7 @@ export default function Page() {
                     <li>React</li>
                     <li>Next</li>
                     <li>Nuxt</li>
-                    <li>Gsap</li>
+                    <li>GSAP</li>
                     <li>Framer Motion</li>
                     <li>Figma</li>
                     <li>Wordpress</li>
