@@ -45,7 +45,7 @@ export default function Hero() {
                 </div>
                 <div className={styles['hero__footer']}>
                     <div className={styles['hero__footer__inner']}>
-                        <span>Basée à Vannes</span>
+                        <span>Basée à Vannes (56)</span>
                         <span className={styles['hero__footer__worldwide']}>
                             <TfiWorld />
                             Active à l&#39;international
