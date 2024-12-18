@@ -6,8 +6,8 @@ export default function Custom404() {
     return (
         <>
             <Head>
-                    <title>Chloé Thomas | 404</title>
-                </Head>
+                <title>Chloé Thomas | 404</title>
+            </Head>
             <PageTransition>
                 <div className="wrapper">
                     <h1 className="title">

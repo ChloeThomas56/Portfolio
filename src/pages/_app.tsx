@@ -2,7 +2,6 @@ import '@/styles/globals.scss';
 import { inter } from '@/lib/font';
 import type { AppProps } from 'next/app';
 import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
 import { CursorProvider } from '@/components/ui/Cursor/CursorContext';
 import { Cursor } from '@/components/ui/Cursor/Cursor';
 import SmoothScrolling from '@/components/ui/SmoothScrolling';
@@ -17,7 +16,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
     return (
         <>
             <Head>
-                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+                <meta name="viewport" content="width=device-width" />
             </Head>
             <div className={inter.className}>
                 <SmoothScrolling>
@@ -26,12 +25,11 @@ export default function App({ Component, pageProps, router }: AppProps) {
                             <PageTransitionProvider>
                                 <Loader />
                                 <Header />
-                                <main className="page">
+                                <div className="container">
                                     <AnimatePresence mode='wait'>
                                         <Component key={router.asPath} {...pageProps} />
                                     </AnimatePresence> 
-                                </main>
-                                <Footer />
+                                </div>
                                 <Cursor />
                             </PageTransitionProvider>
                         </LoaderProvider>

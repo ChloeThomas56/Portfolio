@@ -1,8 +1,6 @@
 .footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    position: relative;
+    background-color: var(--light);
     padding: var(--gutter);
     display: flex;
     justify-content: space-between;

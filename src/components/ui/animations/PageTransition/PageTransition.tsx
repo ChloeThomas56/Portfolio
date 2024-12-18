@@ -4,6 +4,7 @@ import { usePageTransition } from './PageTransitionContext';
 import { useLoader } from '../Loader/LoaderContext';
 import { useEffect } from 'react';
 import { motion, Variants } from 'framer-motion';
+import Footer from '@/components/Footer/Footer';
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
     const router                        = useRouter();
@@ -78,7 +79,10 @@ export default function PageTransition({ children }: { children: React.ReactNode
                 }
             }}
         >
-            {children}
+            <main>
+                {children}
+            </main>
+            <Footer />
         </motion.div>
     );
 }
