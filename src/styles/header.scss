@@ -1,0 +1,110 @@
+.header {
+    position: fixed;
+    width: 100vw;
+    z-index: 10;
+    padding: var(--gutter);
+
+    &__inner {
+        display: grid;
+        grid-template-columns: var(--block-margin) 1fr;
+        align-items: center;
+
+        > div {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+    }
+
+    &__nav {
+        > ul {
+            display: flex;
+            column-gap: 2.5rem;
+        }
+
+        &__link {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.burger-menu {
+    display: none;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .header {
+        &__inner {
+            display: flex;
+            justify-content: space-between;
+            height: 18px;
+        }
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .burger-menu {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 0;
+        height: 15px;
+        overflow: hidden;
+
+        span {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            text-align: right;
+            font-weight: var(--font-weight-medium);
+            transition: all 1s cubic-bezier(.19,1,.22,1);
+        }
+    }
+    
+    // burger menu open
+    .burger-menu--open span {
+        transform: translateY(-15px);
+    }
+
+    .mobile-nav {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        display: block;
+        left: 0;
+        z-index: 2;
+        padding-left: 20%;
+        background-color: var(--black);
+        color: var(--light);
+    
+        > ul {
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0.5rem;
+    
+            > li {
+                overflow: hidden;
+            }
+        }
+    }
+
+    .header--contrasted, .header--contrasted .burger-menu {
+        color: var(--light);
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-nav {
+        padding-left: var(--gutter);
+    }
+}

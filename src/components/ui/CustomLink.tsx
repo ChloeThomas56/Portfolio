@@ -12,7 +12,8 @@ export function CustomLink({ children, className, onClick, ...props }: CustomLin
         <Link 
             {...props}
             className={`link ${className || ''}`} 
-            onClick={onClick}>
+            onClick={onClick}
+            scroll={false}>
             <MdArrowOutward />
             {children}
         </Link>

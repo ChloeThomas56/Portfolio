@@ -1,0 +1,142 @@
+.selected-projects {
+    position: relative;
+    padding: 5rem var(--gutter) var(--bottom-gutter) var(--gutter);
+    background-color: var(--light);
+
+    &-container {
+        padding-top: var(--gutter);
+        border-top: var(--border);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &--large {
+        width: 50%;
+    }
+
+    &--small {
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+}
+
+.selected-project {
+    &__illustration {
+        filter: saturate(0.4);
+        height: auto;
+    }
+
+    > h3 {
+        padding-top: calc(var(--gutter) - 0.5rem);
+        margin-top: var(--gutter);
+        border-top: var(--border);
+    }
+}
+
+.project {
+    &__info {
+        display: flex;
+        gap: 3rem;
+        margin-bottom: 4rem;
+        padding-top: var(--gutter);
+        border-top: var(--border);
+    }
+
+    &__technical-data {
+        width: 30%;
+        line-height: 1.5;
+
+        > div {
+            display: flex;
+            gap: 2rem;
+            align-items: baseline;
+
+            > h5 {
+                font-size: 1rem;
+                width: 60px;
+                flex-shrink: 0;
+            }
+        }
+
+        > div:first-child {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__description {
+        width: 70%;
+
+        > p {
+            text-indent: var(--indent);
+        }
+    }
+
+    &__url-container {
+        margin-top: 2rem;
+    }
+
+    &__images {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__image {
+        height: auto;
+        filter: saturate(0.4);
+
+        &:hover {
+            filter: saturate(0.7);
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding-top: calc(var(--gutter) - 0.5rem);
+        margin-top: var(--gutter);
+        border-top: var(--border);
+        text-transform: uppercase;
+    
+        > a:hover {
+            opacity: 0.4;
+        }
+
+        > span {
+            cursor: not-allowed;
+            opacity: 0.4;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .selected-projects {            
+        &-container {
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        &--large, &--small {
+            width: 100%;
+        }
+    }
+
+    .project__images {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project {
+        &__info {
+            flex-direction: column-reverse;
+        }
+
+        &__technical-data, &__description {
+            width: 100%;
+        }
+    }
+}

@@ -1,5 +1,3 @@
-'use client';
-
 import { motion, Variants } from 'framer-motion';
 
 export default function LineReveal({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) {
