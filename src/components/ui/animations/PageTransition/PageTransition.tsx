@@ -27,6 +27,20 @@ export default function PageTransition({ children }: { children: React.ReactNode
         };
     }, [router]);
 
+    const disableScroll = () => {
+        if (!isLoading) {
+            lenis?.stop();
+            document.documentElement.style.overflowY = 'hidden';
+        }
+    }
+
+    const enableScroll = () => {
+        if (!isLoading) {
+            lenis?.start();
+            document.documentElement.style.overflowY = 'auto';
+        }
+    }
+
     const transition: Variants = {
         initial: {
             opacity: 0, 
@@ -50,24 +64,18 @@ export default function PageTransition({ children }: { children: React.ReactNode
             animate="enter"
             exit="exit"
             onAnimationStart={(variant) => {
+                disableScroll();
+
                 if (variant === 'enter') {
                     setIsTransitionCompleted(false);
-                    lenis?.scrollTo(0, { immediate: true });
-
-                    if (!isLoading) {
-                        lenis?.stop();
-                        document.documentElement.style.overflowY = 'hidden';
-                    }
-                }
+                    window.scrollTo(0,0);
+                }                  
             }}
             onAnimationComplete={(variant) => {
-                if (variant === 'enter')
+                if (variant === 'enter') {
                     setIsTransitionCompleted(true);
-
-                    if (!isLoading) {
-                        lenis?.start();
-                        document.documentElement.style.overflowY = 'auto';
-                    }
+                    enableScroll();
+                }
             }}
         >
             {children}
