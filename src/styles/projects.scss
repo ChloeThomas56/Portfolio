@@ -100,6 +100,7 @@
         margin-top: var(--gutter);
         border-top: var(--border);
         text-transform: uppercase;
+        font-size: var(--font-size-small);
     
         > a:hover {
             opacity: 0.4;

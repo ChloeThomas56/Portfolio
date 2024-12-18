@@ -1,7 +1,7 @@
 import { useSmoothScrollingControl } from '../ui/SmoothScrolling';
 import { CustomLink } from '@/components/ui/CustomLink';
 import { MdArrowOutward } from 'react-icons/md';
-import { TfiWorld } from 'react-icons/tfi';
+import { BiWorld } from 'react-icons/bi';
 
 export default function Hero() {
     const lenis = useSmoothScrollingControl();
@@ -45,7 +45,7 @@ export default function Hero() {
                     <div className="hero__footer-inner">
                         <span>Basée à Vannes (56)</span>
                         <span className="hero__footer-worldwide">
-                            <TfiWorld />
+                            <BiWorld />
                             Active à l&#39;international
                         </span>
                         <span className="hero__footer-availability">
