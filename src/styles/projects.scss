@@ -101,10 +101,6 @@
         border-top: var(--border);
         text-transform: uppercase;
         font-size: var(--font-size-small);
-    
-        > a:hover {
-            opacity: 0.4;
-        }
 
         > span {
             cursor: not-allowed;
