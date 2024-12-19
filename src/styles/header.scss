@@ -81,8 +81,7 @@
         left: 0;
         z-index: 2;
         padding-left: 20%;
-        background-color: var(--black);
-        color: var(--light);
+        background-color: var(--light-grey);
     
         > ul {
             height: 100dvh;
@@ -96,10 +95,6 @@
                 overflow: hidden;
             }
         }
-    }
-
-    .header--contrasted, .header--contrasted .burger-menu {
-        color: var(--light);
     }
 }
 

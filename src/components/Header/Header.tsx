@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { useLoader } from '../ui/animations/Loader/LoaderContext';
-import clsx from 'clsx';
 import LineReveal from '../ui/animations/LineReveal';
 import Link from 'next/link';
 import BurgerMenu from '../ui/BurgerMenu/BurgerMenu';
@@ -9,7 +8,6 @@ import MobileNav from '../ui/MobileNav/MobileNav';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen]                       = useState(false);
-    const [applyContrastedStyle, setApplyContrastedStyle]   = useState(false);
     const pathname                                          = usePathname();
     const { isLoadingCompleted }                            = useLoader();
         
@@ -21,16 +19,6 @@ export default function Header() {
         setIsMenuOpen(false);
     }, [pathname]);
 
-    useEffect(() => {
-        if (!isMenuOpen) {
-            setTimeout(() => {
-                setApplyContrastedStyle(false);
-            }, 600);
-        } else {
-            setApplyContrastedStyle(true);
-        }
-    }, [isMenuOpen])
-
     const links = [
         { name: 'Accueil', href: '/'},
         { name: 'À propos', href: '/about'},
@@ -39,7 +27,7 @@ export default function Header() {
 
     return (
         <>
-            <header className={clsx("header", {"header--contrasted": applyContrastedStyle})}>
+            <header className="header">
                 <div className="header__inner">
                     {isLoadingCompleted && (
                         <LineReveal>
