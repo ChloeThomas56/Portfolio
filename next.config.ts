@@ -5,9 +5,6 @@ const nextConfig: NextConfig = {
     reactStrictMode: true,
     sassOptions: {
         silenceDeprecations: ['legacy-js-api'],
-    },
-    experimental: {
-        scrollRestoration: false
     }
 };
 

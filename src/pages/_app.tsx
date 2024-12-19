@@ -31,6 +31,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
                                     </AnimatePresence> 
                                 </div>
                                 <Cursor />
+                                <div className="noise" />
                             </PageTransitionProvider>
                         </LoaderProvider>
                     </CursorProvider>
