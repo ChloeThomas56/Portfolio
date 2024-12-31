@@ -1,86 +1,70 @@
-.projects-list {
-    counter-reset: counter;
-    border-top: var(--border);
-
-    > li {
-        counter-increment: counter;
+.projects {
+    &-list {
         position: relative;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: row-reverse;
+        counter-reset: counter;
 
-        &:not(:first-child) .projects-list__link {
+        > li {
+            counter-increment: counter;
+        }
+    }
+
+    &--large {
+        float: left;
+        width: 50%;
+    }
+
+    &--small {
+        float: right;
+        width: 35%;
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__item {
+        img {
+            filter: saturate(0.4);
+            height: auto;
+        }
+
+        &-details {
+            padding-top: calc(var(--gutter) - 0.5rem);
+            margin-top: var(--gutter);
             border-top: var(--border);
-        }
+            display: flex;
+            justify-content: space-between;
 
-        &:last-child .projects-list__illustration--desktop {
-            position: static;
-            margin-top: calc(2 * var(--gutter));
-        }
-    }
-
-    &__link {
-        width: calc(50% - var(--gutter));;
-        margin-left: auto;
-        padding: calc(2 * var(--gutter)) 0;
-
-        &:hover {
-            color: inherit;
-        }
-
-        &:hover .projects-list__cta {
-            opacity: 1;
-        }
-    }
-
-    &__details {
-        display: flex;
-        justify-content: space-between;
-        gap: 0.5rem;
-
-        h2 {
-            font-size: 1.5rem;
+            h2 {
+                font-size: var(--font-size-medium);
 
             &::before {
                 content: "0" counter(counter);
                 font-size: var(--font-size-small);
                 margin-right: 0.5rem;
             }
+            }
+
+            > span {
+                display: flex;
+                align-items: flex-end;
+                gap: 0.5rem;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
         }
-    }
 
-    &__cta {
-        display: flex;
-        align-items: flex-end;
-        gap: 0.5rem;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
+        &:hover {
+            color: inherit;
 
-    &__illustration--desktop {
-        position: absolute;
-        left: 0;
-        top: calc(2 * var(--gutter));
-        width: calc(50% - var(--gutter));
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    &__illustration--mobile {
-        display: none;
-    }
-
-    img {
-        height: auto;
-        filter: saturate(0.4);
+            .projects__item-details > span {
+                opacity: 1;
+            }
+        }
     }
 
     &__spacer {
         clear: both;
-    }
-
-    &__link:hover + .projects-list__illustration--desktop {
-        opacity: 1;
     }
 }
 
@@ -155,13 +139,22 @@
 }
 
 @media (max-width: 1024px) {
-    .projects-list {
-        &__illustration--desktop {
-            width: calc(40% - var(--gutter));
+    .projects {
+        &-list > li {
+            float: none;
+            width: 100%;
         }
 
-        &__link {
-            width: calc(60% - var(--gutter));
+        &--large {
+            margin-bottom: 2rem;
+        }
+
+        &__item span {
+            opacity: 1;
+        }
+
+        &__spacer {
+            display: none;
         }
     }
 
@@ -171,36 +164,6 @@
 }
 
 @media (max-width: 768px) {
-    .projects-list {
-        > li:last-child .projects-list__link {
-            padding-bottom: 0;
-        }
-
-        &__illustration--mobile {
-            display: block;
-        }
-
-        &__link {
-            width: 100%;
-        }
-
-        &__details {
-            margin-top: 1rem;
-
-            h2 {
-                font-size: 1rem;
-            }
-        }
-
-        &__cta {
-            opacity: 1;
-        }
-
-        &__spacer, &__illustration--desktop {
-            display: none;
-        }
-    }
-
     .project {
         &__info {
             flex-direction: column-reverse;

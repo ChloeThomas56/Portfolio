@@ -269,7 +269,7 @@ button[disabled] {
     &__shape {
         position: absolute;
         stroke: rgba(var(--shape-color));
-        transition: stroke 0.3s ease;
+        transition: stroke 0.5s ease;
 
         &1 {
             top: -5vw;
@@ -285,20 +285,26 @@ button[disabled] {
             animation: pathRotationDesktop 10s ease infinite alternate;
         }
     }
+
+    feFlood {
+        transition: flood-color 0.5s ease;
+    }
 }
 
 
 // media queries
+@media (max-width: 1200px) {
+    .wrapper {
+        padding-left: var(--gutter);
+        padding-right: var(--gutter);
+    }
+}
+
 @media (max-width: 1024px) {
     :root {
         --gutter: 1rem;
         --top-gutter: 6rem;
         --bottom-gutter: 8rem;
-    }
-
-    .wrapper {
-        padding-left: var(--gutter);
-        padding-right: var(--gutter);
     }
 }
 

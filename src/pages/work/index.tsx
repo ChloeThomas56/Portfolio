@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
 import projects from '@/lib/projects.json';
@@ -7,7 +6,6 @@ import { MdArrowOutward } from 'react-icons/md';
 import { CustomImage } from '@/components/ui/CustomImage/CustomImage';
 
 export default function Work() {
-    const [hoveredProjectId, setHoveredProjectId] = useState<number | null>(null);
 
     return (
         <>
@@ -20,41 +18,50 @@ export default function Work() {
                         Projets
                     </h1>
                     <ol className="projects-list">
-                        {projects.map((project) => (
-                            <li key={project.id}>
+                        <li className="projects--large">
+                            <Link 
+                                href={`/work/${projects[0].slug}`}
+                                scroll={false}
+                                className="projects__item">
+                                <CustomImage
+                                    src={projects[0].image_home}
+                                    width={1900}
+                                    height={1140}
+                                    alt={projects[0].name}
+                                />
+                                <div className="projects__item-details">
+                                    <h2>{projects[0].name}</h2>
+                                    <span>
+                                        <MdArrowOutward />
+                                        Voir
+                                    </span>
+                                </div>
+                            </Link>
+                        </li>
+                        {projects.slice(1).map((project) => (
+                            <li key={project.id} className="projects--small">
                                 <Link 
-                                    href={`/work/${project.slug}`} 
+                                    href={`/work/${project.slug}`}
                                     scroll={false}
-                                    className="projects-list__link"
-                                >
-                                    <div className="projects-list__illustration--mobile">
-                                        <CustomImage
-                                            src={project.image_home}
-                                            width={1900}
-                                            height={1140}
-                                            alt={project.name}
-                                        />
-                                    </div>
-                                    <div className="projects-list__details">
-                                        <h2>{project.name}</h2>
-                                        <span className="projects-list__cta">
-                                            <MdArrowOutward />
-                                            Voir
-                                        </span>
-                                    </div>
-                                </Link>
-                                <div className="projects-list__illustration--desktop">
+                                    className="projects__item">
                                     <CustomImage
                                         src={project.image_home}
                                         width={1900}
                                         height={1140}
                                         alt={project.name}
                                     />
-                                </div>
+                                    <div className="projects__item-details">
+                                        <h2>{project.name}</h2>
+                                        <span>
+                                            <MdArrowOutward />
+                                            Voir
+                                        </span>
+                                    </div>
+                                </Link>
                             </li>
                         ))}
                     </ol>
-                    <div className="projects-list__spacer" />
+                    <div className="projects__spacer" />
                 </div>
             </PageTransition>
         </>
