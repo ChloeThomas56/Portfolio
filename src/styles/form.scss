@@ -25,20 +25,19 @@
     input, textarea {
         position: relative;
         display: block;
-        background-color: var(--light-grey);
-        color: var(--black);
+        background-color: transparent;
+        color: var(--dark);
         font-weight: var(--font-weight-medium);
         width: 100%;
         box-shadow: none;
-        border: none;
+        border-bottom: 2px solid var(--border-color);
+        border-top: none;
+        border-right: none;
+        border-left: none;
         outline: none;
         font-size: var(--font-size-medium);
-        padding: 1.5rem 2rem;
+        padding: 1rem 0;
         line-height: 1.5;
-
-        &::placeholder {
-            color: #a0a0a0;
-        }
     }
 
     &__smiley {

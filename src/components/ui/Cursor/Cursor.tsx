@@ -1,11 +1,8 @@
-import { useCursor } from './CursorContext';
 import useWindowSize from '@/hooks/useWindowSize';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import clsx from 'clsx';
 
 export function Cursor() {
-    const { isProjectHovered }  = useCursor();
     const { isDesktop }         = useWindowSize();
 
     const cursorInner = useRef<HTMLDivElement | null>(null);
@@ -59,16 +56,8 @@ export function Cursor() {
 
     return (
         <>
-            <div
-                ref={cursorInner} 
-                className="cursor cursor-inner"
-            />
-            <div
-                ref={cursorOuter} 
-                className={clsx("cursor cursor-outer", {"projects-cursor": isProjectHovered})}
-            >
-                {isProjectHovered && <span>Voir</span>}
-            </div>
+            <div ref={cursorInner} className="cursor cursor-inner" />
+            <div ref={cursorOuter} className="cursor cursor-outer" />
         </>
     );
 }

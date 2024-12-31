@@ -1,16 +1,15 @@
 import { useRouter } from 'next/router';
-import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling';
-import { usePageTransition } from './PageTransitionContext';
+import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling/SmoothScrolling';
 import { useLoader } from '../Loader/LoaderContext';
 import { useEffect } from 'react';
 import { motion, Variants } from 'framer-motion';
 import Footer from '@/components/Footer/Footer';
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
-    const router                        = useRouter();
-    const lenis                         = useSmoothScrollingControl();
-    const { setIsTransitionCompleted }  = usePageTransition();
-    const { isLoading }                 = useLoader();
+    const router                    = useRouter();
+    const lenis                     = useSmoothScrollingControl();
+    const { isLoading }             = useLoader();
+    const { isLoadingCompleted }    = useLoader();
 
     useEffect(() => {
         if ('scrollRestoration' in window.history)
@@ -58,6 +57,9 @@ export default function PageTransition({ children }: { children: React.ReactNode
         }
     }
 
+    if (!isLoadingCompleted)
+        return null;
+
     return (
         <motion.div
             variants={transition}
@@ -67,16 +69,12 @@ export default function PageTransition({ children }: { children: React.ReactNode
             onAnimationStart={(variant) => {
                 disableScroll();
 
-                if (variant === 'enter') {
-                    setIsTransitionCompleted(false);
-                    window.scrollTo(0,0);
-                }                  
+                if (variant === 'enter') 
+                    window.scrollTo(0,0);            
             }}
             onAnimationComplete={(variant) => {
-                if (variant === 'enter') {
-                    setIsTransitionCompleted(true);
+                if (variant === 'enter')
                     enableScroll();
-                }
             }}
         >
             <main>

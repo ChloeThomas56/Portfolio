@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
-import { CustomLink } from '@/components/ui/CustomLink';
+import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
 import ContactForm from '@/components/ContactForm/ContactForm';
 
 export default function Contact() {

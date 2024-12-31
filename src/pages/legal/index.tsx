@@ -13,9 +13,9 @@ export default function Legal() {
                     <h1 className="title">
                         Mentions légales
                     </h1>
-                    <section>
-                        <article className="grid">
-                            <h3>Éditeur</h3>
+                    <section className="legal">
+                        <article>
+                            <h2>Éditeur</h2>
                             <p>
                                 Le site&nbsp; 
                                 <Link href="/" scroll={false}>
@@ -33,8 +33,8 @@ export default function Legal() {
                                 </Link>
                             </p>
                         </article>
-                        <article className="grid">
-                            <h3>Hébergeur</h3>
+                        <article>
+                            <h2>Hébergeur</h2>
                             <p>
                                 Le site&nbsp;
                                 <Link href="/" scroll={false}>
@@ -50,26 +50,26 @@ export default function Legal() {
                                 </Link>
                             </p>
                         </article>
-                        <article className="grid">
-                            <h3>Propriété intellectuelle</h3>
+                        <article>
+                            <h2>Propriété intellectuelle</h2>
                             <p>
                                 L&#39;ensemble des contenus de ce site est la propriété exclusive de Chloé Thomas, sauf indication contraire. Toute reproduction ou représentation totale ou partielle de ce site, sans autorisation expresse, est interdite et constituerait une contrefaçon.
                             </p>
                         </article>
-                        <article className="grid">
-                            <h3>Données personnelles</h3>
+                        <article>
+                            <h2>Données personnelles</h2>
                             <p>
                                 Ce site ne collecte pas de données personnelles. Les informations fournies par les utilisateurs via le formulaire de contact sont uniquement utilisées pour répondre aux demandes et ne sont pas stockées ni partagées.
                             </p>
                         </article>
-                        <article className="grid">
-                            <h3>Responsabilité</h3>
+                        <article>
+                            <h2>Responsabilité</h2>
                             <p>
                                 Le site peut contenir des liens vers des sites externes. Nous déclinons toute responsabilité quant au contenu de ces sites et à toute éventuelle conséquence découlant de leur utilisation.
                             </p>
                         </article>
-                        <article className="grid">
-                            <h3>Modification</h3>
+                        <article>
+                            <h2>Modification</h2>
                             <p>
                                 Nous nous réservons le droit de modifier les présentes mentions légales à tout moment. Il est recommandé de les consulter régulièrement pour prendre connaissance de toute mise à jour.
                             </p>

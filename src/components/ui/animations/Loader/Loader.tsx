@@ -1,8 +1,8 @@
 import { useLoader } from './LoaderContext';
-import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling';
+import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling/SmoothScrolling';
 import { useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import LineReveal from '../LineReveal';
+import LineReveal from '../LineReveal/LineReveal';
 
 export default function Loader() {
     const { isLoading, setIsLoading, setIsLoadingCompleted }    = useLoader();
@@ -33,9 +33,9 @@ export default function Loader() {
             {isLoading && (
                 <motion.div
                     className="loader"
-                    initial={{ y: 0 }}
-                    exit={{ y: '-100vh' }}
-                    transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+                    initial={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
                     onAnimationComplete={() => {
                         setIsLoadingCompleted(true);
                         lenis?.start();

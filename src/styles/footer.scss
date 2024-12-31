@@ -1,12 +1,15 @@
 .footer {
-    position: relative;
-    background-color: var(--light);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
     padding: var(--gutter);
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: var(--gutter);
     flex-wrap: wrap;
+    font-weight: var(--font-weight-bold);
 
     > span {
         font-size: var(--font-size-small);

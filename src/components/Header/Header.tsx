@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { useLoader } from '../ui/animations/Loader/LoaderContext';
-import LineReveal from '../ui/animations/LineReveal';
+import LineReveal from '../ui/animations/LineReveal/LineReveal';
 import Link from 'next/link';
 import BurgerMenu from '../ui/BurgerMenu/BurgerMenu';
 import MobileNav from '../ui/MobileNav/MobileNav';
 
 export default function Header() {
-    const [isMenuOpen, setIsMenuOpen]                       = useState(false);
-    const pathname                                          = usePathname();
-    const { isLoadingCompleted }                            = useLoader();
+    const [isMenuOpen, setIsMenuOpen]   = useState(false);
+    const pathname                      = usePathname();
+    const { isLoadingCompleted }        = useLoader();
         
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -21,6 +21,7 @@ export default function Header() {
 
     const links = [
         { name: 'Accueil', href: '/'},
+        { name: 'Projets', href: '/work'},
         { name: 'À propos', href: '/about'},
         { name: 'Me contacter', href: '/contact'},
     ];

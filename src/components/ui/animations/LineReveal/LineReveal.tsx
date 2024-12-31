@@ -8,6 +8,10 @@ export default function LineReveal({ children, delay = 0 }: { children: React.Re
             y: 0, 
             transition: { duration: 0.5, delay: delay }
         },
+        exit: {
+            y: "-100%",
+            transition: { duration: 0.5 }
+        }
     }
 
     return (
@@ -16,6 +20,7 @@ export default function LineReveal({ children, delay = 0 }: { children: React.Re
                 variants={lineReveal}
                 initial="initial"
                 animate="animate"
+                exit="exit"
             >
                 {children}
             </motion.div>

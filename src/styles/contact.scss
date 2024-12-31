@@ -10,7 +10,7 @@
     }
 
     &__form-container {
-        margin-top: 5rem;
+        margin-top: var(--spacing);
     }
 }
 
@@ -19,10 +19,6 @@
         &__intro {
             flex-direction: column-reverse;
             row-gap: 3rem;
-        }
-
-        &__form-container {
-            margin-top: 3rem;
         }
     }
 }

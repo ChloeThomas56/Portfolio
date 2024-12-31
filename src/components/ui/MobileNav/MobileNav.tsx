@@ -1,6 +1,6 @@
 import { usePathname } from 'next/navigation';
-import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling';
-import { AnimatePresence, motion } from "framer-motion";
+import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling/SmoothScrolling';
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import Link from 'next/link';
 
 interface LinkProps {
@@ -17,37 +17,51 @@ export default function MobileNav({ links, show, setShow }: { links: LinkProps[]
             setShow(false);
     };
 
+    const transition: Variants = {
+        initial: { opacity: 0 },
+        enter: {
+            opacity: 1,
+            transition: { duration: 0.5 }
+        },
+        exit: {
+            opacity: 0,
+            transition: { duration: 0.9, delay: 0.4 } 
+        }
+    }
+
     return (
         <AnimatePresence>
             {show && (
                 <motion.nav
-                    initial={{ top: '-100vh' }}
-                    animate={{ top: 0 }}
-                    exit={{ top: '-100vh' }}
-                    transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+                    variants={transition}
+                    initial="initial"
+                    animate="enter"
+                    exit="exit"
                     className="mobile-nav"
-                    onAnimationStart={() => {
-                        lenis?.stop();
-                        document.documentElement.style.overflowY = 'hidden';
+                    onAnimationStart={(variant) => {
+                        if (variant === 'enter') {
+                            lenis?.stop();
+                            document.documentElement.style.overflowY = 'hidden';
+                        }
                     }}
-                    onAnimationComplete={(animation: { top: string}) => {
-                        if (animation.top === "-100vh") {
+                    onAnimationComplete={(variant) => {
+                        if (variant === 'exit') {
                             lenis?.start();
                             document.documentElement.style.overflowY = 'auto'; 
                         }
                     }}
                 >
                     <motion.ul
-                        initial={{ y: -150, opacity: 0 }}
+                        initial={{ y: -300, opacity: 0 }}
                         animate={{ 
                             y: 0, 
                             opacity: 1,
                             transition: { duration: 1.5, delay: 0.4, ease: [0.19, 1, 0.22, 1] }
                         }}
                         exit={{
-                            y: -150,
+                            y: -200,
                             opacity: 0,
-                            transition: { duration: 1, delay: 0.2, ease: [0.19, 1, 0.22, 1] }
+                            transition: { duration: 1.2, ease: [0.19, 1, 0.22, 1] }
                         }}
                     >
                         {links.map((link) => (

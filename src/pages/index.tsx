@@ -1,37 +1,8 @@
 import Head from 'next/head';
-import { usePageTransition } from '@/components/ui/animations/PageTransition/PageTransitionContext';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
-import Hero from '@/components/Hero/Hero';
-import SelectedProjects from '@/components/projects/SelectedProjects';
+import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
 
 export default function Home() {
-    const { isTransitionCompleted } = usePageTransition();
-
-    useGSAP(() => {
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.fromTo(
-            '#hero-overlay',
-            { opacity: 0 },
-            {
-                opacity: 0.4,
-                scrollTrigger: {
-                    trigger: '#projects',
-                    start: "top bottom",
-                    end: "top+=200 bottom",
-                    toggleActions: "play none none reverse",
-                    scrub: true,
-                },
-            }
-        );
-
-        if (isTransitionCompleted)
-            ScrollTrigger.refresh();
-
-    }, [isTransitionCompleted]);
 
     return (
         <>
@@ -39,8 +10,27 @@ export default function Home() {
                 <title>Chloé Thomas</title>
             </Head>
             <PageTransition>
-                <Hero />
-                <SelectedProjects />
+                <div className="centered-wrapper home">
+                    <h1 className="title">
+                        Chloé Thomas,
+                    </h1>
+                    <h2 className="title">
+                        développeuse web
+                    </h2>
+                    <p>
+                        Passionnée par le développement front-end, je conçois des interfaces modernes alliant design et performance.
+                        <br/>
+                        Découvrez mon univers et mes projets&nbsp;!
+                    </p>
+                    <nav className="home__nav">
+                        <CustomLink href="/work">
+                            Voir mes projets
+                        </CustomLink>
+                        <CustomLink href="/about">
+                            En savoir plus
+                        </CustomLink>
+                    </nav>
+                </div>
             </PageTransition>
         </>
     );

@@ -1,0 +1,16 @@
+.home {
+    h1, h2 {
+        margin-bottom: 0;
+    }
+
+    p {
+        margin: var(--spacing) 0;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+}

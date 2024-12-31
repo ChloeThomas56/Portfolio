@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/Button/Button';
 import { ImSpinner8 } from 'react-icons/im';
 import { AnimatePresence, motion } from 'framer-motion';
 import { MdOutlineClose } from 'react-icons/md';
@@ -61,7 +61,6 @@ export default function ContactForm() {
                         type="text" 
                         id="first_name" 
                         name="first_name"
-                        placeholder="Jean"
                         required />
                 </div>
                 <div className="form__field-wrapper">
@@ -73,7 +72,6 @@ export default function ContactForm() {
                         type="text"
                         id="last_name"
                         name="last_name"
-                        placeholder="Dupont"
                         required />
                 </div>
                 <div className="form__field-wrapper">
@@ -85,7 +83,6 @@ export default function ContactForm() {
                         type="email" 
                         id="email"
                         name="email"
-                        placeholder="jean.dupont@exemple.com"
                         required />
                 </div>
                 <div className="form__field-wrapper">
@@ -96,7 +93,6 @@ export default function ContactForm() {
                     <textarea 
                         id="message"
                         name="message"
-                        placeholder="Tapez votre demande ici"
                         rows={3} 
                         required />
                 </div>
@@ -111,7 +107,13 @@ export default function ContactForm() {
             </form>
             <AnimatePresence>
                 {showMessage && (
-                    <div className="modal-container">
+                    <motion.div
+                        key="modal-overlay" 
+                        initial={{backdropFilter: 'blur(0px)'}}
+                        animate={{backdropFilter: 'blur(5px)'}}
+                        exit={{backdropFilter: 'blur(0px)'}}
+                        transition={{duration: 0.3, ease:"easeIn"}}
+                        className="modal-overlay">
                         <motion.div
                             key="modal"
                             initial={{scale: 0}}
@@ -136,7 +138,7 @@ export default function ContactForm() {
                                     )
                                 }
                         </motion.div>
-                    </div>
+                    </motion.div>
                 )}
             </AnimatePresence>
         </>

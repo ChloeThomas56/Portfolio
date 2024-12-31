@@ -13,7 +13,9 @@
         ],
         "year": "2024",
         "stack": "Next.js, GSAP, Framer Motion, Lenis",
-        "url": "https://ciphernet-rouge.vercel.app/"
+        "url": "https://ciphernet-rouge.vercel.app/",
+        "color": "207, 207, 207",
+        "box_shadow": "#939393"
     },
     {
         "id": 3,
@@ -29,7 +31,9 @@
         ],
         "year": "2022-2024",
         "stack": "Nuxt.js, Laravel",
-        "url": ""
+        "url": "",
+        "color": "223, 228, 244",
+        "box_shadow": "#bcc4e3"
     },
     {
         "id": 2,
@@ -44,6 +48,8 @@
         ],
         "year": "2023",
         "stack": "Wordpress",
-        "url": "https://www.lespendulesdeminerve.com/"
+        "url": "https://www.lespendulesdeminerve.com/",
+        "color": "215, 215, 202",
+        "box_shadow": "#b8ada9"
     }
 ]
