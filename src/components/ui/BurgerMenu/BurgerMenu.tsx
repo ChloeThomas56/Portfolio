@@ -1,4 +1,3 @@
-import { useLoader } from '../animations/Loader/LoaderContext';
 import LineReveal from '../animations/LineReveal/LineReveal';
 import { Button } from '../Button/Button';
 import clsx from 'clsx';
@@ -9,11 +8,6 @@ interface BurgerMenuProps {
 }
 
 export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
-    const { isLoadingCompleted } = useLoader();
-
-    if (!isLoadingCompleted)
-        return null;
-
     return (
         <div className="burger-menu-container">
             <LineReveal>

@@ -3,7 +3,6 @@ import PageTransition from '@/components/ui/animations/PageTransition/PageTransi
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
 
 export default function Home() {
-
     return (
         <>
             <Head>

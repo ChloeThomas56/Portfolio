@@ -1,15 +1,12 @@
 import { useRouter } from 'next/router';
 import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling/SmoothScrolling';
-import { useLoader } from '../Loader/LoaderContext';
 import { useEffect } from 'react';
 import { motion, Variants } from 'framer-motion';
 import Footer from '@/components/Footer/Footer';
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
-    const router                    = useRouter();
-    const lenis                     = useSmoothScrollingControl();
-    const { isLoading }             = useLoader();
-    const { isLoadingCompleted }    = useLoader();
+    const router    = useRouter();
+    const lenis     = useSmoothScrollingControl();
 
     useEffect(() => {
         if ('scrollRestoration' in window.history)
@@ -28,17 +25,13 @@ export default function PageTransition({ children }: { children: React.ReactNode
     }, [router]);
 
     const disableScroll = () => {
-        if (!isLoading) {
-            lenis?.stop();
-            document.documentElement.style.overflowY = 'hidden';
-        }
+        lenis?.stop();
+        document.documentElement.style.overflowY = 'hidden';
     }
 
     const enableScroll = () => {
-        if (!isLoading) {
-            lenis?.start();
-            document.documentElement.style.overflowY = 'auto';
-        }
+        lenis?.start();
+        document.documentElement.style.overflowY = 'auto';
     }
 
     const transition: Variants = {
@@ -56,9 +49,6 @@ export default function PageTransition({ children }: { children: React.ReactNode
             transition: { duration: 0.4 }
         }
     }
-
-    if (!isLoadingCompleted)
-        return null;
 
     return (
         <motion.div

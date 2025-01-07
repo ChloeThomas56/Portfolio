@@ -7,23 +7,6 @@
     animation: spinnerRotation 0.8s linear infinite;
 }
 
-
-.loader {
-    position: fixed;
-    width: 100vw;
-    height: 100dvh;
-    background-color: var(--light);
-    z-index: 10;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    span {
-        font-size: clamp(1.2rem, 2vw, 2rem);
-    }
-}
-
 .noise {
     position: fixed;
     z-index: 9999;

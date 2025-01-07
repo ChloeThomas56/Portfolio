@@ -6,7 +6,6 @@ import { MdArrowOutward } from 'react-icons/md';
 import Image from 'next/image';
 
 export default function Work() {
-
     return (
         <>
             <Head>
