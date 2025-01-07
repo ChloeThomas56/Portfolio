@@ -6,9 +6,10 @@ import { Cursor } from '@/components/ui/Cursor/Cursor';
 import SmoothScrolling from '@/components/ui/SmoothScrolling/SmoothScrolling';
 import Head from 'next/head';
 import Loader from '@/components/ui/animations/Loader/Loader';
-import { LoaderProvider, useLoader } from '@/components/ui/animations/Loader/LoaderContext';
+import { LoaderProvider } from '@/components/ui/animations/Loader/LoaderContext';
 import { AnimatePresence } from 'framer-motion';
 import Shapes from '@/components/ui/animations/Shapes/Shapes';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export default function App({ Component, pageProps, router }: AppProps) {
 
@@ -22,16 +23,17 @@ export default function App({ Component, pageProps, router }: AppProps) {
                     <LoaderProvider>
                         <Loader />
                         <Header />
-                        <div className="page">
+                        <main>
                             <AnimatePresence mode='wait'>
                                 <Component key={router.asPath} {...pageProps} />
                             </AnimatePresence> 
-                        </div>
-                        <Cursor />
+                        </main>
                         <Shapes />
                         <div className="noise" />
+                        <Cursor />
                     </LoaderProvider>
                 </SmoothScrolling>
+                <SpeedInsights />
             </div>
         </>
     )

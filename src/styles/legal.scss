@@ -1,9 +1,4 @@
 .legal article {
-    display: flex;
-    gap: calc(2 * var(--gutter));
-    border-top: var(--border);
-    padding-top: calc(2 * var(--gutter));
-
     &:not(:last-child) {
         padding-bottom: calc(2 * var(--gutter));
     }
@@ -32,9 +27,6 @@
 
 @media (max-width: 768px) {
     .legal article {
-        flex-direction: column;
-        row-gap: 2rem;
-
         h2 {
             width: 100%;
             line-height: normal;

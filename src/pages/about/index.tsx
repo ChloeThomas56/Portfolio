@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
-import { CustomImage } from '@/components/ui/CustomImage/CustomImage';
+import Image from 'next/image';
 
 export default function About() {
     return (
@@ -15,11 +15,12 @@ export default function About() {
                     </h1>
                     <section className="about">
                         <div className="about__illustration">
-                            <CustomImage
+                            <Image
                                 src="/images/portrait.webp"
                                 width={1000}
                                 height={1000}
                                 alt="Portrait de Chloé Thomas"
+                                priority
                             />
                         </div>
                         <div className="about__introduction">

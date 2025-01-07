@@ -77,9 +77,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
                     enableScroll();
             }}
         >
-            <main>
-                {children}
-            </main>
+            {children}
             <Footer />
         </motion.div>
     );

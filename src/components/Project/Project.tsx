@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
-import { CustomImage } from '@/components/ui/CustomImage/CustomImage';
+import Image from 'next/image';
 import Link from 'next/link';
 
 interface Project {
@@ -28,11 +28,11 @@ export default function Project({ project, previousProject, nextProject }: Proje
         document.documentElement.style.setProperty('--shape-color', project?.color);
         document.documentElement.style.setProperty('--shape-shadow-color', project?.box_shadow);
 
-        // Nettoie la variable lorsque le composant se démonte
         return () => {
             document.documentElement.style.removeProperty('--shape-color');
             document.documentElement.style.removeProperty('--shape-shadow-color');
-        };
+        }; 
+
     }, [project]);
 
     return (
@@ -67,14 +67,15 @@ export default function Project({ project, previousProject, nextProject }: Proje
                 </div>
             </section>
             <section className="project__images">
-                {project.images.map((img) => (
-                    <CustomImage
-                        key={img}
+                {project.images.map((img, index) => (
+                    <Image
+                        key={`${img}${index}`}
                         src={img}
                         width={1900}
                         height={1140}
                         className="project__image"
                         alt={`illustration du site ${project.name}`}
+                        priority
                     />
                 ))}
             </section>

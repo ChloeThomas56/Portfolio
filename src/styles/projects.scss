@@ -1,42 +1,24 @@
-.projects {
-    &-list {
-        position: relative;
-        counter-reset: counter;
+.projects-list {
+    counter-reset: counter;
 
-        > li {
-            counter-increment: counter;
-        }
-    }
+    > li {
+        counter-increment: counter;
 
-    &--large {
-        float: left;
-        width: 50%;
-    }
-
-    &--small {
-        float: right;
-        width: 35%;
-
-        &:not(:last-child) {
-            margin-bottom: 2rem;
+        &:not(:last-child) .projects-list__item {
+            padding-bottom: calc(2 * var(--gutter));
         }
     }
 
     &__item {
-        img {
-            filter: saturate(0.4);
-            height: auto;
-        }
+        align-items: flex-start;
 
         &-details {
-            padding-top: calc(var(--gutter) - 0.5rem);
-            margin-top: var(--gutter);
-            border-top: var(--border);
+            width: 60%;
             display: flex;
             justify-content: space-between;
 
             h2 {
-                font-size: var(--font-size-medium);
+                font-size: 1.5rem;
 
             &::before {
                 content: "0" counter(counter);
@@ -57,14 +39,19 @@
         &:hover {
             color: inherit;
 
-            .projects__item-details > span {
+            .projects-list__item-details > span {
                 opacity: 1;
             }
         }
-    }
 
-    &__spacer {
-        clear: both;
+        &-illustration {
+            width: 40%;
+
+            img {
+                filter: saturate(0.4);
+                height: auto;
+            }
+        }
     }
 }
 
@@ -139,22 +126,13 @@
 }
 
 @media (max-width: 1024px) {
-    .projects {
-        &-list > li {
-            float: none;
-            width: 100%;
+    .projects-list__item {
+        &-details, &-illustration {
+            width: 50%;
         }
 
-        &--large {
-            margin-bottom: 2rem;
-        }
-
-        &__item span {
-            opacity: 1;
-        }
-
-        &__spacer {
-            display: none;
+        &-details h2 {
+            font-size: var(--font-size-medium);
         }
     }
 
@@ -164,6 +142,12 @@
 }
 
 @media (max-width: 768px) {
+    .projects-list__item {
+        &-details, &-illustration {
+            width: 100%;
+        }
+    }
+
     .project {
         &__info {
             flex-direction: column-reverse;

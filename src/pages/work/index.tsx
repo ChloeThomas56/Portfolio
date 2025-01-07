@@ -3,7 +3,7 @@ import PageTransition from '@/components/ui/animations/PageTransition/PageTransi
 import projects from '@/lib/projects.json';
 import Link from 'next/link';
 import { MdArrowOutward } from 'react-icons/md';
-import { CustomImage } from '@/components/ui/CustomImage/CustomImage';
+import Image from 'next/image';
 
 export default function Work() {
 
@@ -18,50 +18,32 @@ export default function Work() {
                         Projets
                     </h1>
                     <ol className="projects-list">
-                        <li className="projects--large">
-                            <Link 
-                                href={`/work/${projects[0].slug}`}
-                                scroll={false}
-                                className="projects__item">
-                                <CustomImage
-                                    src={projects[0].image_home}
-                                    width={1900}
-                                    height={1140}
-                                    alt={projects[0].name}
-                                />
-                                <div className="projects__item-details">
-                                    <h2>{projects[0].name}</h2>
-                                    <span>
-                                        <MdArrowOutward />
-                                        Voir
-                                    </span>
-                                </div>
-                            </Link>
-                        </li>
-                        {projects.slice(1).map((project) => (
-                            <li key={project.id} className="projects--small">
+                        {projects.map((project) => (
+                            <li key={project.id}>
                                 <Link 
                                     href={`/work/${project.slug}`}
                                     scroll={false}
-                                    className="projects__item">
-                                    <CustomImage
-                                        src={project.image_home}
-                                        width={1900}
-                                        height={1140}
-                                        alt={project.name}
-                                    />
-                                    <div className="projects__item-details">
+                                    className="list-item projects-list__item">
+                                    <div className="projects-list__item-details">
                                         <h2>{project.name}</h2>
                                         <span>
                                             <MdArrowOutward />
                                             Voir
                                         </span>
                                     </div>
+                                    <div className="projects-list__item-illustration">
+                                        <Image
+                                            src={project.image_home}
+                                            width={1900}
+                                            height={1140}
+                                            alt={project.name}
+                                            priority
+                                        />
+                                    </div>
                                 </Link>
                             </li>
                         ))}
                     </ol>
-                    <div className="projects__spacer" />
                 </div>
             </PageTransition>
         </>

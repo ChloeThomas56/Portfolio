@@ -1,0 +1,151 @@
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2rem;
+    animation: spinnerRotation 0.8s linear infinite;
+}
+
+
+.loader {
+    position: fixed;
+    width: 100vw;
+    height: 100dvh;
+    background-color: var(--light);
+    z-index: 10;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        font-size: clamp(1.2rem, 2vw, 2rem);
+    }
+}
+
+.noise {
+    position: fixed;
+    z-index: 9999;
+    top: -300%;
+    left: -150%;
+    height: 600%;
+    width: 600%;
+    animation: grain 7s steps(10) infinite;
+    background-image: url('/images/noise.webp');
+    background-size: 200px;
+    background-repeat: repeat;
+    opacity: .2;
+    pointer-events: none;
+}
+
+.shapes {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+    transform: translate3d(0,0,0);
+    filter: blur(50px);
+
+    &__item-container {
+        position: absolute;
+
+        &--donut {
+            top: -5vw;
+            left: -2%;
+        }
+
+        &--curve {
+            bottom: -3vw;
+            right: -2%;
+        }
+    }
+
+    &__item {
+        stroke: var(--shape-color);
+        transition: stroke 0.5s ease;
+
+        &--donut {
+            width: clamp(15rem, 40vw, 37rem);
+            animation: donutRotation 10s ease infinite alternate;
+        }
+
+        &--curve {
+            width: clamp(25rem, 50vw, 48rem);
+            animation: curveRotationDesktop 10s ease infinite alternate;
+        }
+
+        &-gradient stop {
+            transition: stop-color 1.3s ease;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .noise {
+        opacity: 0.15;
+    }
+
+    .shapes__item--curve {
+        animation-name: curveRotationMobile;
+    }
+}
+
+
+// keyframes
+@keyframes spinnerRotation {
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+@keyframes donutRotation {
+    0% {
+        transform: rotate(-7deg);
+    } 100% {
+        transform: rotate(7deg);
+    }
+}
+
+@keyframes curveRotationDesktop {
+    0% {
+        transform: rotate(-10deg);
+    } 100% {
+        transform: rotate(4deg);
+    }
+}
+
+@keyframes curveRotationMobile {
+    0% {
+        transform: rotate(-55deg) translate(30%, 20%);
+    } 100% {
+        transform: rotate(-41deg) translate(30%, 20%);
+    }
+}
+
+@keyframes grain {
+    0%, 100% {
+        transform: translate(0);
+    } 10% {
+        transform: translate(-5%,-10%);
+    } 20% {
+        transform: translate(-15%,5%);
+    } 30% {
+        transform: translate(7%,-25%);
+    } 40% {
+        transform: translate(-5%,25%);
+    } 50% {
+        transform: translate(-15%,10%);
+    } 60% {
+        transform: translate(15%);
+    } 70% {
+        transform: translateY(15%);
+    } 80% {
+        transform: translate(3%,35%);
+    } 90% {
+        transform: translate(-10%,10%);
+    }
+}

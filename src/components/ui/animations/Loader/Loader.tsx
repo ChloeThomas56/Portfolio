@@ -36,10 +36,12 @@ export default function Loader() {
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    onAnimationComplete={() => {
-                        setIsLoadingCompleted(true);
-                        lenis?.start();
-                        document.documentElement.style.overflowY = 'auto';
+                    onAnimationStart={() => {
+                        setTimeout(() => {
+                            setIsLoadingCompleted(true);
+                            lenis?.start();
+                            document.documentElement.style.overflowY = 'auto';
+                        }, 300);
                     }}
                 >
                     <LineReveal delay={0.1}>
