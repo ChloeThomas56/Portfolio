@@ -25,7 +25,7 @@ export default function About() {
                         </div>
                         <div className="about__introduction">
                             <p>
-                                Attirée par le monde du digital et le développement web, j&#39;ai été formée à l&#39;école O&#39;clock, après une première carrière de traductrice. J&#39;ai ensuite rejoint la start-up Sports-Village, où j&#39;ai contribué à un projet ambitieux durant deux ans. Je suis actuellement disponible pour mettre mes compétences au service de vos projets web, que ce soit pour des missions ponctuelles ou de plus grande envergure.
+                                Attirée par le monde du numérique et le développement web, j&#39;ai été formée à l&#39;école O&#39;clock, après une première carrière de traductrice. J&#39;ai ensuite rejoint la start-up Sports-Village, où j&#39;ai contribué à un projet ambitieux durant deux ans. Je suis actuellement disponible pour mettre mes compétences au service de vos projets web, que ce soit pour des missions ponctuelles ou de plus grande envergure.
                             </p>
                             <p>
                                 Je m&#39;attache à créer des interfaces soignées, fonctionnelles et intuitives, en accordant une attention particulière à chaque détail. Je développe des sites web sur mesure à l&#39;aide de frameworks modernes ou via des CMS pour une gestion simplifiée, offrant ainsi une solution adaptée à chaque projet. Mon expérience en back-end complète mon expertise en front-end, ce qui me permet de prendre en charge des projets dans leur globalité.
