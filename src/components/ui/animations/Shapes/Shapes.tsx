@@ -34,7 +34,12 @@ export default function Shapes() {
                 className="shapes__item-container shapes__item-container--curve"
                 transition={{duration: 0.8, ease: [0.76, 0, 0.24, 1.15]}}
             >
-                <svg className="shapes__item shapes__item--curve" viewBox="0 0 365 164" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg 
+                    className="shapes__item shapes__item--curve" 
+                    viewBox="0 0 365 164" 
+                    fill="none"
+                    preserveAspectRatio="xMidYMid meet" 
+                    xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="curve-gradient" className="shapes__item-gradient" gradientTransform="rotate(45)">
                             <stop offset="5%" stopColor="var(--shape-shadow-color)" />

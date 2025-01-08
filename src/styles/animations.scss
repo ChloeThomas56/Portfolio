@@ -72,8 +72,12 @@
         opacity: 0.15;
     }
 
-    .shapes__item--curve {
-        animation-name: curveRotationMobile;
+    .shapes {
+        filter: blur(35px);
+
+        &__item--curve {
+            animation-name: curveRotationMobile;
+        }
     }
 }
 

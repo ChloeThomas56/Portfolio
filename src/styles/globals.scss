@@ -21,10 +21,10 @@
     --spacing: 4rem;
     --font-size-small: clamp(0.8rem, 0.9vw, 0.9rem);
     --font-size-medium: clamp(0.9rem, 1.15vw, 1.15rem);
-    --font-size-large: clamp(2.2rem, 7vw, 6rem);
+    --font-size-large: clamp(1.2rem, 1.2vw, 1.4rem);
+    --font-size-xlarge: clamp(2.2rem, 7vw, 6rem);
     --font-weight-medium: 500;
     --font-weight-bold: 600;
-    --indent: 5rem;
     --border: 2px solid var(--border-color);
 }
 
@@ -126,9 +126,13 @@ ul, ol {
 }
 
 .title {
-    font-size: var(--font-size-large);
+    font-size: var(--font-size-xlarge);
     margin-bottom: var(--spacing);
     line-height: 1em;
+}
+
+.subtitle {
+    font-size: var(--font-size-large);
 }
 
 .button {
@@ -178,7 +182,7 @@ button[disabled] {
 .modal-overlay {
     position: fixed;
     width: 100vw;
-    height: 100vh;
+    height: 100dvh;
     top: 0;
     left: 0;
     display: flex;
@@ -239,7 +243,6 @@ button[disabled] {
 
 @media (max-width: 768px) {
     :root {
-        --indent: 3rem;
         --spacing: 3rem;
     }
 
@@ -259,9 +262,5 @@ button[disabled] {
     .list-item {
         flex-direction: column;
         row-gap: 2rem;
-    }
-
-    .modal-overlay {
-        align-items: flex-start;
     }
 }

@@ -2,8 +2,7 @@ import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Button } from '@/components/ui/Button/Button';
 import { ImSpinner8 } from 'react-icons/im';
-import { AnimatePresence, motion } from 'framer-motion';
-import { MdOutlineClose } from 'react-icons/md';
+import Modal from '../ui/Modal/Modal';
 
 export default function ContactForm() {
     const [showMessage, setShowMessage] = useState(false);
@@ -105,42 +104,21 @@ export default function ContactForm() {
                     Envoyer
                 </Button>
             </form>
-            <AnimatePresence>
-                {showMessage && (
-                    <motion.div
-                        key="modal-overlay" 
-                        initial={{backdropFilter: 'blur(0px)'}}
-                        animate={{backdropFilter: 'blur(5px)'}}
-                        exit={{backdropFilter: 'blur(0px)'}}
-                        transition={{duration: 0.3, ease:"easeIn"}}
-                        className="modal-overlay">
-                        <motion.div
-                            key="modal"
-                            initial={{scale: 0}}
-                            animate={{scale: 1}}
-                            exit={{scale: 0}}
-                            transition={{duration: 0.4, ease: [0.76, 0, 0.24, 1]}}
-                            className="modal">
-                                <button className="modal__close-btn" onClick={closeModal}>
-                                    <MdOutlineClose />
-                                </button>
-                                {
-                                    formStatus === 'success' ? (
-                                        <p>
-                                            Votre message a bien été envoyé&nbsp;!<br/>Je vous répondrai dans les plus brefs délais.<br/>
-                                            <span className="form__smiley">(•‿•)</span>
-                                        </p>
-                                    ) : (
-                                        <p>
-                                            Oups&nbsp;! Quelque chose s&#39;est mal passé.<br/>Veuillez vérifier vos informations et réessayer.<br/>
-                                            <span className="form__smiley">(•_•)</span>
-                                        </p>
-                                    )
-                                }
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            <Modal show={showMessage} close={closeModal}>
+                {
+                    formStatus === 'success' ? (
+                        <p>
+                            Votre message a bien été envoyé&nbsp;!<br/>Je vous répondrai dans les plus brefs délais.<br/>
+                            <span className="form__smiley">(•‿•)</span>
+                        </p>
+                    ) : (
+                        <p>
+                            Oups&nbsp;! Quelque chose s&#39;est mal passé.<br/>Veuillez vérifier vos informations et réessayer.<br/>
+                            <span className="form__smiley">(•_•)</span>
+                        </p>
+                    )
+                }
+            </Modal>
         </>
     );
 }

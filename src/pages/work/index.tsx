@@ -24,7 +24,9 @@ export default function Work() {
                                     scroll={false}
                                     className="list-item projects-list__item">
                                     <div className="projects-list__item-details">
-                                        <h2>{project.name}</h2>
+                                        <h2 className="subtitle">
+                                            {project.name}
+                                        </h2>
                                         <span>
                                             <MdArrowOutward />
                                             Voir

@@ -16,15 +16,12 @@
             width: 60%;
             display: flex;
             justify-content: space-between;
+            gap: 1rem;
 
-            h2 {
-                font-size: 1.5rem;
-
-            &::before {
+            h2::before {
                 content: "0" counter(counter);
                 font-size: var(--font-size-small);
                 margin-right: 0.5rem;
-            }
             }
 
             > span {
@@ -86,10 +83,6 @@
 
     &__description {
         width: 70%;
-
-        > p {
-            text-indent: var(--indent);
-        }
     }
 
     &__url-container {
@@ -130,10 +123,6 @@
         &-details, &-illustration {
             width: 50%;
         }
-
-        &-details h2 {
-            font-size: var(--font-size-medium);
-        }
     }
 
     .project__images {
@@ -145,6 +134,10 @@
     .projects-list__item {
         &-details, &-illustration {
             width: 100%;
+        }
+
+        &-details > span {
+            display: none;
         }
     }
 
