@@ -15,7 +15,7 @@
         "stack": "Next.js, GSAP, Framer Motion, Lenis",
         "url": "https://ciphernet-rouge.vercel.app/",
         "color": "#cfcfcf",
-        "box_shadow": "#939393"
+        "shadow": "#939393"
     },
     {
         "id": 3,
@@ -33,7 +33,7 @@
         "stack": "Nuxt.js, Laravel",
         "url": "",
         "color": "#dfe4f4",
-        "box_shadow": "#B2BAE0"
+        "shadow": "#b2bae0"
     },
     {
         "id": 2,
@@ -50,10 +50,10 @@
         "stack": "Wordpress",
         "url": "https://www.lespendulesdeminerve.com/",
         "color": "#d7d7ca",
-        "box_shadow": "#b8ada9"
+        "shadow": "#b8ada9"
     },
     {
-        "id": 4,
+        "id": 1,
         "name": "Geobio56",
         "slug": "geobio56",
         "text": "Dans le cadre de son activité de géobiologie, Jean-François Thomas souhaitait améliorer sa présence en ligne. J'ai donc réalisé une refonte complète de son site vitrine Wordpress, le modernisant et assurant une expérience utilisateur optimale sur tous les appareils. J'ai restructuré l'interface pour la rendre plus intuitive et responsive, tout en améliorant le référencement naturel afin d'augmenter sa visibilité sur les moteurs de recherche.",
@@ -67,6 +67,6 @@
         "stack": "Wordpress",
         "url": "https://geobio56.fr/",
         "color": "#d6dfe2",
-        "box_shadow": "#abb6bb"
+        "shadow": "#abb6bb"
     }
 ]

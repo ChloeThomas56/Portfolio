@@ -1,5 +1,4 @@
 import LineReveal from '../animations/LineReveal/LineReveal';
-import { Button } from '../Button/Button';
 import clsx from 'clsx';
 
 interface BurgerMenuProps {
@@ -11,7 +10,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
     return (
         <div className="burger-menu-container">
             <LineReveal>
-                <Button
+                <button
                     className={clsx("burger-menu", {"burger-menu--open": isOpen})}
                     onClick={toggleMenu}
                     aria-expanded={isOpen}
@@ -19,7 +18,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
                     aria-label={isOpen ? 'Fermer le menu' : 'Ouvrir le menu'}>
                         <span>Menu</span>
                         <span>Fermer</span>
-                </Button>
+                </button>
             </LineReveal>
         </div>
     );

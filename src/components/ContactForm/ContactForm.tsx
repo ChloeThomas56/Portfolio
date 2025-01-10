@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { Button } from '@/components/ui/Button/Button';
 import { ImSpinner8 } from 'react-icons/im';
 import Modal from '../ui/Modal/Modal';
 
@@ -95,14 +94,14 @@ export default function ContactForm() {
                         rows={3} 
                         required />
                 </div>
-                <Button type="submit" className="button" disabled={isLoading ? true : false}>
+                <button type="submit" className="button" disabled={isLoading ? true : false}>
                     {
                         isLoading && (
                             <ImSpinner8 className="spinner" />
                         )
                     }
                     Envoyer
-                </Button>
+                </button>
             </form>
             <Modal show={showMessage} close={closeModal}>
                 {

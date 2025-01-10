@@ -82,6 +82,7 @@ button {
     cursor: pointer;
     border: none;
     background-color: transparent;
+    color: var(--dark);
 }
 
 h1, h2 {
@@ -99,7 +100,6 @@ input, textarea, button {
 img {
     display: block;
     width: 100%;
-    box-shadow: 0 0 20px rgba(96, 104, 135, .2);
     transition: filter 0.3s ease, opacity 0.3s ease;
     transform: translateZ(0);
 }
@@ -222,6 +222,10 @@ button[disabled] {
     &:last-child > span {
         margin-right: 0;
     }
+}
+
+.img-container {
+    box-shadow: 0 0 20px rgba(96, 104, 135, 0.2);
 }
 
 

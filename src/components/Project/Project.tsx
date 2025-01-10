@@ -13,7 +13,7 @@ interface Project {
     stack: string;
     url: string;
     color: string;
-    box_shadow: string;
+    shadow: string;
 }
 
 interface ProjectProps {
@@ -26,7 +26,7 @@ export default function Project({ project, previousProject, nextProject }: Proje
 
     useEffect(() => {
         document.documentElement.style.setProperty('--shape-color', project?.color);
-        document.documentElement.style.setProperty('--shape-shadow-color', project?.box_shadow);
+        document.documentElement.style.setProperty('--shape-shadow-color', project?.shadow);
 
         return () => {
             document.documentElement.style.removeProperty('--shape-color');
@@ -68,15 +68,16 @@ export default function Project({ project, previousProject, nextProject }: Proje
             </section>
             <section className="project__images">
                 {project.images.map((img, index) => (
-                    <Image
-                        key={`${img}${index}`}
-                        src={img}
-                        width={1900}
-                        height={1140}
-                        className="project__image"
-                        alt={`illustration du site ${project.name}`}
-                        priority
-                    />
+                    <div key={`${img}${index}`} className="img-container">
+                        <Image
+                            src={img}
+                            width={1900}
+                            height={1140}
+                            className="project__image"
+                            alt={`illustration du site ${project.name}`}
+                            priority
+                        />
+                    </div>
                 ))}
             </section>
             <div className="project__navigation">

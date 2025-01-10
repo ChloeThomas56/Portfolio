@@ -9,16 +9,16 @@
 
 .noise {
     position: fixed;
-    z-index: 9999;
+    z-index: 10000;
     top: -300%;
     left: -150%;
     height: 600%;
     width: 600%;
-    animation: grain 7s steps(10) infinite;
+    opacity: 0.2;
+    animation: noise 7s steps(10) infinite;
     background-image: url('/images/noise.webp');
     background-size: 200px;
     background-repeat: repeat;
-    opacity: .2;
     pointer-events: none;
 }
 
@@ -48,9 +48,6 @@
     }
 
     &__item {
-        stroke: var(--shape-color);
-        transition: stroke 0.5s ease;
-
         &--donut {
             width: clamp(15rem, 40vw, 37rem);
             animation: donutRotation 10s ease infinite alternate;
@@ -62,7 +59,7 @@
         }
 
         &-gradient stop {
-            transition: stop-color 1.3s ease;
+            transition: stop-color 0.3s ease;
         }
     }
 }
@@ -113,7 +110,7 @@
     }
 }
 
-@keyframes grain {
+@keyframes noise {
     0%, 100% {
         transform: translate(0);
     } 10% {

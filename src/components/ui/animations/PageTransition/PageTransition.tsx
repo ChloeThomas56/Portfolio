@@ -37,7 +37,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
     const transition: Variants = {
         initial: {
             opacity: 0, 
-            y: 100
+            y: 75
         },
         enter: {
             opacity: 1,

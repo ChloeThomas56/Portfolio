@@ -32,7 +32,7 @@ export default function Work() {
                                             Voir
                                         </span>
                                     </div>
-                                    <div className="projects-list__item-illustration">
+                                    <div className="projects-list__item-illustration img-container">
                                         <Image
                                             src={project.image_home}
                                             width={1900}

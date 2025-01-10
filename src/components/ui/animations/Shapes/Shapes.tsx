@@ -4,8 +4,8 @@ export default function Shapes() {
     return (
         <div className="shapes">
             <motion.div
-                initial={{x: '-100%', y: '-100%'}}
-                animate={{x: 0, y: 0}}
+                initial={{opacity: 0}}
+                animate={{opacity: 1}}
                 className="shapes__item-container shapes__item-container--donut"
                 transition={{duration: 0.8, ease: [0.76, 0, 0.24, 1.15]}}
             >
@@ -29,8 +29,8 @@ export default function Shapes() {
                 </svg>
             </motion.div>
             <motion.div
-                initial={{x: '100%', y: '100%'}}
-                animate={{x: 0, y: 0}} 
+                initial={{opacity: 0}}
+                animate={{opacity: 1}} 
                 className="shapes__item-container shapes__item-container--curve"
                 transition={{duration: 0.8, ease: [0.76, 0, 0.24, 1.15]}}
             >
