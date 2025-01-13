@@ -6,14 +6,14 @@ export default function Shapes() {
             <motion.div
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
-                className="shapes__item-container shapes__item-container--donut"
+                className="shapes__item-container shapes__item-container--top"
                 transition={{duration: 0.8, ease: [0.76, 0, 0.24, 1.15]}}
             >
-                <svg className="shapes__item shapes__item--donut" viewBox="146 146 508 508" xmlns="http://www.w3.org/2000/svg">
+                <svg className="shapes__item shapes__item--top" viewBox="111 111 578 578" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <radialGradient  id="donut-gradient" className="shapes__item-gradient" cx="60%" cy="60%" r="110%" fx="50%" fy="50%">
-                            <stop offset="30%" stopColor="var(--shape-shadow-color)" />
-                            <stop offset="70%" stopColor="var(--shape-color)" />
+                            <stop offset="40%" stopColor="var(--shape-shadow-color)" />
+                            <stop offset="60%" stopColor="var(--shape-color)" />
                         </radialGradient>
                     </defs>
                     <circle 
@@ -22,8 +22,8 @@ export default function Shapes() {
                         fill="none"
                         r="164"
                         stroke="url(#donut-gradient)" 
-                        strokeWidth="180" 
-                        strokeDasharray="720 1400"
+                        strokeWidth="250" 
+                        strokeDasharray="750 1400"
                         strokeLinecap="round"
                         strokeDashoffset="-260" />
                 </svg>
@@ -31,18 +31,18 @@ export default function Shapes() {
             <motion.div
                 initial={{opacity: 0}}
                 animate={{opacity: 1}} 
-                className="shapes__item-container shapes__item-container--curve"
+                className="shapes__item-container shapes__item-container--bottom"
                 transition={{duration: 0.8, ease: [0.76, 0, 0.24, 1.15]}}
             >
                 <svg 
-                    className="shapes__item shapes__item--curve" 
+                    className="shapes__item shapes__item--bottom" 
                     viewBox="0 0 365 164" 
                     fill="none"
                     preserveAspectRatio="xMidYMid meet" 
                     xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="curve-gradient" className="shapes__item-gradient" gradientTransform="rotate(45)">
-                            <stop offset="5%" stopColor="var(--shape-shadow-color)" />
+                            <stop offset="15%" stopColor="var(--shape-shadow-color)" />
                             <stop offset="95%" stopColor="var(--shape-color)" />
                         </linearGradient>
                     </defs>

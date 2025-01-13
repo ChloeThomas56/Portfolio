@@ -17,15 +17,13 @@ export default function About() {
                     <div className="about">
                         <section className="about__introduction">
                             <div className="about__introduction-illustration">
-                                <div className="img-container">
-                                    <Image
-                                        src="/images/portrait.webp"
-                                        width={800}
-                                        height={800}
-                                        alt="Portrait de Chloé Thomas"
-                                        priority
-                                    />
-                                </div>
+                                <Image
+                                    src="/images/portrait.webp"
+                                    width={1000}
+                                    height={1000}
+                                    alt="Portrait de Chloé Thomas"
+                                    priority
+                                />
                             </div>
                             <div className="about__introduction-text">
                                 <h2 className="subtitle">

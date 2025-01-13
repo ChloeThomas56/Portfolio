@@ -12,6 +12,7 @@ interface Project {
     year: string;
     stack: string;
     url: string;
+    background: string;
     color: string;
     shadow: string;
 }
@@ -25,10 +26,12 @@ interface ProjectProps {
 export default function Project({ project, previousProject, nextProject }: ProjectProps) {
 
     useEffect(() => {
+        document.documentElement.style.setProperty('--background-color', project?.background);
         document.documentElement.style.setProperty('--shape-color', project?.color);
         document.documentElement.style.setProperty('--shape-shadow-color', project?.shadow);
 
         return () => {
+            document.documentElement.style.removeProperty('--background-color');
             document.documentElement.style.removeProperty('--shape-color');
             document.documentElement.style.removeProperty('--shape-shadow-color');
         }; 
@@ -68,16 +71,15 @@ export default function Project({ project, previousProject, nextProject }: Proje
             </section>
             <section className="project__images">
                 {project.images.map((img, index) => (
-                    <div key={`${img}${index}`} className="img-container">
-                        <Image
-                            src={img}
-                            width={1900}
-                            height={1140}
-                            className="project__image"
-                            alt={`illustration du site ${project.name}`}
-                            priority
-                        />
-                    </div>
+                    <Image
+                        key={`${img}${index}`}
+                        src={img}
+                        width={1900}
+                        height={1140}
+                        className="project__image"
+                        alt={`illustration du site ${project.name}`}
+                        priority
+                    />
                 ))}
             </section>
             <div className="project__navigation">

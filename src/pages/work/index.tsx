@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
 import projects from '@/lib/projects.json';
@@ -6,6 +7,19 @@ import { MdArrowOutward } from 'react-icons/md';
 import Image from 'next/image';
 
 export default function Work() {
+    useEffect(() => {
+        document.documentElement.style.setProperty('--background-color', '#fff9ef');
+        document.documentElement.style.setProperty('--shape-color', '#f4e7c1');
+        document.documentElement.style.setProperty('--shape-shadow-color', '#d7cca9');
+
+        return () => {
+            document.documentElement.style.removeProperty('--background-color');
+            document.documentElement.style.removeProperty('--shape-color');
+            document.documentElement.style.removeProperty('--shape-shadow-color');
+        }; 
+    
+    }, []);
+
     return (
         <>
             <Head>
@@ -32,7 +46,7 @@ export default function Work() {
                                             Voir
                                         </span>
                                     </div>
-                                    <div className="projects-list__item-illustration img-container">
+                                    <div className="projects-list__item-illustration">
                                         <Image
                                             src={project.image_home}
                                             width={1900}

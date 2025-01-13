@@ -10,22 +10,25 @@
 @use './animations.scss';
 
 :root {
-    --light: #ffffff;
+    --white: #ffffff;
+    --light: #f7eeec;
     --dark: #242424;
+    --background-color: var(--light);
     --border-color: #616161;
-    --shape-color: #eee6c8;
-    --shape-shadow-color: #d7cca9;
+    --shape-color: #f4e7c1;
+    --shape-shadow-color: #e1c5b1;
     --gutter: 1.5vw;
     --top-gutter: clamp(7rem, 14vh, 9rem);
     --bottom-gutter: clamp(8rem, 17vh, 10rem);
     --spacing: 4rem;
     --font-size-small: clamp(0.8rem, 0.9vw, 0.9rem);
     --font-size-medium: clamp(0.9rem, 1.15vw, 1.15rem);
-    --font-size-large: clamp(1.2rem, 1.2vw, 1.4rem);
+    --font-size-large: clamp(1.25rem, 1.3vw, 1.5rem);
     --font-size-xlarge: clamp(2.2rem, 7vw, 6rem);
     --font-weight-medium: 500;
     --font-weight-bold: 600;
     --border: 2px solid var(--border-color);
+    --border-radius: 15px;
 }
 
 * {
@@ -42,7 +45,7 @@ html {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     scrollbar-width: thin;
-    scrollbar-color: var(--dark) var(--light);    
+    scrollbar-color: var(--dark) var(--background-color);    
 }
 
 html,
@@ -55,8 +58,9 @@ body {
     position: relative;
     font-size: var(--font-size-medium);
     font-weight: var(--font-weight-medium);
-    background-color: var(--light);
+    background-color: var(--background-color);
     color: var(--dark);
+    transition: background-color 0.3s ease;
 }
 
 main {
@@ -86,7 +90,8 @@ button {
 }
 
 h1, h2 {
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-medium);
+    font-family: var(--font-bricolage-grotesque);
 }
 
 p {
@@ -102,6 +107,7 @@ img {
     width: 100%;
     transition: filter 0.3s ease, opacity 0.3s ease;
     transform: translateZ(0);
+    border-radius: var(--border-radius);
 }
 
 ul, ol {
@@ -147,6 +153,7 @@ ul, ol {
     font-size: 1rem;
     font-weight: var(--font-weight-medium);
     border: none;
+    border-radius: 5px;
     outline: none;
     transition: padding 0.3s ease;
 
@@ -198,6 +205,7 @@ button[disabled] {
     background-color: var(--dark);
     color: var(--light);
     max-width: 400px;
+    border-radius: var(--border-radius);
 
     &__close-btn {
         position: absolute;
@@ -206,7 +214,7 @@ button[disabled] {
         font-size: 1.5rem;
 
         > svg {
-            color: var(--light);
+            color: var(--white);
         }
     }
 }
@@ -222,10 +230,6 @@ button[disabled] {
     &:last-child > span {
         margin-right: 0;
     }
-}
-
-.img-container {
-    box-shadow: 0 0 20px rgba(96, 104, 135, 0.2);
 }
 
 
@@ -248,11 +252,12 @@ button[disabled] {
 @media (max-width: 768px) {
     :root {
         --spacing: 3rem;
+        --border-radius: 10px;
     }
 
     html {
         scrollbar-width: auto;
-        scrollbar-color: auto; 
+        scrollbar-color: auto;
     }
 
     a:hover {
