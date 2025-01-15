@@ -1,13 +1,21 @@
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 export default function Shapes() {
+    const transition: Variants = {
+        initial: { opacity: 0 },
+        enter: {
+            opacity: 1,
+            transition: { duration: 1, delay: 0.25, ease: [0.2, 1, 0.66, 1] }
+        },
+    }
+
     return (
         <div className="shapes">
             <motion.div
-                initial={{opacity: 0}}
-                animate={{opacity: 1}}
+                variants={transition}
+                initial="initial"
+                animate="enter"
                 className="shapes__item-container shapes__item-container--top"
-                transition={{duration: 0.8, ease: [0.76, 0, 0.24, 1.15]}}
             >
                 <svg className="shapes__item shapes__item--top" viewBox="111 111 578 578" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -29,10 +37,10 @@ export default function Shapes() {
                 </svg>
             </motion.div>
             <motion.div
-                initial={{opacity: 0}}
-                animate={{opacity: 1}} 
+                variants={transition}
+                initial="initial"
+                animate="enter"
                 className="shapes__item-container shapes__item-container--bottom"
-                transition={{duration: 0.8, ease: [0.76, 0, 0.24, 1.15]}}
             >
                 <svg 
                     className="shapes__item shapes__item--bottom" 

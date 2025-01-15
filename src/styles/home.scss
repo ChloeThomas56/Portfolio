@@ -1,6 +1,7 @@
 .home {
     h1, h2 {
         margin-bottom: 0;
+        line-height: 1em;
     }
 
     p {
@@ -12,5 +13,13 @@
         justify-content: center;
         gap: 2rem;
         flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .home {
+        h1, h2 {
+            line-height: normal;
+        }
     }
 }

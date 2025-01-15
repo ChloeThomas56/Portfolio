@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
+import LineReveal from '@/components/ui/animations/LineReveal/LineReveal';
 import projects from '@/lib/projects.json';
 import Link from 'next/link';
 import { MdArrowOutward } from 'react-icons/md';
@@ -28,7 +29,9 @@ export default function Work() {
             <PageTransition>
                 <div className="wrapper">
                     <h1 className="title">
-                        Projets
+                        <LineReveal>
+                            Projets
+                        </LineReveal>
                     </h1>
                     <ol className="projects-list">
                         {projects.map((project) => (

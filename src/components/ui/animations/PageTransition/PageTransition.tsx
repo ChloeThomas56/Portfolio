@@ -37,12 +37,12 @@ export default function PageTransition({ children }: { children: React.ReactNode
     const transition: Variants = {
         initial: {
             opacity: 0, 
-            y: 75
+            y: 50
         },
         enter: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.8, delay: 0.2, ease: [0.2, 1, 0.66, 1] }
+            transition: { duration: 0.8, delay: 0.25, ease: [0.2, 1, 0.66, 1] }
         },
         exit: {
             opacity: 0,

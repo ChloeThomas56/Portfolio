@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import LineReveal from '../ui/animations/LineReveal/LineReveal';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import BurgerMenu from '../ui/BurgerMenu/BurgerMenu';
 import MobileNav from '../ui/MobileNav/MobileNav';
@@ -26,29 +26,31 @@ export default function Header() {
 
     return (
         <>
-            <header className="header">
+            <motion.header 
+                className="header"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.25 }}>
                 <div className="header__inner">
-                    <LineReveal>
+                    <div>
                         <Link href="/" className="nav-item header__nav-item" scroll={false}>
                             CT.
                         </Link>
-                    </LineReveal>
+                    </div>
                     <nav className="header__nav">
                         <ul>
                             {links.map((link) => (
                                 <li key={link.name} >
-                                    <LineReveal>
-                                        <Link href={link.href} className="nav-item header__nav-item" scroll={false}>
-                                            {link.name}
-                                        </Link>
-                                    </LineReveal>
+                                    <Link href={link.href} className="nav-item header__nav-item" scroll={false}>
+                                        {link.name}
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
                     </nav>
                     <BurgerMenu toggleMenu={toggleMenu} isOpen={isMenuOpen} />
                 </div>
-            </header>
+            </motion.header>
             <MobileNav links={links} show={isMenuOpen} setShow={setIsMenuOpen} />
         </>
     );

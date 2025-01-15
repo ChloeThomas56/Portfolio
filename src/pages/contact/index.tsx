@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
+import LineReveal from '@/components/ui/animations/LineReveal/LineReveal';
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
 import ContactForm from '@/components/ContactForm/ContactForm';
 
@@ -12,7 +13,9 @@ export default function Contact() {
             <PageTransition>
                 <div className="wrapper">
                     <h1 className="title">
-                        Me contacter
+                        <LineReveal>
+                            Me contacter
+                        </LineReveal>
                     </h1>
                     <section className="contact__intro">
                         <p>

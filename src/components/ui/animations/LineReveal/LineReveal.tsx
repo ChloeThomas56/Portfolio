@@ -1,29 +1,25 @@
 import { motion, Variants } from 'framer-motion';
 
-export default function LineReveal({ children, delay = 0 }: { children: React.ReactNode, delay?: number }) {
+export default function LineReveal({ children }: { children: React.ReactNode }) {
     
     const lineReveal: Variants = {
-        initial: { y: "100%"},
-        animate: { 
+        initial: { opacity: 0, y: "100%"},
+        animate: {
+            opacity: 1, 
             y: 0, 
-            transition: { duration: 0.5, delay: delay }
-        },
-        exit: {
-            y: "-100%",
-            transition: { duration: 0.5 }
+            transition: { duration: 0.8, delay: 0.2, ease: [0.2, 1, 0.66, 1] }
         }
     }
 
     return (
-        <div className="line-wrapper">
-            <motion.div
+        <span className="line-wrapper">
+            <motion.span
                 variants={lineReveal}
                 initial="initial"
                 animate="animate"
-                exit="exit"
             >
                 {children}
-            </motion.div>
-        </div>
+            </motion.span>
+        </span>
     )
 }

@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import LineReveal from '../ui/animations/LineReveal/LineReveal';
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -41,7 +42,9 @@ export default function Project({ project, previousProject, nextProject }: Proje
     return (
         <div className="wrapper">
             <h1 className="title">
-                {project.name}
+                <LineReveal>
+                    {project.name}
+                </LineReveal>
             </h1>
             <section className="project__info">
                 <div className="project__technical-data">
