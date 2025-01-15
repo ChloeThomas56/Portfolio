@@ -2,7 +2,8 @@
     position: fixed;
     width: 100vw;
     z-index: 10;
-    padding: var(--gutter);
+    padding: var(--gutter) var(--gutter) 0 var(--gutter);
+    overflow: hidden;
 
     &__inner {
         display: flex;

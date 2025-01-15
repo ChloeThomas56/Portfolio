@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
-import LineReveal from '@/components/ui/animations/LineReveal/LineReveal';
+import Title from '@/components/ui/Title/Title';
 import Link from 'next/link';
 
 export default function Legal() {
@@ -11,11 +11,9 @@ export default function Legal() {
             </Head>
             <PageTransition>
                 <div className="wrapper">
-                    <h1 className="title">
-                        <LineReveal>
-                            Mentions légales
-                        </LineReveal>
-                    </h1>
+                    <Title>
+                        Mentions légales
+                    </Title>
                     <section className="legal">
                         <article className="list-item">
                             <h2 className="subtitle">

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
-import LineReveal from '@/components/ui/animations/LineReveal/LineReveal';
+import Title from '@/components/ui/Title/Title';
 import Image from 'next/image';
 import { MdArrowOutward } from 'react-icons/md';
 
@@ -12,11 +12,9 @@ export default function About() {
             </Head>
             <PageTransition>
                 <div className="wrapper">
-                    <h1 className="title">
-                        <LineReveal>
-                            À propos
-                        </LineReveal>
-                    </h1>
+                    <Title>
+                        À propos
+                    </Title>
                     <div className="about">
                         <section className="about__introduction">
                             <div className="about__introduction-illustration">

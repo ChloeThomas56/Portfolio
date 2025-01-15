@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
-import LineReveal from '@/components/ui/animations/LineReveal/LineReveal';
+import Title from '@/components/ui/Title/Title';
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
 
 export default function Home() {
@@ -11,16 +11,12 @@ export default function Home() {
             </Head>
             <PageTransition>
                 <div className="centered-wrapper home">
-                    <h1 className="title">
-                        <LineReveal>
-                            Chloé Thomas,
-                        </LineReveal>
-                    </h1>
-                    <h2 className="title">
-                        <LineReveal>
-                            développeuse web
-                        </LineReveal>
-                    </h2>
+                    <Title>
+                        Chloé Thomas,
+                    </Title>
+                    <Title as="h2">
+                        développeuse web
+                    </Title>
                     <p>
                         Passionnée par le développement front-end, je conçois des interfaces modernes alliant design et performance.
                         <br/>

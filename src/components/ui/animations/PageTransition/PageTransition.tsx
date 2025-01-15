@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router';
 import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling/SmoothScrolling';
 import { useEffect } from 'react';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { pageTransition } from '@/lib/variants';
 import Footer from '@/components/Footer/Footer';
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
@@ -34,25 +35,9 @@ export default function PageTransition({ children }: { children: React.ReactNode
         document.documentElement.style.overflowY = 'auto';
     }
 
-    const transition: Variants = {
-        initial: {
-            opacity: 0, 
-            y: 50
-        },
-        enter: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.8, delay: 0.25, ease: [0.2, 1, 0.66, 1] }
-        },
-        exit: {
-            opacity: 0,
-            transition: { duration: 0.25 }
-        }
-    }
-
     return (
         <motion.div
-            variants={transition}
+            variants={pageTransition}
             initial="initial"
             animate="enter"
             exit="exit"

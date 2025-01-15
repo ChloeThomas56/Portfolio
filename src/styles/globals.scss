@@ -217,6 +217,11 @@ button[disabled] {
     }
 }
 
+.line-wrapper {
+    overflow: hidden;
+    display: inline-flex;
+}
+
 
 // media queries
 @media (max-width: 1200px) {

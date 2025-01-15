@@ -1,6 +1,7 @@
 import { usePathname } from 'next/navigation';
 import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling/SmoothScrolling';
-import { AnimatePresence, motion, Variants } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { mobileNavFade, mobileNavSlide } from '@/lib/variants';
 import Link from 'next/link';
 
 interface LinkProps {
@@ -17,23 +18,11 @@ export default function MobileNav({ links, show, setShow }: { links: LinkProps[]
             setShow(false);
     };
 
-    const transition: Variants = {
-        initial: { opacity: 0 },
-        enter: {
-            opacity: 1,
-            transition: { duration: 0.5 }
-        },
-        exit: {
-            opacity: 0,
-            transition: { duration: 0.9, delay: 0.4 } 
-        }
-    }
-
     return (
         <AnimatePresence>
             {show && (
                 <motion.nav
-                    variants={transition}
+                    variants={mobileNavFade}
                     initial="initial"
                     animate="enter"
                     exit="exit"
@@ -52,17 +41,10 @@ export default function MobileNav({ links, show, setShow }: { links: LinkProps[]
                     }}
                 >
                     <motion.ul
-                        initial={{ y: -300, opacity: 0 }}
-                        animate={{ 
-                            y: 0, 
-                            opacity: 1,
-                            transition: { duration: 1.5, delay: 0.4, ease: [0.19, 1, 0.22, 1] }
-                        }}
-                        exit={{
-                            y: -200,
-                            opacity: 0,
-                            transition: { duration: 1.2, ease: [0.19, 1, 0.22, 1] }
-                        }}
+                        variants={mobileNavSlide}
+                        initial="initial"
+                        animate="enter"
+                        exit="exit"
                     >
                         {links.map((link) => (
                             <li key={link.name} >
