@@ -32,7 +32,7 @@ export default function Work() {
                         Projets
                     </Title>
                     <ol className="projects-list">
-                        {projects.map((project) => (
+                        {projects.map((project, index) => (
                             <li key={project.id}>
                                 <Link 
                                     href={`/work/${project.slug}`}
@@ -54,7 +54,7 @@ export default function Work() {
                                             height={1140}
                                             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
                                             alt={`illustration du site ${project.name}`}
-                                            priority
+                                            priority={index <= 1}
                                         />
                                     </div>
                                 </Link>

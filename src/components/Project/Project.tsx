@@ -79,7 +79,7 @@ export default function Project({ project, previousProject, nextProject }: Proje
                         height={1140}
                         className="project__image"
                         alt={`illustration du site ${project.name}`}
-                        priority
+                        priority={index === 0}
                     />
                 ))}
             </section>
