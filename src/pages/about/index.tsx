@@ -22,6 +22,7 @@ export default function About() {
                                     src="/images/portrait.webp"
                                     width={1000}
                                     height={1000}
+                                    sizes="(max-width: 768px) 100vw, 30vw"
                                     alt="Portrait de Chloé Thomas"
                                     priority
                                 />

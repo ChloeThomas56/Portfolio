@@ -48,11 +48,12 @@ export default function Work() {
                                         </span>
                                     </div>
                                     <div className="projects-list__item-illustration">
-                                        <Image
+                                        <Image 
                                             src={project.image_home}
                                             width={1900}
                                             height={1140}
-                                            alt={project.name}
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                                            alt={`illustration du site ${project.name}`}
                                             priority
                                         />
                                     </div>
