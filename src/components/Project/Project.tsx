@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Title from '../ui/Title/Title';
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
-import Image from 'next/image';
+import CustomImage from '../ui/CustomImage/CustomImage';
 import Link from 'next/link';
 
 interface Project {
@@ -72,7 +72,7 @@ export default function Project({ project, previousProject, nextProject }: Proje
             </section>
             <section className="project__images">
                 {project.images.map((img, index) => (
-                    <Image
+                    <CustomImage
                         key={`${img}${index}`}
                         src={img}
                         width={1900}

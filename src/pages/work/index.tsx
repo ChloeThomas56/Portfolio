@@ -5,7 +5,7 @@ import Title from '@/components/ui/Title/Title';
 import projects from '@/lib/projects.json';
 import Link from 'next/link';
 import { MdArrowOutward } from 'react-icons/md';
-import Image from 'next/image';
+import CustomImage from '@/components/ui/CustomImage/CustomImage';
 
 export default function Work() {
     useEffect(() => {
@@ -48,7 +48,7 @@ export default function Work() {
                                         </span>
                                     </div>
                                     <div className="projects-list__item-illustration">
-                                        <Image 
+                                        <CustomImage 
                                             src={project.image_home}
                                             width={1900}
                                             height={1140}

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
 import Title from '@/components/ui/Title/Title';
-import Image from 'next/image';
+import CustomImage from '@/components/ui/CustomImage/CustomImage';
 import { MdArrowOutward } from 'react-icons/md';
 
 export default function About() {
@@ -18,7 +18,7 @@ export default function About() {
                     <div className="about">
                         <section className="about__introduction">
                             <div className="about__introduction-illustration">
-                                <Image
+                                <CustomImage
                                     src="/images/portrait.webp"
                                     width={1000}
                                     height={1000}
