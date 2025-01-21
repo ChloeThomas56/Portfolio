@@ -8,10 +8,20 @@ type Props = {
     project: typeof projects[0] | null;
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-    const paths = projects.map((project) => ({
-        params: { slug: project.slug },
-    }));
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+    if (!locales) {
+        throw new Error('Locales are not defined in getStaticPaths');
+    }
+
+    const paths = locales.flatMap((locale) =>
+        projects.map((project) => ({
+            params: { slug: project.slug },
+            locale,
+        }))
+    );
+    /* const paths = projects.map((project) => ({
+        params: { slug: project.slug, },
+    })); */
 
     return {
         paths,

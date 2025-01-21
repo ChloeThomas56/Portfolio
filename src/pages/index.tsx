@@ -1,9 +1,15 @@
+import { useRouter } from 'next/router';
+import fr from '../../locales/fr/home';
+import en from '../../locales/en/home';
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
 import Title from '@/components/ui/Title/Title';
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
 
 export default function Home() {
+    const { locale } = useRouter();
+    const t = locale === 'fr' ? fr : en;
+
     return (
         <>
             <Head>
@@ -15,7 +21,7 @@ export default function Home() {
                         Chloé Thomas,
                     </Title>
                     <Title as="h2">
-                        développeuse web
+                        {t.subtitle}
                     </Title>
                     <p>
                         Passionnée par le développement front-end, je conçois des interfaces modernes alliant design et performance.

@@ -1,9 +1,10 @@
 import '@/styles/globals.scss';
-import { inter, bricolage_grotesque } from '@/lib/font';
 import type { AppProps } from 'next/app';
-import Header from '@/components/Header/Header';
-import SmoothScrolling from '@/components/ui/SmoothScrolling/SmoothScrolling';
 import Head from 'next/head';
+//import { I18nProvider } from '../../locales';
+import { inter, bricolage_grotesque } from '@/lib/font';
+import SmoothScrolling from '@/components/ui/SmoothScrolling/SmoothScrolling';
+import Header from '@/components/Header/Header';
 import { AnimatePresence } from 'framer-motion';
 import Shapes from '@/components/ui/animations/Shapes/Shapes';
 import { SpeedInsights } from '@vercel/speed-insights/next';
