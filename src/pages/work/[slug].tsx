@@ -19,9 +19,6 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
             locale,
         }))
     );
-    /* const paths = projects.map((project) => ({
-        params: { slug: project.slug, },
-    })); */
 
     return {
         paths,

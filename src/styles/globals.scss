@@ -9,7 +9,6 @@
 @use './animations.scss';
 
 :root {
-    --white: #ffffff;
     --light: #f7eeec;
     --dark: #242424;
     --background-color: var(--light);
@@ -74,7 +73,6 @@ a {
     color: inherit;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-weight: var(--font-weight-bold);
 
     &:hover {
         color: #555555;
@@ -170,6 +168,7 @@ button[disabled] {
     gap: 0.5rem;
     width: fit-content;
     cursor: pointer;
+    font-weight: var(--font-weight-bold);
 }
 
 .nav-item {
@@ -212,7 +211,7 @@ button[disabled] {
         font-size: 1.5rem;
 
         > svg {
-            color: var(--white);
+            color: var(--light);
         }
     }
 }
@@ -236,6 +235,10 @@ button[disabled] {
         --gutter: 1rem;
         --top-gutter: 6rem;
         --bottom-gutter: 8rem;
+    }
+
+    .desktop-only {
+        display: none;
     }
 }
 

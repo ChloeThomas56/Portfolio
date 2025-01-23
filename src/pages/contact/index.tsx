@@ -13,7 +13,7 @@ export default function Contact() {
             <PageTransition>
                 <div className="wrapper">
                     <Title>
-                        Me contacter
+                        Contact
                     </Title>
                     <section className="contact__intro">
                         <p>

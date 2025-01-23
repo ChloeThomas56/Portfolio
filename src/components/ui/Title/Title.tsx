@@ -7,8 +7,8 @@ export default function Title({ as: Tag = "h1", children }: { as?: React.Element
             <span className="line-wrapper">
                 <motion.span
                     variants={textReveal}
-                    initial="hidden"
-                    animate="visible"
+                    initial="initial"
+                    animate="enter"
                 >
                     {children}
                 </motion.span>

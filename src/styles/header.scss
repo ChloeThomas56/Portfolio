@@ -4,11 +4,20 @@
     z-index: 10;
     padding: var(--gutter) var(--gutter) 0 var(--gutter);
     overflow: hidden;
+    color: var(--light);
+    mix-blend-mode: difference;
+
+    &__inner, &__controls {
+        display: flex;
+        align-items: center;
+    }
 
     &__inner {
-        display: flex;
         justify-content: space-between;
-        align-items: center;
+    }
+
+    &__controls {
+        gap: 2.5rem;
     }
 
     &__nav {
@@ -24,11 +33,30 @@
     }
 }
 
+.language-switch {
+    display: flex;
+    gap: 0.25rem;
+    background-color: var(--dark);
+    padding: 0.25rem;
+    border-radius: 5px;
+    
+    &__button {
+        color: var(--light);
+        padding: 0.25rem; 
+        border-radius: 2px;
+        transition: background-color 0.3s ease;
+
+        &--active, &:hover {
+            background-color: #464646;
+        }
+    }
+}
+
 .burger-menu-container {
     display: none;
 }
 
-.mobile-nav {
+.mobile-menu {
     display: none;
 }
 
@@ -60,7 +88,7 @@
             text-transform: uppercase;
             font-size: 0.8rem;
             text-align: right;
-            font-weight: var(--font-weight-bold);
+            color: var(--light);
             transition: all 1s cubic-bezier(.19,1,.22,1);
         }
     }
@@ -70,7 +98,7 @@
         transform: translateY(-15px);
     }
 
-    .mobile-nav {
+    .mobile-menu {
         position: fixed;
         width: 100vw;
         height: 100vh;
@@ -80,24 +108,29 @@
         padding-left: 20%;
         background-color: var(--background-color);
         transition: background-color 1.2s ease;
-    
-        > ul {
+        color: var(--light);
+
+        &__inner {
             height: 100dvh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
-            gap: 0.5rem;
+            gap: 2rem;
+            mix-blend-mode: difference;
+        }
     
-            > li {
-                overflow: hidden;
-            }
+        ul li {
+            padding: 0.25rem 0;
+            overflow: hidden;
+            font-size: var(--font-size-xlarge);
+            font-family: var(--font-bricolage-grotesque);
         }
     }
 }
 
 @media (max-width: 768px) {
-    .mobile-nav {
+    .mobile-menu {
         padding-left: var(--gutter);
     }
 }

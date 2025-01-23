@@ -1,8 +1,10 @@
 import { usePathname } from 'next/navigation';
 import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling/SmoothScrolling';
 import { AnimatePresence, motion } from "framer-motion";
-import { mobileNavFade, mobileNavSlide } from '@/lib/variants';
+import { mobileMenuFade, mobileMenuSlide } from '@/lib/variants';
 import Link from 'next/link';
+import { textReveal } from '@/lib/variants';
+import SwitchLanguage from '../SwitchLanguage/SwitchLanguage';
 
 interface LinkProps {
     name: string;
@@ -21,12 +23,12 @@ export default function MobileNav({ links, show, setShow }: { links: LinkProps[]
     return (
         <AnimatePresence>
             {show && (
-                <motion.nav
-                    variants={mobileNavFade}
+                <motion.div
+                    variants={mobileMenuFade}
                     initial="initial"
                     animate="enter"
                     exit="exit"
-                    className="mobile-nav"
+                    className="mobile-menu"
                     onAnimationStart={(variant) => {
                         if (variant === 'enter') {
                             lenis?.stop();
@@ -40,25 +42,41 @@ export default function MobileNav({ links, show, setShow }: { links: LinkProps[]
                         }
                     }}
                 >
-                    <motion.ul
-                        variants={mobileNavSlide}
-                        initial="initial"
-                        animate="enter"
-                        exit="exit"
-                    >
-                        {links.map((link) => (
-                            <li key={link.name} >
-                                <Link 
-                                    href={link.href} 
-                                    className="nav-item"
-                                    onClick={() => handleClick(link.href)}
-                                    scroll={false}>
-                                    {link.name}
-                                </Link>
-                            </li>
-                        ))}
-                    </motion.ul>
-                </motion.nav>
+                    <div className="mobile-menu__inner">
+                        <nav>
+                            <ul>
+                                {links.map((link) => (
+                                    <li key={link.name}>
+                                        <motion.div
+                                            variants={textReveal}
+                                            initial="initial"
+                                            animate="enter"
+                                            exit="exit"
+                                        >
+                                            <Link 
+                                                href={link.href} 
+                                                onClick={() => handleClick(link.href)}
+                                                scroll={false}
+                                            >
+                                                {link.name}
+                                            </Link>
+                                        </motion.div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </nav>
+                        <div style={{overflow: 'hidden'}}>
+                            <motion.div
+                                variants={textReveal}
+                                initial="initial"
+                                animate="enter"
+                                exit="exit"
+                            >
+                                <SwitchLanguage onClick={() => setShow(false)} />
+                            </motion.div>
+                        </div>
+                    </div>
+                </motion.div>
             )}
         </AnimatePresence>
     )

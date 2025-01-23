@@ -8,7 +8,7 @@ import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
 
 export default function Home() {
     const { locale } = useRouter();
-    const t = locale === 'fr' ? fr : en;
+    const t = locale === 'en' ? en : fr;
 
     return (
         <>

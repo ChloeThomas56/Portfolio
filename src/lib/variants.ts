@@ -1,17 +1,5 @@
 import { Variants } from 'framer-motion';
 
-export const textReveal: Variants = {
-    hidden: { 
-        opacity: 0, 
-        y: "100%" 
-    },
-    visible: {
-        opacity: 1, 
-        y: 0,
-        transition: { duration: 0.8, delay: 0.2, ease: [0.2, 1, 0.66, 1] }
-    }
-}
-
 export const pageTransition: Variants = {
     initial: {
         opacity: 0, 
@@ -28,6 +16,23 @@ export const pageTransition: Variants = {
     }
 }
 
+export const textReveal: Variants = {
+    initial: { 
+        opacity: 0, 
+        y: "100%" 
+    },
+    enter: {
+        opacity: 1, 
+        y: 0,
+        transition: { duration: 0.8, delay: 0.2, ease: [0.2, 1, 0.66, 1] }
+    },
+    exit: {
+        opacity: 0, 
+        y: "-100%" ,
+        transition: { duration: 0.8, ease: [0.2, 1, 0.66, 1] }
+    }
+}
+
 export const shapesFadeIn: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -36,7 +41,7 @@ export const shapesFadeIn: Variants = {
     },
 }
 
-export const mobileNavFade: Variants = {
+export const mobileMenuFade: Variants = {
     initial: { opacity: 0 },
     enter: {
         opacity: 1,
@@ -44,11 +49,11 @@ export const mobileNavFade: Variants = {
     },
     exit: {
         opacity: 0,
-        transition: { duration: 0.9, delay: 0.4 } 
+        transition: { duration: 0.5, delay: 0.4 } 
     }
 }
 
-export const mobileNavSlide: Variants = {
+export const mobileMenuSlide: Variants = {
     initial: { 
         y: -300, 
         opacity: 0 

@@ -1,7 +1,6 @@
 import '@/styles/globals.scss';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-//import { I18nProvider } from '../../locales';
 import { inter, bricolage_grotesque } from '@/lib/font';
 import SmoothScrolling from '@/components/ui/SmoothScrolling/SmoothScrolling';
 import Header from '@/components/Header/Header';
