@@ -1,12 +1,10 @@
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
 
-export default function SwitchLanguage({ onClick }: { onClick?: () => void }) {
+export default function SwitchLanguage() {
     const router = useRouter();
 
     const switchLanguage = (locale: string) => {
-        if (onClick) onClick();
-
         router.push(router.asPath, router.asPath, { locale });
     }
 

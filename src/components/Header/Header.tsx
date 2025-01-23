@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import { textReveal } from '@/lib/variants';
 import Link from 'next/link';
@@ -9,7 +9,7 @@ import MobileNav from '../ui/MobileNav/MobileNav';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen]   = useState(false);
-    const pathname                      = usePathname();
+    const { pathname, locale }          = useRouter();
         
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -17,7 +17,7 @@ export default function Header() {
 
     useEffect(() => {
         setIsMenuOpen(false);
-    }, [pathname]);
+    }, [pathname, locale]);
 
     const links = [
         { name: 'Accueil', href: '/'},

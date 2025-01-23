@@ -72,7 +72,7 @@ export default function MobileNav({ links, show, setShow }: { links: LinkProps[]
                                 animate="enter"
                                 exit="exit"
                             >
-                                <SwitchLanguage onClick={() => setShow(false)} />
+                                <SwitchLanguage />
                             </motion.div>
                         </div>
                     </div>
