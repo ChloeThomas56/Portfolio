@@ -1,13 +1,26 @@
+import { useTranslation } from '@/context/TranslationContext';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
 import Title from '@/components/ui/Title/Title';
 import Link from 'next/link';
 
 export default function Legal() {
+    const { t }     = useTranslation();
+    const router    = useRouter();
+
     return (
         <>
             <Head>
                 <title>Chloé Thomas | Mentions légales</title>
+                {router.locales?.map((locale) => (
+                    <link 
+                        key={locale} 
+                        rel="alternate" 
+                        hrefLang={locale} 
+                        href={`https://www.chloethomas.me${locale === 'en' ? `/${locale}` : ''}${router.asPath}`} 
+                    />
+                ))}
             </Head>
             <PageTransition>
                 <div className="wrapper">

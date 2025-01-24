@@ -1,16 +1,26 @@
 import { useTranslation } from '@/context/TranslationContext';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
 import Title from '@/components/ui/Title/Title';
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
 
 export default function Home() {
-    const { home } = useTranslation();
+    const { t }     = useTranslation();
+    const router    = useRouter();
 
     return (
         <>
             <Head>
                 <title>Chloé Thomas</title>
+                {router.locales?.map((locale) => (
+                    <link 
+                        key={locale} 
+                        rel="alternate" 
+                        hrefLang={locale} 
+                        href={`https://www.chloethomas.me${locale === 'en' ? `/${locale}` : ''}`} 
+                    />
+                ))}
             </Head>
             <PageTransition>
                 <div className="centered-wrapper home">
@@ -18,19 +28,19 @@ export default function Home() {
                         Chloé Thomas,
                     </Title>
                     <Title as="h2">
-                        {home.subtitle}
+                        {t.home.subtitle}
                     </Title>
                     <p>
-                        Passionnée par le développement front-end, je conçois des interfaces modernes alliant design et performance.
+                        {t.home.paragraph_first}
                         <br/>
-                        Découvrez mon univers et mes projets&nbsp;!
+                        {t.home.paragraph_second}
                     </p>
                     <nav className="home__nav">
                         <CustomLink href="/work">
-                            Voir mes projets
+                            {t.home.cta_projects}
                         </CustomLink>
                         <CustomLink href="/about">
-                            En savoir plus
+                            {t.home.cta_about}
                         </CustomLink>
                     </nav>
                 </div>

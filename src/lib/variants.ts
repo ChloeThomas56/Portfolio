@@ -38,7 +38,7 @@ export const shapesFadeIn: Variants = {
     visible: {
         opacity: 1,
         transition: { duration: 1, delay: 0.25 }
-    },
+    }
 }
 
 export const mobileMenuFade: Variants = {
@@ -47,27 +47,10 @@ export const mobileMenuFade: Variants = {
         opacity: 1,
         transition: { duration: 0.5 }
     },
-    exit: {
+    exit: (custom) => ({
         opacity: 0,
-        transition: { duration: 0.5, delay: 0.4 } 
-    }
-}
-
-export const mobileMenuSlide: Variants = {
-    initial: { 
-        y: -300, 
-        opacity: 0 
-    },
-    enter: {
-        y: 0, 
-        opacity: 1,
-        transition: { duration: 1.5, delay: 0.4, ease: [0.19, 1, 0.22, 1] }
-    },
-    exit: {
-        y: -200,
-        opacity: 0,
-        transition: { duration: 1.2, ease: [0.19, 1, 0.22, 1] }
-    }
+        transition: { duration: 0.5, delay: custom?.exitDelay || 0 }
+    })
 }
 
 export const modalBlur: Variants = {

@@ -1,3 +1,4 @@
+import { useTranslation } from '@/context/TranslationContext';
 import { useEffect } from 'react';
 import Title from '../ui/Title/Title';
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
@@ -25,6 +26,7 @@ interface ProjectProps {
 }
 
 export default function Project({ project, previousProject, nextProject }: ProjectProps) {
+    const { t } = useTranslation();
 
     useEffect(() => {
         document.documentElement.style.setProperty('--background-color', project?.background);
@@ -48,13 +50,13 @@ export default function Project({ project, previousProject, nextProject }: Proje
                 <div className="project__technical-data">
                     <div>
                         <span className="project__technical-data-label">
-                            Année
+                            {t.projects.label_year}
                         </span>
                         <span>{project.year}</span>
                     </div>
                     <div>
                         <span className="project__technical-data-label">
-                            Outils
+                            {t.projects.label_stack}
                         </span>
                         <span>{project.stack}</span>
                     </div>
@@ -64,7 +66,7 @@ export default function Project({ project, previousProject, nextProject }: Proje
                     {project.url && project.url.length > 0 && (
                         <div className="project__url-container">
                             <CustomLink href={project.url} target="_blank" rel="noopener noreferrer">
-                                Visiter le site
+                                {t.projects.cta_live_site}
                             </CustomLink>
                         </div>
                     )}
@@ -89,7 +91,7 @@ export default function Project({ project, previousProject, nextProject }: Proje
                         <Link 
                             href={`/work/${previousProject.slug}`} scroll={false}
                             className="project__navigation--backward">
-                            Précédent
+                            {t.projects.nav_previous}
                         </Link>
                     ) 
                 }
@@ -98,7 +100,7 @@ export default function Project({ project, previousProject, nextProject }: Proje
                         <Link 
                             href={`/work/${nextProject.slug}`} scroll={false}
                             className="project__navigation--forward">
-                            Suivant
+                            {t.projects.nav_next}
                         </Link>
                     )
                 }

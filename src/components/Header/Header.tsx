@@ -1,6 +1,7 @@
+import { useTranslation } from '@/context/TranslationContext';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { textReveal } from '@/lib/variants';
 import Link from 'next/link';
 import SwitchLanguage from '../ui/SwitchLanguage/SwitchLanguage';
@@ -8,6 +9,7 @@ import BurgerMenu from '../ui/BurgerMenu/BurgerMenu';
 import MobileNav from '../ui/MobileNav/MobileNav';
 
 export default function Header() {
+    const { t }                         = useTranslation();
     const [isMenuOpen, setIsMenuOpen]   = useState(false);
     const { pathname, locale }          = useRouter();
         
@@ -20,44 +22,55 @@ export default function Header() {
     }, [pathname, locale]);
 
     const links = [
-        { name: 'Accueil', href: '/'},
-        { name: 'Projets', href: '/work'},
-        { name: 'À propos', href: '/about'},
-        { name: 'Contact', href: '/contact'},
+        { name: t.common.link_home, href: '/'},
+        { name: t.common.link_projects, href: '/work'},
+        { name: t.common.link_about, href: '/about'},
+        { name: t.common.link_contact, href: '/contact'},
     ];
 
     return (
         <>
             <header className="header">
-                <motion.div 
-                    className="header__inner"
-                    variants={textReveal}
-                    initial="initial"
-                    animate="enter"
-                >
-                    <div>
+                <div className="header__inner">
+                    <motion.div
+                        variants={textReveal}
+                        initial="initial"
+                        animate="enter"
+                    >
                         <Link href="/" className="nav-item header__nav-item" scroll={false}>
                             CT.
                         </Link>
-                    </div>
+                    </motion.div>
                     <div className="header__controls">
                         <nav className="header__nav">
-                            <ul>
-                                {links.map((link) => (
-                                    <li key={link.name} >
-                                        <Link href={link.href} className="nav-item header__nav-item" scroll={false}>
-                                            {link.name}
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
+                            <AnimatePresence mode="wait">
+                                <motion.ul
+                                    key={locale}
+                                    variants={textReveal}
+                                    initial="initial"
+                                    animate="enter"
+                                    exit="exit"
+                                >
+                                    {links.map((link) => (
+                                        <li key={link.name} >
+                                            <Link href={link.href} className="nav-item header__nav-item" scroll={false}>
+                                                {link.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </motion.ul>
+                            </AnimatePresence>
                         </nav>
-                        <div className="desktop-only">
+                        <motion.div 
+                            variants={textReveal}
+                            initial="initial"
+                            animate="enter"
+                            className="desktop-only">
                             <SwitchLanguage />
-                        </div>
+                        </motion.div>
                     </div>
                     <BurgerMenu toggleMenu={toggleMenu} isOpen={isMenuOpen} />
-                </motion.div>
+                </div>
             </header>
             <MobileNav links={links} show={isMenuOpen} setShow={setIsMenuOpen} />
         </>

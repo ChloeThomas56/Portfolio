@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { useTranslation } from '@/context/TranslationContext';
 import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling/SmoothScrolling';
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
@@ -6,8 +7,10 @@ import { pageTransition } from '@/lib/variants';
 import Footer from '@/components/Footer/Footer';
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
-    const router    = useRouter();
-    const lenis     = useSmoothScrollingControl();
+    const router                = useRouter();
+    const locale                = router.locale;
+    const { setVisibleLocale }  = useTranslation();
+    const lenis                 = useSmoothScrollingControl();
 
     useEffect(() => {
         if ('scrollRestoration' in window.history)
@@ -44,8 +47,10 @@ export default function PageTransition({ children }: { children: React.ReactNode
             onAnimationStart={(variant) => {
                 disableScroll();
 
-                if (variant === 'enter') 
-                    window.scrollTo(0,0);            
+                if (variant === 'enter') {
+                    window.scrollTo(0,0);
+                    setVisibleLocale(locale);
+                }            
             }}
             onAnimationComplete={(variant) => {
                 if (variant === 'enter')

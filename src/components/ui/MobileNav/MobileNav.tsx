@@ -1,7 +1,8 @@
+import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling/SmoothScrolling';
 import { AnimatePresence, motion } from "framer-motion";
-import { mobileMenuFade, mobileMenuSlide } from '@/lib/variants';
+import { mobileMenuFade } from '@/lib/variants';
 import Link from 'next/link';
 import { textReveal } from '@/lib/variants';
 import SwitchLanguage from '../SwitchLanguage/SwitchLanguage';
@@ -12,12 +13,19 @@ interface LinkProps {
 }
 
 export default function MobileNav({ links, show, setShow }: { links: LinkProps[], show: boolean, setShow: (show: boolean) => void }) {
-    const pathname  = usePathname();
-    const lenis     = useSmoothScrollingControl();
+    const [ delay, setDelay ]   = useState(0);
+    const pathname              = usePathname();
+    const lenis                 = useSmoothScrollingControl();
+
+    useEffect(() => {
+        setDelay(0);
+    }, [show]);
 
     const handleClick = (href: string) => {
         if (pathname === href)
             setShow(false);
+        else
+            setDelay(0.4);
     };
 
     return (
@@ -28,6 +36,7 @@ export default function MobileNav({ links, show, setShow }: { links: LinkProps[]
                     initial="initial"
                     animate="enter"
                     exit="exit"
+                    custom={{ exitDelay: delay }}
                     className="mobile-menu"
                     onAnimationStart={(variant) => {
                         if (variant === 'enter') {
@@ -72,7 +81,7 @@ export default function MobileNav({ links, show, setShow }: { links: LinkProps[]
                                 animate="enter"
                                 exit="exit"
                             >
-                                <SwitchLanguage />
+                                <SwitchLanguage onClick={() => setDelay(0.4)} />
                             </motion.div>
                         </div>
                     </div>

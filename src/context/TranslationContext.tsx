@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import fr from '../../locales/fr';
 import en from '../../locales/en';
@@ -10,10 +10,12 @@ const TranslationContext = createContext<Record<string, any> | undefined>(undefi
 export const TranslationProvider = ({ children }: { children: React.ReactNode }) => {
     const { locale } = useRouter();
     const [ visibleLocale, setVisibleLocale ] = useState(locale);
-    const currentTranslations = translations[locale as keyof typeof translations] || fr;
+    const t = useMemo(() => {
+        return translations[visibleLocale as keyof typeof translations] || fr;
+    }, [visibleLocale]);
   
     return (
-        <TranslationContext.Provider value={currentTranslations}>
+        <TranslationContext.Provider value={{t, setVisibleLocale}}>
             {children}
         </TranslationContext.Provider>
     );

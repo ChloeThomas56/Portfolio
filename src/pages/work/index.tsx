@@ -1,3 +1,5 @@
+import { useTranslation } from '@/context/TranslationContext';
+import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
@@ -8,6 +10,10 @@ import { MdArrowOutward } from 'react-icons/md';
 import CustomImage from '@/components/ui/CustomImage/CustomImage';
 
 export default function Work() {
+    const { t }     = useTranslation();
+    const router    = useRouter();
+    const title     = `Chloé Thomas | ${t.projects.title}`
+
     useEffect(() => {
         document.documentElement.style.setProperty('--background-color', '#fff9ef');
         document.documentElement.style.setProperty('--shape-color', '#f4e7c1');
@@ -24,12 +30,20 @@ export default function Work() {
     return (
         <>
             <Head>
-                <title>Chloé Thomas | Projets</title>
+                <title>{title}</title>
+                {router.locales?.map((locale) => (
+                    <link 
+                        key={locale} 
+                        rel="alternate" 
+                        hrefLang={locale} 
+                        href={`https://www.chloethomas.me${locale === 'en' ? `/${locale}` : ''}${router.asPath}`} 
+                    />
+                ))}
             </Head>
             <PageTransition>
                 <div className="wrapper">
                     <Title>
-                        Projets
+                        {t.projects.title}
                     </Title>
                     <ol className="projects-list">
                         {projects.map((project, index) => (
@@ -44,7 +58,7 @@ export default function Work() {
                                         </h2>
                                         <span>
                                             <MdArrowOutward />
-                                            Voir
+                                            {t.projects.cta}
                                         </span>
                                     </div>
                                     <div className="projects-list__item-illustration">

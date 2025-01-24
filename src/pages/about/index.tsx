@@ -1,3 +1,5 @@
+import { useTranslation } from '@/context/TranslationContext';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
 import Title from '@/components/ui/Title/Title';
@@ -5,10 +7,21 @@ import CustomImage from '@/components/ui/CustomImage/CustomImage';
 import { MdArrowOutward } from 'react-icons/md';
 
 export default function About() {
+    const { t }     = useTranslation();
+    const router    = useRouter();
+
     return (
         <>
             <Head>
                 <title>Chloé Thomas | À propos</title>
+                {router.locales?.map((locale) => (
+                    <link 
+                        key={locale} 
+                        rel="alternate" 
+                        hrefLang={locale} 
+                        href={`https://www.chloethomas.me${locale === 'en' ? `/${locale}` : ''}${router.asPath}`} 
+                    />
+                ))}
             </Head>
             <PageTransition>
                 <div className="wrapper">

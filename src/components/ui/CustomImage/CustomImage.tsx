@@ -5,10 +5,12 @@ export default function CustomImage({...props}: ImageProps) {
     const [isLoaded, setLoaded] = useState(false);
 
     return (
-        <Image
-            {...props}
-            style={{opacity: isLoaded ? 1 : 0}}
-            onLoad={() => setLoaded(true)}
-        />
+        <div className="img-container">
+            <Image
+                {...props}
+                style={{opacity: isLoaded ? 1 : 0}}
+                onLoad={() => setLoaded(true)}
+            />
+        </div>
     )
 }

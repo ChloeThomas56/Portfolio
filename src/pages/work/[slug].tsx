@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import projects from '@/lib/projects.json';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
 import Project from '@/components/Project/Project';
@@ -45,6 +46,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 export default function ProjectPage({ project }: Props) {
     if (!project) return null;
 
+    const router = useRouter();
+
     const currentIndex = projects.findIndex((p) => p.slug === project.slug);
     const previousProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
     const nextProject = currentIndex < (projects.length - 1) ? projects[currentIndex + 1] : null;
@@ -55,6 +58,14 @@ export default function ProjectPage({ project }: Props) {
         <>
             <Head>
                 <title>{title}</title>
+                {router.locales?.map((locale) => (
+                    <link 
+                        key={locale} 
+                        rel="alternate" 
+                        hrefLang={locale} 
+                        href={`https://www.chloethomas.me${locale === 'en' ? `/${locale}` : ''}${router.asPath}`} 
+                    />
+                ))}
             </Head>
             <PageTransition>
                 <Project project={project} previousProject={previousProject} nextProject={nextProject} />
