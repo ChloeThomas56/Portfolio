@@ -1,0 +1,20 @@
+export default {
+    'title': 'Mentions légales',
+    'subtitle_publisher': 'Éditeur',
+    'subtitle_host': 'Hébergeur',
+    'subtitle_ip': 'Propriété intellectuelle',
+    'subtitle_data': 'Données personnelles',
+    'subtitle_responsibility': 'Responsabilité',
+    'subtitle_changes': 'Modification',
+    'paragraph_website': 'Le site\u00a0',
+    'paragraph_contact': 'Contact\u00a0:\u00a0',
+    'paragraph_publisher_name': ' est édité par Chloé Thomas.',
+    'paragraph_publisher_siret': 'SIRET\u00a0:',
+    'paragraph_publisher_headquarters': 'Siège social\u00a0:',
+    'paragraph_host_name': ' est hébergé par Vercel Inc.',
+    'paragraph_host_headquarters': 'Siège social\u00a0:',
+    'paragraph_ip': "L'ensemble des contenus de ce site est la propriété exclusive de Chloé Thomas, sauf indication contraire. Toute reproduction ou représentation totale ou partielle de ce site, sans autorisation expresse, est interdite et constituerait une contrefaçon.",
+    'paragraph_data': "Ce site ne collecte pas de données personnelles. Les informations fournies par les utilisateurs via le formulaire de contact sont uniquement utilisées pour répondre aux demandes et ne sont pas stockées ni partagées.",
+    'paragraph_responsibility': "Le site peut contenir des liens vers des sites externes. Nous déclinons toute responsabilité quant au contenu de ces sites et à toute éventuelle conséquence découlant de leur utilisation.",
+    'paragraph_changes': "Nous nous réservons le droit de modifier les présentes mentions légales à tout moment. Il est recommandé de les consulter régulièrement pour prendre connaissance de toute mise à jour."
+} as const

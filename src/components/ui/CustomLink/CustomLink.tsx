@@ -11,7 +11,7 @@ export function CustomLink({ children, className, onClick, ...props }: CustomLin
     return (
         <Link 
             {...props}
-            className={`link ${className || ''}`} 
+            className={`link hover-underline ${className || ''}`} 
             onClick={onClick}
             scroll={false}>
             <MdArrowOutward />

@@ -38,6 +38,10 @@
         font-size: var(--font-size-medium);
         padding: 1rem 0;
         line-height: 1.5;
+
+        &:-webkit-autofill, &:-webkit-autofill:focus {
+            transition: background-color 0s 600000s, color 0s 600000s !important;
+        }
     }
 
     &__smiley {

@@ -35,7 +35,7 @@
         }
 
         &-gradient stop {
-            transition: stop-color 1.2s ease;
+            transition: stop-color var(--color-transition);
         }
     }
 }

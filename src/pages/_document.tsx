@@ -4,9 +4,11 @@ export default function Document() {
     return (
         <Html suppressHydrationWarning>
             <Head>
-                <meta name="description" content="Développeuse web freelance passionnée par la création et le design. Je conçois des sites et applications web sur-mesure." />
-                <meta name="keywords" content="développement web, front-end, création de sites, react" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+                <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+                <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+                <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+                <link rel="manifest" href="/site.webmanifest" />
             </Head>
             <body>
                 <Main />

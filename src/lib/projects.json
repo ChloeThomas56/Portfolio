@@ -3,7 +3,8 @@
         "id": 4,
         "name": "CipherNet",
         "slug": "ciphernet",
-        "text": "CipherNet est un site one-page fictif conçu pour présenter les services d'une entreprise spécialisée en cybersécurité. Imaginé pour offrir une expérience utilisateur dynamique et immersive, le site présente des animations interactives inspirées de références primées aux CSS Design Awards. Également conçu comme une vitrine technique, CipherNet vous permet de découvrir un panel d'effets et de transitions fluides qui sauront dynamiser votre site web ou portfolio, et retenir l'attention de vos visiteurs.",
+        "text_fr": "CipherNet est un site one-page fictif conçu pour présenter les services d'une entreprise spécialisée en cybersécurité. Imaginé pour offrir une expérience utilisateur dynamique et immersive, le site présente des animations interactives inspirées de références primées aux CSS Design Awards. Également conçu comme une vitrine technique, CipherNet vous permet de découvrir un panel d'effets et de transitions fluides qui sauront dynamiser votre site web ou portfolio et retenir l'attention de vos visiteurs.",
+        "text_en": "CipherNet is a fictional one-page website created to showcase the services of a cybersecurity company. Designed to provide a dynamic and immersive user experience, the site features interactive animations inspired by CSS Design Awards winners. Additionally, as a technical showcase, CipherNet offers a collection of smooth effects and transitions that can enhance your website or portfolio, and capture the attention of your visitors.",
         "image_home": "/images/projects/ciphernet/ciphernet_home.avif",
         "images": [
             "/images/projects/ciphernet/ciphernet_home.avif",
@@ -14,15 +15,16 @@
         "year": "2024",
         "stack": "Next.js, GSAP, Framer Motion, Lenis",
         "url": "https://ciphernet-rouge.vercel.app/",
-        "background": "#e2e6ec",
-        "color": "#c5c9d0",
-        "shadow": "#919497"
+        "color_bg": "#e2e6ec",
+        "color_primary": "#c5c9d0",
+        "color_secondary": "#919497"
     },
     {
         "id": 3,
         "name": "Sports-Village",
         "slug": "sports-village",
-        "text": "Sports-Village, c'est une plateforme qui permet aux clubs sportifs amateurs de créer et d'administrer leur propre boutique en ligne, offrant ainsi à leurs adhérents des produits personnalisés aux couleurs du club. Durant deux années passées chez Sports-Village, j'ai participé à l'évolution des fonctionnalités, à la refonte UX/UI de la plateforme et au développement d'un tableau de bord permettant aux administrateurs des clubs la gestion complète de leur boutique, de leurs cotisations, des newsletters, et d'autres services.",
+        "text_fr": "Sports-Village, c'est une plateforme qui permet aux clubs sportifs amateurs de créer et d'administrer leur propre boutique en ligne, offrant ainsi à leurs adhérents des produits personnalisés aux couleurs du club. Durant deux années passées chez Sports-Village, j'ai participé à l'évolution des fonctionnalités, à la refonte UX/UI de la plateforme et au développement d'un tableau de bord permettant aux administrateurs des clubs la gestion complète de leur boutique, de leurs cotisations, des newsletters, et d'autres services.",
+        "text_en": "Sports-Village is a platform that enables amateur sports clubs to create and manage their own online store, offering their members customized products in the club's colors. During my two years at Sports-Village, I contributed to the evolution of the platform's features, led the UX/UI redesign, and developed a dashboard that allows club administrators to fully manage their store, memberships, newsletters and other services.",
         "image_home": "/images/projects/sv/sv_store.avif",
         "images": [
             "/images/projects/sv/sv_home.avif",
@@ -33,33 +35,35 @@
         "year": "2022-2024",
         "stack": "Nuxt.js, Laravel",
         "url": "",
-        "background": "#f1f4ff",
-        "color": "#dfe4f4",
-        "shadow": "#b2bae0"
+        "color_bg": "#f1f4ff",
+        "color_primary": "#dfe4f4",
+        "color_secondary": "#b2bae0"
     },
     {
         "id": 2,
         "name": "Les Pendules de Minerve",
         "slug": "lespendulesdeminerve",
-        "text": "Les Pendules de Minerve est une boutique en ligne spécialisée dans la vente de pendules de radiesthésie. J'ai réalisé ce projet sur Wordpress, en concevant une plateforme e-commerce fluide et responsive. Le site permet une gestion simplifiée et efficace des produits, des paiements en ligne et des commandes, tout en étant optimisé pour le référencement naturel afin d'améliorer la visibilité de la boutique sur les moteurs de recherche.",
+        "text_fr": "Les Pendules de Minerve est une boutique en ligne spécialisée dans la vente de pendules de radiesthésie. J'ai réalisé ce projet sur WordPress, en concevant une plateforme e-commerce fluide et responsive. Le site permet une gestion simplifiée et efficace des produits, des paiements en ligne et des commandes, tout en étant optimisé pour le référencement naturel afin d'améliorer la visibilité de la boutique sur les moteurs de recherche.",
+        "text_en": "Les Pendules de Minerve is an online store specializing in the sale of dowsing pendulums. I created this project using WordPress, designing a seamless, responsive e-commerce platform. The site enables simplified and efficient management of products, online payments, and orders, while being optimized for search engine optimization (SEO) to enhance the store's visibility online.",
         "image_home": "/images/projects/lpdm/lpdm_store.avif",
         "images": [
             "/images/projects/lpdm/lpdm_home.avif",
             "/images/projects/lpdm/lpdm_store.avif",
             "/images/projects/lpdm/lpdm_product.avif"
         ],
-        "year": "2023",
-        "stack": "Wordpress",
+        "year": "2024",
+        "stack": "WordPress",
         "url": "https://www.lespendulesdeminerve.com/",
-        "background": "#f6f0ee",
-        "color": "#d7d7ca",
-        "shadow": "#a99f9b"
+        "color_bg": "#f6f0ee",
+        "color_primary": "#d7d7ca",
+        "color_secondary": "#a99f9b"
     },
     {
         "id": 1,
         "name": "Geobio56",
         "slug": "geobio56",
-        "text": "Dans le cadre de son activité de géobiologie, Jean-François Thomas souhaitait améliorer sa présence en ligne. J'ai donc réalisé une refonte complète de son site vitrine Wordpress, le modernisant et assurant une expérience utilisateur optimale sur tous les appareils. J'ai restructuré l'interface pour la rendre plus intuitive et responsive, tout en améliorant le référencement naturel afin d'augmenter sa visibilité sur les moteurs de recherche.",
+        "text_fr": "Dans le cadre de son activité de géobiologie, Jean-François Thomas souhaitait améliorer sa présence en ligne. J'ai donc réalisé une refonte complète de son site vitrine WordPress, le modernisant et assurant une expérience utilisateur optimale sur tous les appareils. J'ai restructuré l'interface pour la rendre plus intuitive et responsive, tout en améliorant le référencement naturel afin d'augmenter sa visibilité sur les moteurs de recherche.",
+        "text_en": "As part of his geobiology business, Jean-François Thomas wanted to enhance his online presence. I therefore carried out a complete redesign of his WordPress showcase website, modernizing it and ensuring an optimal user experience across all devices. I restructured the interface to make it more intuitive and responsive, while improving its search engine optimization (SEO) to increase its visibility online.",
         "image_home": "/images/projects/geobio/geobio_home.avif",
         "images": [
             "/images/projects/geobio/geobio_home.avif",
@@ -67,10 +71,10 @@
             "/images/projects/geobio/geobio_actu.avif"
         ],
         "year": "2024",
-        "stack": "Wordpress",
+        "stack": "WordPress",
         "url": "https://geobio56.fr/",
-        "background": "#f3f8ff",
-        "color": "#d6dfe2",
-        "shadow": "#9dabb1"
+        "color_bg": "#f3f8ff",
+        "color_primary": "#d6dfe2",
+        "color_secondary": "#9dabb1"
     }
 ]

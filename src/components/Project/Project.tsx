@@ -2,6 +2,8 @@ import { useTranslation } from '@/context/TranslationContext';
 import { useEffect } from 'react';
 import Title from '../ui/Title/Title';
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
+import { motion } from 'framer-motion';
+import { projectsImagesSlidUp } from '@/lib/variants';
 import CustomImage from '../ui/CustomImage/CustomImage';
 import Link from 'next/link';
 
@@ -9,14 +11,15 @@ interface Project {
     id: number;
     name: string;
     slug: string;
-    text: string;
+    text_fr: string;
+    text_en: string;
     images: string[];
     year: string;
     stack: string;
     url: string;
-    background: string;
-    color: string;
-    shadow: string;
+    color_bg: string;
+    color_primary: string;
+    color_secondary: string;
 }
 
 interface ProjectProps {
@@ -26,17 +29,17 @@ interface ProjectProps {
 }
 
 export default function Project({ project, previousProject, nextProject }: ProjectProps) {
-    const { t } = useTranslation();
+    const { t, visibleLocale } = useTranslation();
 
     useEffect(() => {
-        document.documentElement.style.setProperty('--background-color', project?.background);
-        document.documentElement.style.setProperty('--shape-color', project?.color);
-        document.documentElement.style.setProperty('--shape-shadow-color', project?.shadow);
+        document.documentElement.style.setProperty('--background-color', project?.color_bg);
+        document.documentElement.style.setProperty('--shape-color-primary', project?.color_primary);
+        document.documentElement.style.setProperty('--shape-color-secondary', project?.color_secondary);
 
         return () => {
             document.documentElement.style.removeProperty('--background-color');
-            document.documentElement.style.removeProperty('--shape-color');
-            document.documentElement.style.removeProperty('--shape-shadow-color');
+            document.documentElement.style.removeProperty('--shape-color-primary');
+            document.documentElement.style.removeProperty('--shape-color-secondary');
         }; 
 
     }, [project]);
@@ -62,7 +65,7 @@ export default function Project({ project, previousProject, nextProject }: Proje
                     </div>
                 </div>
                 <div className="project__description" >
-                    <p>{project.text}</p>
+                    <p>{project[`text_${visibleLocale}` as keyof Project]}</p>
                     {project.url && project.url.length > 0 && (
                         <div className="project__url-container">
                             <CustomLink href={project.url} target="_blank" rel="noopener noreferrer">
@@ -72,39 +75,45 @@ export default function Project({ project, previousProject, nextProject }: Proje
                     )}
                 </div>
             </section>
-            <section className="project__images">
-                {project.images.map((img, index) => (
-                    <CustomImage
-                        key={`${img}${index}`}
-                        src={img}
-                        width={1900}
-                        height={1140}
-                        className="project__image"
-                        alt={`illustration du site ${project.name}`}
-                        priority={index === 0}
-                    />
-                ))}
-            </section>
-            <div className="project__navigation">
-                {previousProject && 
-                    (
-                        <Link 
-                            href={`/work/${previousProject.slug}`} scroll={false}
-                            className="project__navigation--backward">
-                            {t.projects.nav_previous}
-                        </Link>
-                    ) 
-                }
-                {nextProject &&
-                    (
-                        <Link 
-                            href={`/work/${nextProject.slug}`} scroll={false}
-                            className="project__navigation--forward">
-                            {t.projects.nav_next}
-                        </Link>
-                    )
-                }
-            </div>
+            <motion.div
+                variants={projectsImagesSlidUp}
+                initial="initial"
+                animate="enter"
+            >
+                <section className="project__images">
+                    {project.images.map((img, index) => (
+                        <CustomImage
+                            key={`${img}${index}`}
+                            src={img}
+                            width={1900}
+                            height={1140}
+                            className="project__image"
+                            alt={`${t.projects.alt_label} ${project.name}`}
+                            priority={index === 0}
+                        />
+                    ))}
+                </section>
+                <div className="project__navigation">
+                    {previousProject && 
+                        (
+                            <Link 
+                                href={`/work/${previousProject.slug}`} scroll={false}
+                                className="project__navigation--backward hover-underline">
+                                {t.projects.nav_previous}
+                            </Link>
+                        ) 
+                    }
+                    {nextProject &&
+                        (
+                            <Link 
+                                href={`/work/${nextProject.slug}`} scroll={false}
+                                className="project__navigation--forward hover-underline">
+                                {t.projects.nav_next}
+                            </Link>
+                        )
+                    }
+                </div>
+            </motion.div>
         </div>
     )
 }

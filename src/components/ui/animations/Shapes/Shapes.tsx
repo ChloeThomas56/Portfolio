@@ -3,7 +3,7 @@ import { shapesFadeIn } from '@/lib/variants';
 
 export default function Shapes() {
     return (
-        <div className="shapes">
+        <div className="shapes" aria-hidden="true">
             <motion.div
                 variants={shapesFadeIn}
                 initial="hidden"
@@ -13,8 +13,8 @@ export default function Shapes() {
                 <svg className="shapes__item shapes__item--top" viewBox="111 111 578 578" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <radialGradient  id="donut-gradient" className="shapes__item-gradient" cx="60%" cy="60%" r="110%" fx="50%" fy="50%">
-                            <stop offset="40%" stopColor="var(--shape-shadow-color)" />
-                            <stop offset="60%" stopColor="var(--shape-color)" />
+                            <stop offset="30%" stopColor="var(--shape-color-secondary)" />
+                            <stop offset="70%" stopColor="var(--shape-color-primary)" />
                         </radialGradient>
                     </defs>
                     <circle 
@@ -24,7 +24,7 @@ export default function Shapes() {
                         r="164"
                         stroke="url(#donut-gradient)" 
                         strokeWidth="250" 
-                        strokeDasharray="750 1400"
+                        strokeDasharray="730 1400"
                         strokeLinecap="round"
                         strokeDashoffset="-260" />
                 </svg>
@@ -43,8 +43,8 @@ export default function Shapes() {
                     xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <linearGradient id="curve-gradient" className="shapes__item-gradient" gradientTransform="rotate(45)">
-                            <stop offset="15%" stopColor="var(--shape-shadow-color)" />
-                            <stop offset="95%" stopColor="var(--shape-color)" />
+                            <stop offset="15%" stopColor="var(--shape-color-secondary)" />
+                            <stop offset="95%" stopColor="var(--shape-color-primary)" />
                         </linearGradient>
                     </defs>
                     <path 

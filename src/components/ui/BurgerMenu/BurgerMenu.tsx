@@ -23,7 +23,7 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
                 onClick={toggleMenu}
                 aria-expanded={isOpen}
                 aria-controls="menu"
-                aria-label={isOpen ? 'Fermer le menu' : 'Ouvrir le menu'}>
+                aria-label={isOpen ? t.common.aria_label_close_menu : t.common.aria_label_open_menu}>
                     <span>{t.common.burger_menu_open}</span>
                     <span>{t.common.burger_menu_close}</span>
             </button>

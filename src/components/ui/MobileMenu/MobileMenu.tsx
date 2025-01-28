@@ -12,7 +12,7 @@ interface LinkProps {
     href: string;
 }
 
-export default function MobileNav({ links, show, setShow }: { links: LinkProps[], show: boolean, setShow: (show: boolean) => void }) {
+export default function MobileMenu({ links, show, setShow }: { links: LinkProps[], show: boolean, setShow: (show: boolean) => void }) {
     const [ delay, setDelay ]   = useState(0);
     const pathname              = usePathname();
     const lenis                 = useSmoothScrollingControl();

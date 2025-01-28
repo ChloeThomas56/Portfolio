@@ -1,24 +1,24 @@
+import { useTranslation } from '@/context/TranslationContext';
 import Head from 'next/head';
-import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
 import Title from '@/components/ui/Title/Title';
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
 
 export default function Custom404() {
+    const { t } = useTranslation();
+
     return (
         <>
             <Head>
                 <title>Chloé Thomas | 404</title>
             </Head>
-            <PageTransition>
-                <div className="centered-wrapper">
-                    <Title>
-                        Erreur 404
-                    </Title>
-                    <CustomLink href="/">
-                        Retour à l&#39;accueil
-                    </CustomLink>
-                </div>
-            </PageTransition>
+            <div className="centered-wrapper">
+                <Title>
+                    {t.common.error_title}
+                </Title>
+                <CustomLink href="/">
+                    {t.common.error_cta}
+                </CustomLink>
+            </div>
         </>
     )
 }

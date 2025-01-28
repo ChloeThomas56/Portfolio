@@ -12,9 +12,9 @@
     --light: #f7eeec;
     --dark: #242424;
     --background-color: var(--light);
-    --border-color: #616161;
-    --shape-color: #f4e1c1;
-    --shape-shadow-color: #e1c5b1;
+    --border-color: #3a3a3a;
+    --shape-color-primary: #f4e1c1;
+    --shape-color-secondary: #e1c5b1;
     --gutter: 1.5vw;
     --top-gutter: clamp(7rem, 14vh, 9rem);
     --bottom-gutter: clamp(8rem, 17vh, 10rem);
@@ -27,6 +27,7 @@
     --font-weight-bold: 600;
     --border: 2px solid var(--border-color);
     --border-radius: 15px;
+    --color-transition: 1.2s ease;
 }
 
 * {
@@ -58,7 +59,7 @@ body {
     font-weight: var(--font-weight-medium);
     background-color: var(--background-color);
     color: var(--dark);
-    transition: background-color 1.2s ease;
+    transition: background-color var(--color-transition);
 }
 
 main {
@@ -74,10 +75,6 @@ a {
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: var(--font-weight-bold);
-
-    &:hover {
-        color: #555555;
-    }
 }
 
 button {
@@ -115,7 +112,7 @@ ul, ol {
 // classes
 .wrapper {
     min-height: 100vh;
-    padding: var(--top-gutter) 10% var(--bottom-gutter) 10%;
+    padding: var(--top-gutter) 12% var(--bottom-gutter) 12%;
 }
 
 .centered-wrapper {
@@ -217,9 +214,33 @@ ul, ol {
 }
 
 .img-container {
-    background-color: var(--shape-shadow-color);
+    background-color: #ffffff;
     border-radius: var(--border-radius);
     overflow: hidden;
+}
+
+.hover-underline {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        display: block;
+        content: '';
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        background-color: var(--border-color);
+        pointer-events: none;
+        transform-origin: 100% 50%;
+        transform: scale3d(0, 1, 1);
+        transition: transform 0.3s ease-out;
+    }
+
+    &:hover::before {
+        transform-origin: 0% 50%;
+        transform: scale3d(1, 1, 1);
+    }
 }
 
 
@@ -254,12 +275,12 @@ ul, ol {
         scrollbar-color: auto;
     }
 
-    a:hover {
-        color: inherit;
-    }
-
     .list-item {
         flex-direction: column;
         row-gap: 2rem;
+    }
+
+    .hover-underline::before {
+        display: none;
     }
 }

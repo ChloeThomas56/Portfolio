@@ -1,7 +1,6 @@
 import { useTranslation } from '@/context/TranslationContext';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
 import Title from '@/components/ui/Title/Title';
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
 
@@ -22,29 +21,27 @@ export default function Home() {
                     />
                 ))}
             </Head>
-            <PageTransition>
-                <div className="centered-wrapper home">
-                    <Title>
-                        Chloé Thomas,
-                    </Title>
-                    <Title as="h2">
-                        {t.home.subtitle}
-                    </Title>
-                    <p>
-                        {t.home.paragraph_first}
-                        <br/>
-                        {t.home.paragraph_second}
-                    </p>
-                    <nav className="home__nav">
-                        <CustomLink href="/work">
-                            {t.home.cta_projects}
-                        </CustomLink>
-                        <CustomLink href="/about">
-                            {t.home.cta_about}
-                        </CustomLink>
-                    </nav>
-                </div>
-            </PageTransition>
+            <div className="centered-wrapper home">
+                <Title>
+                    Chloé Thomas,
+                </Title>
+                <Title as="h2">
+                    {t.home.subtitle}
+                </Title>
+                <p>
+                    {t.home.paragraph_first}
+                    <br/>
+                    {t.home.paragraph_second}
+                </p>
+                <nav className="home__nav">
+                    <CustomLink href="/work">
+                        {t.home.cta_projects}
+                    </CustomLink>
+                    <CustomLink href="/about">
+                        {t.home.cta_about}
+                    </CustomLink>
+                </nav>
+            </div>
         </>
     );
 }

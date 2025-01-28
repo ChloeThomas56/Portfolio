@@ -7,9 +7,9 @@ export default function Footer() {
     return (
         <div role="contentinfo" className="footer">
             <span>
-                © 2024
+                © 2025
             </span>
-            <Link href="/legal" className="nav-item" scroll={false}>
+            <Link href="/legal" className="nav-item hover-underline" scroll={false}>
                 {t.common.link_legal}
             </Link>
         </div>

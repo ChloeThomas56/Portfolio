@@ -1,0 +1,20 @@
+export default {
+    'title': 'Legal',
+    'subtitle_publisher': 'Publisher',
+    'subtitle_host': 'Host',
+    'subtitle_ip': 'Intellectual property',
+    'subtitle_data': 'Personal data',
+    'subtitle_responsibility': 'Responsibility',
+    'subtitle_changes': 'Changes',
+    'paragraph_website': 'The website\u00a0',
+    'paragraph_contact': 'Contact:\u00a0',
+    'paragraph_publisher_name': ' is published by Chloé Thomas.',
+    'paragraph_publisher_siret': 'SIRET:',
+    'paragraph_publisher_headquarters': 'Registered office:',
+    'paragraph_host_name': ' is hosted by Vercel Inc.',
+    'paragraph_host_headquarters': 'Headquarters:',
+    'paragraph_ip': "All content on this website is the exclusive property of Chloé Thomas, unless stated otherwise. Any full or partial reproduction or representation of this website without explicit authorization is strictly prohibited and may constitute an infringement.",
+    'paragraph_data': "This website does not collect personal data. Information provided by users through the contact form is only used to respond to requests and is not stored or shared.",
+    'paragraph_responsibility': "The website may contain links to external sites. We accept no responsibility for the content of these sites or for any consequences arising from their use.",
+    'paragraph_changes': "We reserve the right to modify this legal notice at any time. We encourage you to review it regularly for any updates."
+} as const

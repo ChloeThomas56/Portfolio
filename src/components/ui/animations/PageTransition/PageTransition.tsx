@@ -28,6 +28,10 @@ export default function PageTransition({ children }: { children: React.ReactNode
         };
     }, [router]);
 
+    useEffect(() => {
+        console.log('je passe dans page transition')
+    }, [])
+
     const disableScroll = () => {
         lenis?.stop();
         document.documentElement.style.overflowY = 'hidden';

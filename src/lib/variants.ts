@@ -8,11 +8,11 @@ export const pageTransition: Variants = {
     enter: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.8, delay: 0.25, ease: [0.2, 1, 0.66, 1] }
+        transition: { duration: 0.8, delay: 0.15, ease: [0.2, 1, 0.66, 1] }
     },
     exit: {
         opacity: 0,
-        transition: { duration: 0.25 }
+        transition: { duration: 0.15 }
     }
 }
 
@@ -24,7 +24,7 @@ export const textReveal: Variants = {
     enter: {
         opacity: 1, 
         y: 0,
-        transition: { duration: 0.8, delay: 0.2, ease: [0.2, 1, 0.66, 1] }
+        transition: { duration: 0.8, delay: 0.1, ease: [0.2, 1, 0.66, 1] }
     },
     exit: {
         opacity: 0, 
@@ -37,7 +37,7 @@ export const shapesFadeIn: Variants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
-        transition: { duration: 1, delay: 0.25 }
+        transition: { duration: 1, delay: 0.15 }
     }
 }
 
@@ -61,7 +61,7 @@ export const modalBlur: Variants = {
     },
     exit: { 
         backdropFilter: 'blur(0px)',
-        transition: { duration: 0.3, ease:"easeIn" }  
+        transition: { duration: 0.3, ease:"easeIn" }
     }
 }
 
@@ -74,5 +74,17 @@ export const modalScale: Variants = {
     exit: { 
         scale: 0,
         transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] }
+    }
+}
+
+export const projectsImagesSlidUp: Variants = {
+    initial: { 
+        opacity: 0, 
+        y: 50 
+    },
+    enter: { 
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, delay: 0.15, ease: [0.2, 1, 0.66, 1] }
     }
 }

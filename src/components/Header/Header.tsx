@@ -6,7 +6,7 @@ import { textReveal } from '@/lib/variants';
 import Link from 'next/link';
 import SwitchLanguage from '../ui/SwitchLanguage/SwitchLanguage';
 import BurgerMenu from '../ui/BurgerMenu/BurgerMenu';
-import MobileNav from '../ui/MobileNav/MobileNav';
+import MobileMenu from '../ui/MobileMenu/MobileMenu';
 
 export default function Header() {
     const { t }                         = useTranslation();
@@ -36,31 +36,33 @@ export default function Header() {
                         variants={textReveal}
                         initial="initial"
                         animate="enter"
+                        className="header__logo-container"
                     >
                         <Link href="/" className="nav-item header__nav-item" scroll={false}>
                             CT.
                         </Link>
                     </motion.div>
                     <div className="header__controls">
-                        <nav className="header__nav">
-                            <AnimatePresence mode="wait">
-                                <motion.ul
-                                    key={locale}
-                                    variants={textReveal}
-                                    initial="initial"
-                                    animate="enter"
-                                    exit="exit"
-                                >
+                        <AnimatePresence mode="wait">
+                            <motion.nav
+                                key={locale}
+                                variants={textReveal}
+                                initial="initial"
+                                animate="enter"
+                                exit="exit" 
+                                className="header__nav"
+                            >
+                                <ul>
                                     {links.map((link) => (
                                         <li key={link.name} >
-                                            <Link href={link.href} className="nav-item header__nav-item" scroll={false}>
+                                            <Link href={link.href} className="nav-item header__nav-item hover-underline" scroll={false}>
                                                 {link.name}
                                             </Link>
                                         </li>
                                     ))}
-                                </motion.ul>
-                            </AnimatePresence>
-                        </nav>
+                                </ul>
+                            </motion.nav>
+                        </AnimatePresence>
                         <motion.div 
                             variants={textReveal}
                             initial="initial"
@@ -72,7 +74,7 @@ export default function Header() {
                     <BurgerMenu toggleMenu={toggleMenu} isOpen={isMenuOpen} />
                 </div>
             </header>
-            <MobileNav links={links} show={isMenuOpen} setShow={setIsMenuOpen} />
+            <MobileMenu links={links} show={isMenuOpen} setShow={setIsMenuOpen} />
         </>
     );
 }

@@ -1,7 +1,6 @@
 import { useTranslation } from '@/context/TranslationContext';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import PageTransition from '@/components/ui/animations/PageTransition/PageTransition';
 import Title from '@/components/ui/Title/Title';
 import CustomImage from '@/components/ui/CustomImage/CustomImage';
 import { MdArrowOutward } from 'react-icons/md';
@@ -9,11 +8,12 @@ import { MdArrowOutward } from 'react-icons/md';
 export default function About() {
     const { t }     = useTranslation();
     const router    = useRouter();
+    const title     = `Chloé Thomas | ${t.about.title}`
 
     return (
         <>
             <Head>
-                <title>Chloé Thomas | À propos</title>
+                <title>{title}</title>
                 {router.locales?.map((locale) => (
                     <link 
                         key={locale} 
@@ -23,61 +23,56 @@ export default function About() {
                     />
                 ))}
             </Head>
-            <PageTransition>
-                <div className="wrapper">
-                    <Title>
-                        À propos
-                    </Title>
-                    <div className="about">
-                        <section className="about__introduction">
-                            <div className="about__introduction-illustration">
-                                <CustomImage
-                                    src="/images/portrait.webp"
-                                    width={1000}
-                                    height={1000}
-                                    sizes="(max-width: 768px) 100vw, 30vw"
-                                    alt="Portrait de Chloé Thomas"
-                                    priority
-                                />
-                            </div>
-                            <div className="about__introduction-text">
-                                <h2 className="subtitle">
-                                    Mon parcours
-                                </h2>
-                                <p>
-                                    Attirée par le monde du numérique et le développement web, j&#39;ai été formée à l&#39;école O&#39;clock, après une première carrière de traductrice. J&#39;ai ensuite rejoint la start-up Sports-Village, où j&#39;ai contribué à un projet ambitieux durant deux ans. Je suis actuellement disponible pour mettre mes compétences au service de vos projets web, que ce soit pour des missions ponctuelles ou de plus grande envergure.
-                                </p>
-                                <p>
-                                    Je m&#39;attache à créer des interfaces soignées, fonctionnelles et intuitives, en accordant une attention particulière à chaque détail. Je développe des sites web sur mesure à l&#39;aide de frameworks modernes ou via des CMS pour une gestion simplifiée, offrant ainsi une solution adaptée à chaque projet. Mon expérience en back-end complète mon expertise en front-end, ce qui me permet de prendre en charge des projets dans leur globalité.
-                                </p>
-                                <a href="/cv_chloe_thomas.pdf" target="_blank" rel="noopener noreferrer" className="link">
-                                    <MdArrowOutward />
-                                    Voir mon CV
-                                </a>
-                            </div>
-                        </section>
-                        <section className="about__tools">
+            <div className="wrapper">
+                <Title>
+                    {t.about.title}
+                </Title>
+                <div className="about">
+                    <section className="about__introduction">
+                        <div className="about__introduction-illustration">
+                            <CustomImage
+                                src="/images/portrait.webp"
+                                width={1000}
+                                height={1000}
+                                sizes="(max-width: 768px) 100vw, 30vw"
+                                alt="Portrait de Chloé Thomas"
+                                priority
+                            />
+                        </div>
+                        <div className="about__introduction-text">
                             <h2 className="subtitle">
-                                Mes outils
+                                {t.about.subtitle_background}
                             </h2>
-                            <ul className="about__tools-list">
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JS</li>
-                                <li>React</li>
-                                <li>Next</li>
-                                <li>Nuxt</li>
-                                <li>GSAP</li>
-                                <li>Framer Motion</li>
-                                <li>Figma</li>
-                                <li>Wordpress</li>
-                                <li>PHP</li>
-                                <li>Laravel</li>
-                            </ul>
-                        </section>
-                    </div>
+                            <p>{t.about.paragraph_background_first}</p>
+                            <p>{t.about.paragraph_background_second}</p>
+                            <a href={t.about.href_resume} target="_blank" rel="noopener noreferrer" className="link">
+                                <MdArrowOutward />
+                                {t.about.cta_resume}
+                            </a>
+                        </div>
+                    </section>
+                    <section className="about__tools">
+                        <h2 className="subtitle">
+                            {t.about.subtitle_tools}
+                        </h2>
+                        <ul className="about__tools-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JS</li>
+                            <li>React</li>
+                            <li>Next</li>
+                            <li>Vue</li>
+                            <li>Nuxt</li>
+                            <li>GSAP</li>
+                            <li>Framer Motion</li>
+                            <li>Figma</li>
+                            <li>WordPress</li>
+                            <li>PHP</li>
+                            <li>Laravel</li>
+                        </ul>
+                    </section>
                 </div>
-            </PageTransition>
+            </div>
         </>
     );
 }

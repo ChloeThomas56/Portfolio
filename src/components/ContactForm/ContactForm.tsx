@@ -1,9 +1,11 @@
+import { useTranslation } from '@/context/TranslationContext';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { ImSpinner8 } from 'react-icons/im';
 import Modal from '../ui/Modal/Modal';
 
 export default function ContactForm() {
+    const { t }                         = useTranslation();
     const [showMessage, setShowMessage] = useState(false);
     const [isLoading, setIsLoading]     = useState(false);
     const [formStatus, setFormStatus]   = useState<string | null>(null);
@@ -52,7 +54,7 @@ export default function ContactForm() {
             <form ref={form} action="/submit-form" method="post" className="form" onSubmit={sendForm}>
                 <div className="form__field-wrapper">
                     <label htmlFor="first_name">
-                        Prénom
+                        {t.contact.label_first_name}
                         <span>*</span>
                     </label>
                     <input 
@@ -63,7 +65,7 @@ export default function ContactForm() {
                 </div>
                 <div className="form__field-wrapper">
                     <label htmlFor="last_name">
-                        Nom
+                        {t.contact.label_last_name}
                         <span>*</span>
                     </label>
                     <input 
@@ -100,19 +102,19 @@ export default function ContactForm() {
                             <ImSpinner8 className="spinner" />
                         )
                     }
-                    Envoyer
+                    {t.contact.cta}
                 </button>
             </form>
             <Modal show={showMessage} close={closeModal}>
                 {
                     formStatus === 'success' ? (
                         <p>
-                            Votre message a bien été envoyé&nbsp;!<br/>Je vous répondrai dans les plus brefs délais.<br/>
+                            {t.contact.modal_success_paragraph_first}<br/>{t.contact.modal_success_paragraph_second}<br/>
                             <span className="form__smiley">(•‿•)</span>
                         </p>
                     ) : (
                         <p>
-                            Oups&nbsp;! Quelque chose s&#39;est mal passé.<br/>Veuillez vérifier vos informations et réessayer.<br/>
+                            {t.contact.modal_error_paragraph_first}<br/>{t.contact.modal_error_paragraph_second}<br/>
                             <span className="form__smiley">(•_•)</span>
                         </p>
                     )
