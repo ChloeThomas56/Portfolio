@@ -75,6 +75,10 @@ a {
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: var(--font-weight-bold);
+
+    &:visited {
+        color: inherit;
+    }
 }
 
 button {
