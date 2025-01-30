@@ -45,6 +45,10 @@
         &-illustration {
             width: 40%;
 
+            .img-container {
+                background-color: var(--shape-color-primary);
+            }
+
             img {
                 filter: saturate(0.4);
                 height: auto;
