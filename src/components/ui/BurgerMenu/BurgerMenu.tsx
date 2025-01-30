@@ -1,7 +1,4 @@
 import { useTranslation } from '@/context/TranslationContext';
-import { useFirstLoad } from '@/context/FirstLoadContext';
-import { motion } from 'framer-motion';
-import { textReveal } from '@/lib/variants';
 import clsx from 'clsx';
 
 interface BurgerMenuProps {
@@ -10,17 +7,10 @@ interface BurgerMenuProps {
 }
 
 export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
-    const { t }         = useTranslation();
-    const { firstLoad } = useFirstLoad();
+    const { t } = useTranslation();
 
     return (
-        <motion.div
-            variants={textReveal}
-            initial="initial"
-            animate="enter"
-            custom={{ firstLoad }} 
-            className="burger-menu-container"
-        >
+        <div className="burger-menu-container">
             <button
                 className={clsx("burger-menu", {"burger-menu--open": isOpen})}
                 onClick={toggleMenu}
@@ -30,6 +20,6 @@ export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
                     <span>{t.common.burger_menu_open}</span>
                     <span>{t.common.burger_menu_close}</span>
             </button>
-        </motion.div>
+        </div>
     );
 }

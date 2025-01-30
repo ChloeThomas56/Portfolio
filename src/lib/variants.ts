@@ -8,11 +8,11 @@ export const pageTransition: Variants = {
     enter: (custom) => ({
         opacity: 1,
         y: 0,
-        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.5 : 0.15, ease: [0.2, 1, 0.66, 1] }
+        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.5 : 0.2, ease: [0.2, 1, 0.66, 1] }
     }),
     exit: {
         opacity: 0,
-        transition: { duration: 0.15 }
+        transition: { duration: 0.2 }
     }
 }
 
@@ -24,12 +24,28 @@ export const textReveal: Variants = {
     enter: (custom) => ({
         opacity: 1, 
         y: 0,
-        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.45 : 0.1, ease: [0.2, 1, 0.66, 1] }
+        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.5 : 0.2, ease: [0.2, 1, 0.66, 1] }
     }),
     exit: {
         opacity: 0, 
         y: "-100%",
         transition: { duration: 0.8, ease: [0.2, 1, 0.66, 1] }
+    }
+}
+
+export const headerReveal: Variants = {
+    initial: { 
+        opacity: 0, 
+        y: "100%"
+    },
+    enter: (custom) => ({
+        opacity: 1, 
+        y: 0,
+        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.5 : 0.2, ease: [0.2, 1, 0.66, 1] }
+    }),
+    exit: {
+        opacity: 0, 
+        transition: { duration: 0.2 }
     }
 }
 
@@ -85,6 +101,6 @@ export const projectsImagesSlidUp: Variants = {
     enter: (custom) => ({ 
         opacity: 1,
         y: 0,
-        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.5 : 0.15, ease: [0.2, 1, 0.66, 1] }
+        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.5 : 0.2, ease: [0.2, 1, 0.66, 1] }
     })
 }

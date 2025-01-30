@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useFirstLoad } from '@/context/FirstLoadContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import { textReveal } from '@/lib/variants';
+import { headerReveal } from '@/lib/variants';
 import Link from 'next/link';
 import SwitchLanguage from '../ui/SwitchLanguage/SwitchLanguage';
 import BurgerMenu from '../ui/BurgerMenu/BurgerMenu';
@@ -33,51 +33,41 @@ export default function Header() {
     return (
         <>
             <header className="header">
-                <div className="header__inner">
+                <AnimatePresence mode="wait">
                     <motion.div
-                        variants={textReveal}
+                        key={locale}
+                        variants={headerReveal}
                         initial="initial"
                         animate="enter"
+                        exit="exit"
                         custom={{ firstLoad }}
-                        className="header__logo-container"
                     >
-                        <Link href="/" className="nav-item header__nav-item" scroll={false}>
-                            CT.
-                        </Link>
+                        <div className="header__inner">
+                            <div>
+                                <Link href="/" className="nav-item header__nav-item" scroll={false}>
+                                    CT.
+                                </Link>
+                            </div>
+                            <div className="header__controls">
+                                <nav className="header__nav">
+                                    <ul>
+                                        {links.map((link) => (
+                                            <li key={link.name} >
+                                                <Link href={link.href} className="nav-item header__nav-item hover-underline" scroll={false}>
+                                                    {link.name}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </nav>
+                                <div className="desktop-only">
+                                    <SwitchLanguage />
+                                </div>
+                            </div>
+                            <BurgerMenu toggleMenu={toggleMenu} isOpen={isMenuOpen} />
+                        </div>
                     </motion.div>
-                    <div className="header__controls">
-                        <AnimatePresence mode="wait">
-                            <motion.nav
-                                key={locale}
-                                variants={textReveal}
-                                initial="initial"
-                                animate="enter"
-                                exit="exit"
-                                custom={{ firstLoad }} 
-                                className="header__nav"
-                            >
-                                <ul>
-                                    {links.map((link) => (
-                                        <li key={link.name} >
-                                            <Link href={link.href} className="nav-item header__nav-item hover-underline" scroll={false}>
-                                                {link.name}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </motion.nav>
-                        </AnimatePresence>
-                        <motion.div 
-                            variants={textReveal}
-                            initial="initial"
-                            animate="enter"
-                            custom={{ firstLoad }}
-                            className="desktop-only">
-                            <SwitchLanguage />
-                        </motion.div>
-                    </div>
-                    <BurgerMenu toggleMenu={toggleMenu} isOpen={isMenuOpen} />
-                </div>
+                </AnimatePresence>
             </header>
             <MobileMenu links={links} show={isMenuOpen} setShow={setIsMenuOpen} />
         </>
