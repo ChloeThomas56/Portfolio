@@ -8,7 +8,7 @@ export const pageTransition: Variants = {
     enter: (custom) => ({
         opacity: 1,
         y: 0,
-        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.5 : 0.2, ease: [0.2, 1, 0.66, 1] }
+        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.5 : 0.3, ease: [0.2, 1, 0.66, 1] }
     }),
     exit: {
         opacity: 0,
@@ -24,7 +24,7 @@ export const textReveal: Variants = {
     enter: (custom) => ({
         opacity: 1, 
         y: 0,
-        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.5 : 0.2, ease: [0.2, 1, 0.66, 1] }
+        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.5 : 0.3, ease: [0.2, 1, 0.66, 1] }
     }),
     exit: {
         opacity: 0, 
@@ -41,7 +41,7 @@ export const headerReveal: Variants = {
     enter: (custom) => ({
         opacity: 1, 
         y: 0,
-        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.5 : 0.2, ease: [0.2, 1, 0.66, 1] }
+        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.5 : 0.3, ease: [0.2, 1, 0.66, 1] }
     }),
     exit: {
         opacity: 0, 
@@ -61,11 +61,11 @@ export const mobileMenuFade: Variants = {
     initial: { opacity: 0 },
     enter: {
         opacity: 1,
-        transition: { duration: 0.5 }
+        transition: { duration: 0.8 }
     },
     exit: (custom) => ({
         opacity: 0,
-        transition: { duration: 0.5, delay: custom?.exitDelay || 0 }
+        transition: { duration: 0.8, delay: custom?.exitDelay || 0 }
     })
 }
 
@@ -101,6 +101,6 @@ export const projectsImagesSlidUp: Variants = {
     enter: (custom) => ({ 
         opacity: 1,
         y: 0,
-        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.5 : 0.2, ease: [0.2, 1, 0.66, 1] }
+        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.5 : 0.3, ease: [0.2, 1, 0.66, 1] }
     })
 }
