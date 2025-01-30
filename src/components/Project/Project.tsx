@@ -3,8 +3,6 @@ import { useFirstLoad } from '@/context/FirstLoadContext';
 import { useEffect } from 'react';
 import Title from '../ui/Title/Title';
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
-import { motion } from 'framer-motion';
-import { projectsImagesSlidUp } from '@/lib/variants';
 import CustomImage from '../ui/CustomImage/CustomImage';
 import Link from 'next/link';
 
@@ -77,46 +75,39 @@ export default function Project({ project, previousProject, nextProject }: Proje
                     )}
                 </div>
             </section>
-            <motion.div
-                variants={projectsImagesSlidUp}
-                initial="initial"
-                animate="enter"
-                custom={{ firstLoad }}
-            >
-                <section className="project__images">
-                    {project.images.map((img, index) => (
-                        <CustomImage
-                            key={`${img}${index}`}
-                            src={img}
-                            width={1900}
-                            height={1140}
-                            className="project__image"
-                            alt={`${t.projects.alt_label} ${project.name}`}
-                            priority={index === 0}
-                        />
-                    ))}
-                </section>
-                <div className="project__navigation">
-                    {previousProject && 
-                        (
-                            <Link 
-                                href={`/work/${previousProject.slug}`} scroll={false}
-                                className="project__navigation--backward hover-underline">
-                                {t.projects.nav_previous}
-                            </Link>
-                        ) 
-                    }
-                    {nextProject &&
-                        (
-                            <Link 
-                                href={`/work/${nextProject.slug}`} scroll={false}
-                                className="project__navigation--forward hover-underline">
-                                {t.projects.nav_next}
-                            </Link>
-                        )
-                    }
-                </div>
-            </motion.div>
+            <section className="project__images">
+                {project.images.map((img, index) => (
+                    <CustomImage
+                        key={`${img}${index}`}
+                        src={img}
+                        width={1900}
+                        height={1140}
+                        className="project__image"
+                        alt={`${t.projects.alt_label} ${project.name}`}
+                        priority={index === 0}
+                    />
+                ))}
+            </section>
+            <div className="project__navigation">
+                {previousProject && 
+                    (
+                        <Link 
+                            href={`/work/${previousProject.slug}`} scroll={false}
+                            className="project__navigation--backward hover-underline">
+                            {t.projects.nav_previous}
+                        </Link>
+                    ) 
+                }
+                {nextProject &&
+                    (
+                        <Link 
+                            href={`/work/${nextProject.slug}`} scroll={false}
+                            className="project__navigation--forward hover-underline">
+                            {t.projects.nav_next}
+                        </Link>
+                    )
+                }
+            </div>
         </div>
     )
 }

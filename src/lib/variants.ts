@@ -76,15 +76,3 @@ export const modalScale: Variants = {
         transition: { duration: 0.4, ease: [0.76, 0, 0.24, 1] }
     }
 }
-
-export const projectsImagesSlidUp: Variants = {
-    initial: { 
-        opacity: 0, 
-        y: 50 
-    },
-    enter: (custom) => ({ 
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.8, delay: custom?.firstLoad ? 0.5 : 0.15, ease: [0.2, 1, 0.66, 1] }
-    })
-}

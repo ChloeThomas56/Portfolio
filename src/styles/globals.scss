@@ -69,7 +69,7 @@ body {
         left: -150%;
         height: 600%;
         width: 600%;
-        opacity: 0.2;
+        opacity: 0.17;
         animation: noise 7s steps(10) infinite;
         background-image: url('/images/noise.webp');
         background-size: 200px;
@@ -295,7 +295,7 @@ ul, ol {
     }
 
     body::after {
-        opacity: 0.15;
+        opacity: 0.12;
     }
 
     .list-item {
