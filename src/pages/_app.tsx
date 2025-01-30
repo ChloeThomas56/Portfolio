@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { inter, bricolage_grotesque } from '@/lib/font';
 import { TranslationProvider } from '@/context/TranslationContext';
+import { FirstLoadProvider } from '@/context/FirstLoadContext';
 import SmoothScrolling from '@/components/ui/SmoothScrolling/SmoothScrolling';
 import Header from '@/components/Header/Header';
 import { AnimatePresence } from 'framer-motion';
@@ -28,17 +29,19 @@ export default function App({ Component, pageProps, router }: AppProps) {
             </Head>
             <div className={`${inter.className} ${bricolage_grotesque.variable}`}>
                 <TranslationProvider>
-                    <SmoothScrolling>
-                        <Header />
-                        <main>
-                            <AnimatePresence mode='wait'>
-                                <PageTransition key={`${router.asPath}-${router.locale}`}>
-                                    <Component {...pageProps} />
-                                </PageTransition>
-                            </AnimatePresence>
-                        </main>
-                        <Shapes />
-                    </SmoothScrolling>
+                    <FirstLoadProvider>
+                        <SmoothScrolling>
+                            <Header />
+                            <main>
+                                <AnimatePresence mode='wait'>
+                                    <PageTransition key={`${router.asPath}-${router.locale}`}>
+                                        <Component {...pageProps} />
+                                    </PageTransition>
+                                </AnimatePresence>
+                            </main>
+                            <Shapes />
+                        </SmoothScrolling>
+                    </FirstLoadProvider>
                 </TranslationProvider>
                 <SpeedInsights />
             </div>

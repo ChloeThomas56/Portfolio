@@ -1,6 +1,7 @@
 import { useTranslation } from '@/context/TranslationContext';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { useFirstLoad } from '@/context/FirstLoadContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import { textReveal } from '@/lib/variants';
 import Link from 'next/link';
@@ -12,6 +13,7 @@ export default function Header() {
     const { t }                         = useTranslation();
     const [isMenuOpen, setIsMenuOpen]   = useState(false);
     const { pathname, locale }          = useRouter();
+    const { firstLoad }                 = useFirstLoad();
         
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -36,6 +38,7 @@ export default function Header() {
                         variants={textReveal}
                         initial="initial"
                         animate="enter"
+                        custom={{ firstLoad }}
                         className="header__logo-container"
                     >
                         <Link href="/" className="nav-item header__nav-item" scroll={false}>
@@ -49,7 +52,8 @@ export default function Header() {
                                 variants={textReveal}
                                 initial="initial"
                                 animate="enter"
-                                exit="exit" 
+                                exit="exit"
+                                custom={{ firstLoad }} 
                                 className="header__nav"
                             >
                                 <ul>
@@ -67,6 +71,7 @@ export default function Header() {
                             variants={textReveal}
                             initial="initial"
                             animate="enter"
+                            custom={{ firstLoad }}
                             className="desktop-only">
                             <SwitchLanguage />
                         </motion.div>

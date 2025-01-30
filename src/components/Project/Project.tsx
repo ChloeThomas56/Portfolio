@@ -1,4 +1,5 @@
 import { useTranslation } from '@/context/TranslationContext';
+import { useFirstLoad } from '@/context/FirstLoadContext';
 import { useEffect } from 'react';
 import Title from '../ui/Title/Title';
 import { CustomLink } from '@/components/ui/CustomLink/CustomLink';
@@ -29,7 +30,8 @@ interface ProjectProps {
 }
 
 export default function Project({ project, previousProject, nextProject }: ProjectProps) {
-    const { t, visibleLocale } = useTranslation();
+    const { t, visibleLocale }  = useTranslation();
+    const { firstLoad }         = useFirstLoad();
 
     useEffect(() => {
         document.documentElement.style.setProperty('--background-color', project?.color_bg);
@@ -79,6 +81,7 @@ export default function Project({ project, previousProject, nextProject }: Proje
                 variants={projectsImagesSlidUp}
                 initial="initial"
                 animate="enter"
+                custom={{ firstLoad }}
             >
                 <section className="project__images">
                     {project.images.map((img, index) => (

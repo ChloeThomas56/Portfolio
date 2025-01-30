@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { useTranslation } from '@/context/TranslationContext';
 import { useSmoothScrollingControl } from '@/components/ui/SmoothScrolling/SmoothScrolling';
+import { useFirstLoad } from '@/context/FirstLoadContext';
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { pageTransition } from '@/lib/variants';
@@ -11,6 +12,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
     const locale                = router.locale;
     const { setVisibleLocale }  = useTranslation();
     const lenis                 = useSmoothScrollingControl();
+    const { firstLoad }         = useFirstLoad();
 
     useEffect(() => {
         if ('scrollRestoration' in window.history)
@@ -28,10 +30,6 @@ export default function PageTransition({ children }: { children: React.ReactNode
         };
     }, [router]);
 
-    useEffect(() => {
-        console.log('je passe dans page transition')
-    }, [])
-
     const disableScroll = () => {
         lenis?.stop();
         document.documentElement.style.overflowY = 'hidden';
@@ -48,6 +46,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
             initial="initial"
             animate="enter"
             exit="exit"
+            custom={{ firstLoad }}
             onAnimationStart={(variant) => {
                 disableScroll();
 

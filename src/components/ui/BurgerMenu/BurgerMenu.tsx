@@ -1,4 +1,5 @@
 import { useTranslation } from '@/context/TranslationContext';
+import { useFirstLoad } from '@/context/FirstLoadContext';
 import { motion } from 'framer-motion';
 import { textReveal } from '@/lib/variants';
 import clsx from 'clsx';
@@ -9,13 +10,15 @@ interface BurgerMenuProps {
 }
 
 export default function BurgerMenu({ isOpen, toggleMenu }: BurgerMenuProps) {
-    const { t } = useTranslation();
+    const { t }         = useTranslation();
+    const { firstLoad } = useFirstLoad();
 
     return (
         <motion.div
             variants={textReveal}
             initial="initial"
-            animate="enter" 
+            animate="enter"
+            custom={{ firstLoad }} 
             className="burger-menu-container"
         >
             <button
